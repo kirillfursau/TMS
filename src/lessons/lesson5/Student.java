@@ -6,13 +6,15 @@ public class Student {
     String firstName;
     String lastName;
     int age;
-    boolean[] homeWork;
+    boolean[] homeWork = new boolean[5];
+    static int students = 0;
     Scanner sc = new Scanner(System.in);
 
     Student(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        students++;
     }
 
     Student() {
@@ -20,6 +22,7 @@ public class Student {
         this.firstName = sc.nextLine();
         this.lastName = sc.nextLine();
         this.age = sc.nextInt();
+        students++;
     }
 
     void printInformation() {
@@ -32,7 +35,7 @@ public class Student {
         return prexif + firstName + " " + lastName;
     }
 
-    int birtDay() {
+    void birtDay() {
         age++;
     }
 
@@ -41,6 +44,24 @@ public class Student {
     }
 
     int[] getHomeWorkDone() {
+        int doneHomeWork = 0;
+        for (int i = 0; i < homeWork.length; i++) {
+            if (homeWork[i]) {
+                doneHomeWork++;
+            }
+        }
+        int[] getHomeWorkDone = new int[doneHomeWork];
+        int count = 0;
+        for (int i = 0; i < homeWork.length; i++) {
+            if (homeWork[i]) {
+                getHomeWorkDone[count] = i;
+                count++;
+            }
+        }
+        return getHomeWorkDone;
+    }
 
+    static int getNumberOfStudents() {
+        return students;
     }
 }

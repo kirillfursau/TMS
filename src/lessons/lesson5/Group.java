@@ -8,7 +8,5 @@ public class Group {
 
     }
     Student[] checkHomeWork(int){
-
     }
 }
-w
