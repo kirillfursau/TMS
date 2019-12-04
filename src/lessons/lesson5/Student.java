@@ -1,10 +1,13 @@
-package Lessons.lesson5;
+package lessons.lesson5;
+
 import java.util.Scanner;
 
 public class Student {
     String firstName;
     String lastName;
     int age;
+    boolean[] homeWork;
+    Scanner sc = new Scanner(System.in);
 
     Student(String firstName, String lastName, int age) {
         this.firstName = firstName;
@@ -13,7 +16,7 @@ public class Student {
     }
 
     Student() {
-        Scanner sc = new Scanner(System.in);
+
         this.firstName = sc.nextLine();
         this.lastName = sc.nextLine();
         this.age = sc.nextInt();
@@ -29,4 +32,15 @@ public class Student {
         return prexif + firstName + " " + lastName;
     }
 
+    int birtDay() {
+        age++;
+    }
+
+    void doHomeWork(int i) {
+        homeWork[i] = true;
+    }
+
+    int[] getHomeWorkDone() {
+
+    }
 }
