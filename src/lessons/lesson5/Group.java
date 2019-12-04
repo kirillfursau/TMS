@@ -7,8 +7,8 @@ public class Group {
 
     void addStudent() {
         for (int i = 0; i < students.length; i++) {
-                students[i] =  ;
-            }
+            students[i] = new Student();
         }
     }
 }
+
