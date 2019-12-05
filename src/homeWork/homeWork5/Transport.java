@@ -2,15 +2,19 @@ package homeWork.homeWork5;
 
 
 public class Transport {
-    public int power;
-    public int maxSpeed;
-    public int weight;
-    public String brand;
+    int power;
+    int maxSpeed;
+    int weight;
+    String brand;
+    double powerKW = power * 0.74;
 
-    public Transport(int power, int maxSpeed, int weight, String brand) {
+    Transport(int power, int maxSpeed, int weight, String brand) {
         this.power = power;
         this.maxSpeed = maxSpeed;
         this.weight = weight;
         this.brand = brand;
+    }
+    void powerKW (){
+       double powerKW = power * 0.74;
     }
 }
