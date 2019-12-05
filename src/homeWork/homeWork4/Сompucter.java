@@ -42,7 +42,7 @@ public class Сompucter {
                     fire();
                 }
             } else {
-                fire();
+               fire();
             }
         } else {
             System.out.println("I need 1 or 0.");
@@ -58,7 +58,7 @@ public class Сompucter {
             if (yrNumber == i) {
                 System.out.println("I am turn on.");
             } else {
-                fire();
+               fire();
             }
         } else {
             System.out.println("I need 1 or 0.");
@@ -68,6 +68,6 @@ public class Сompucter {
 
     void fire() {
         System.out.println("I'm on fire. Try again");
-        turnOn();
+        boolean fire = false;
     }
 }

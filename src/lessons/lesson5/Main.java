@@ -11,7 +11,8 @@ public class Main {
         for (int i = 0; i < homeWorkDone.length; i++) {
             System.out.println(homeWorkDone[i]);
         }
-        Group gr1 = new Group();
-        gr1.addStudent();
+//        Group gr1 = new Group();
+//        gr1.addStudent();
+//    }
     }
 }
