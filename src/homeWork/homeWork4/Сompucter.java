@@ -9,6 +9,7 @@ public class Сompucter {
     int resource;
     int count = 0;
     Scanner sc = new Scanner(System.in);
+    public boolean fire = false;
 
     Сompucter() {
         System.out.print("Enter processor : ");
@@ -39,10 +40,10 @@ public class Сompucter {
                 if (count == resource) {
                     System.out.print("I am out of resource. ");
                     count = 0;
-                    fire();
+                    fire = true;
                 }
             } else {
-               fire();
+                fire = true;
             }
         } else {
             System.out.println("I need 1 or 0.");
@@ -58,7 +59,7 @@ public class Сompucter {
             if (yrNumber == i) {
                 System.out.println("I am turn on.");
             } else {
-               fire();
+                fire = true;
             }
         } else {
             System.out.println("I need 1 or 0.");
@@ -68,6 +69,20 @@ public class Сompucter {
 
     void fire() {
         System.out.println("I'm on fire. Try again");
-        boolean fire = false;
+        fire = false;
+    }
+
+    void metod() {
+        while (true) {
+            if (fire == false) {
+                turnOn();
+            }
+            if (fire == false) {
+                turnOff();
+            }
+            if (fire) {
+                fire();
+            }
+        }
     }
 }
