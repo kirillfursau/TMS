@@ -15,4 +15,12 @@ public class CivilAir extends AirTransport {
                 + ". Wingspan(M) : " + wingspan + ". Minimum distance to fly away(M) : " + minimumRunway + ". Total passengers : " + totalPassengers + ". Bissnes class : " +
                 bissnes + ". Power in kilowat : " + powerKW();
     }
+
+    void maxPassengers(int passengers) {
+        if (passengers < totalPassengers) {
+            System.out.println("Plane loaded");
+        } else {
+            System.out.println("You need a bigger plane");
+        }
+    }
 }

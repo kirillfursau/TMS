@@ -26,7 +26,7 @@ public class PassengerCar extends GroundTransport {
 
     void kiloPerFuel(int time) {
         int distance = time * maxSpeed;
-        System.out.println("Distance on max speed is : " + distance + " for " + time + " hours ");
-        System.out.println("Fuel consumption on max speed " + fuelConsumptionDistance(distance) + " for " + time + " hours.");
+        System.out.println("For the time " + time + "h car " + brand  + " moving at maximum speed " + maxSpeed + " km and use up "
+         + fuelConsumptionDistance(distance) + " liters of fuel.");
     }
 }

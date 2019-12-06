@@ -12,5 +12,7 @@ public class Main {
         System.out.println(ca1.getInformation());
         System.out.println(wa1.getInformation());
         pc1.kiloPerFuel(2);
+        tr1.maxCarrying(6);
+        ca1.maxPassengers(115);
     }
 }
