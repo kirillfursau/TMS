@@ -7,6 +7,9 @@ public class Truck extends GroundTransport {
         this.carrying = carrying;
     }
     String getInformation(){
-        return power +  maxSpeed +  weight +  brand + numberOfWheels + fuelConsumption + carrying + powerKW;
+        return "Power in horses : " + power + ". Max speed km/h : " + maxSpeed + ". Weight(Kg) : " + weight + ". Brand : " + brand
+                + ". Number of Wheels : " + numberOfWheels + ". Fuel consumption(L/100km) : " + fuelConsumption +
+                ". Carrying capacity(T) : " + carrying
+                + ". Power in kilowat : " + powerKW();
     }
 }

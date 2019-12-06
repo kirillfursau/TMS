@@ -9,6 +9,8 @@ public class WarAir extends AirTransport {
         this.bailoutSystem = bailoutSystem;
     }
     String getInformation(){
-        return power + maxSpeed + weight + brand + wingspan + minimumRunway + totalRockets + bailoutSystem+ powerKW;
+        return "Power in horses : " + power + ". Max speed km/h : " + maxSpeed + "/ Weight(Kg) : " + weight + ". Brand : " + brand
+                + ". Wingspan(M) : " + wingspan + " Minimum distance to fly away(M) : " + minimumRunway + ". Total rockets : " + totalRockets + ". Bailout system : " +
+                bailoutSystem + ". Power in kilowat : " + powerKW();
     }
 }

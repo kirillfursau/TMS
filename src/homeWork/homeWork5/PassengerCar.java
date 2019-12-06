@@ -1,6 +1,5 @@
 package homeWork.homeWork5;
 
-import java.util.Scanner;
 
 public class PassengerCar extends GroundTransport {
     String bodyTipe;
@@ -12,17 +11,22 @@ public class PassengerCar extends GroundTransport {
         this.totalPassengers = totalPassengers;
     }
 
-    String getInformation() {
-        return power + maxSpeed + weight + brand + numberOfWheels + fuelConsumption + bodyTipe + fuelConsumption + powerKW;
+    private double fuelConsumptionDistance(double distance) {
+        double fuelConsumptionDistance = fuelConsumption * (distance/100);
+        return fuelConsumptionDistance;
     }
 
-    private void fuelConsumptionDistance() {
-       int fuelConsumptionDistance =  fuelConsumption;
+    String getInformation() {
+
+        return "Power in horses : " + power + ". Max speed km/h : " + maxSpeed + ". Weight(Kg) : " + weight + ". Brand : " + brand
+                + ". Number of Wheels : " + numberOfWheels + ". Fuel consumption(L/100km) : " + fuelConsumption + ". Tipe of body : " + bodyTipe
+                + ". Power in kilowat : " + powerKW();
     }
+
 
     void kiloPerFuel(int time) {
         int distance = time * maxSpeed;
-        System.out.println("Distance on max speed is : " + distance + "for " + time + " hours");
-        System.out.println("Fuel consumption on max speed " + fuelConsumptionDistance + "for" + time + " hours");
+        System.out.println("Distance on max speed is : " + distance + " for " + time + " hours ");
+        System.out.println("Fuel consumption on max speed " + fuelConsumptionDistance(distance) + " for " + time + " hours.");
     }
 }

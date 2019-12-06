@@ -2,13 +2,15 @@ package homeWork.homeWork5;
 
 public class Main {
     public static void main(String[] args) {
-        PassengerCar pc1 = new PassengerCar(21,2,2,21,4,23,car,4);
-        Truck tr1 = new Truck(25,2,24, 21,8,4,1);
-        CivilAir ca1 = new CivilAir(150,700,150,1,10,100,15,1);
-        WarAir wa1 = new WarAir(121,231,123,volvo,312,132,31,3);
-        pc1.getInformation();
-        tr1.getInformation();
-        ca1.getInformation();
-        wa1.getInformation();
+        PassengerCar pc1 = new PassengerCar(115,140,2300,"volvo",4,12,
+                "minivan",8);
+        Truck tr1 = new Truck(210,120,3700, "BMW",8,23,15);
+        CivilAir ca1 = new CivilAir(600,700,23000,"Airbus",32,1500,110,true);
+        WarAir wa1 = new WarAir(900,890,21000,"Killer",26,900,false,7);
+        System.out.println(pc1.getInformation());
+        System.out.println(tr1.getInformation());
+        System.out.println(ca1.getInformation());
+        System.out.println(wa1.getInformation());
+        pc1.kiloPerFuel(2);
     }
 }
