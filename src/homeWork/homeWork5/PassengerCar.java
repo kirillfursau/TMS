@@ -21,7 +21,7 @@ public class PassengerCar extends GroundTransport {
 
         return "Power in horses : " + power + ". Max speed km/h : " + maxSpeed + ". Weight(Kg) : " + weight +
                 ". Brand : " + brand + ". Number of Wheels : " + numberOfWheels + ". Fuel consumption(L/100km) : "
-                + fuelConsumption + ". Tipe of body : " + bodyType + " Total passengers : " + totalPassengers +
+                + fuelConsumption + ". Type of body : " + bodyType + " Total passengers : " + totalPassengers +
                 ". Power in kilowat : " + powerKW();
     }
 
