@@ -1,18 +1,20 @@
 package homeWork.homeWork5;
 
-public class CivilAir extends AirTransport {
+public class CivilAirTransport extends AirTransport {
     int totalPassengers;
     boolean bissnes;
 
-    CivilAir(int power, int maxSpeed, int weight, String brand, int wingspan, int minimumRunway, int totalPassengers, boolean bissnes) {
+    CivilAirTransport(int power, int maxSpeed, int weight, String brand, int wingspan, int minimumRunway,
+                      int totalPassengers, boolean bissnes) {
         super(power, maxSpeed, weight, brand, wingspan, minimumRunway);
         this.totalPassengers = totalPassengers;
         this.bissnes = bissnes;
     }
 
     String getInformation() {
-        return "Power in horses : " + power + ". Max speed km/h : " + maxSpeed + ". Weight(Kg) : " + weight + ". Brand : " + brand
-                + ". Wingspan(M) : " + wingspan + ". Minimum distance to fly away(M) : " + minimumRunway + ". Total passengers : " + totalPassengers + ". Bissnes class : " +
+        return "Power in horses : " + power + ". Max speed km/h : " + maxSpeed + ". Weight(Kg) : " + weight +
+                ". Brand : " + brand + ". Wingspan(M) : " + wingspan + ". Minimum distance to fly away(M) : "
+                + minimumRunway + ". Total passengers : " + totalPassengers + ". Bissnes class : " +
                 bissnes + ". Power in kilowat : " + powerKW();
     }
 
