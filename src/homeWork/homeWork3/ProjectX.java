@@ -13,6 +13,9 @@ public class ProjectX {
         int count = 1;
         int close = 0;
         boolean game = true;
+        boolean place = true;
+        int x = 0;
+        int o = 0;
         for (int i = 0; i < heigth; i++) {
             for (int j = 0; j < length; j++) {
                 array[i][j] = count;
@@ -32,10 +35,23 @@ public class ProjectX {
                 }
                 System.out.println();
             }
-            System.out.println("Select field");
-            System.out.print("Turn x : ");
-            int x = sc.nextInt();
+            while (place) {
+                System.out.println("Select field");
+                System.out.print("Turn x : ");
+                x = sc.nextInt();
+                for (int i = 0; i < 9; i++) {
+                    if (closeArray[i] == x || x > 9) {
+                        place = true;
+                        System.out.println("Invalid field.");
+                        break;
+                    } else {
+                        place = false;
+                    }
+                }
+            }
+            place = true;
             closeArray[close] = x;
+            close++;
             for (int i = 0; i < heigth; i++) {
                 for (int j = 0; j < length; j++) {
                     if (x == array[i][j]) {
@@ -75,9 +91,21 @@ public class ProjectX {
                     }
                     System.out.println();
                 }
-                System.out.println("Select field");
-                System.out.print("Turn o : ");
-                int o = sc.nextInt();
+                while (place) {
+                    System.out.println("Select field");
+                    System.out.print("Turn o : ");
+                    o = sc.nextInt();
+                    for (int i = 0; i < 9; i++) {
+                        if (closeArray[i] == o || o > 9) {
+                            place = true;
+                            System.out.println("Invalid field.");
+                            break;
+                        } else {
+                            place = false;
+                        }
+                    }
+                }
+                place = true;
                 closeArray[close] = o;
                 close++;
                 for (int i = 0; i < heigth; i++) {
