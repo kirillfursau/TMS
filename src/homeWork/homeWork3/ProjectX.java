@@ -35,12 +35,6 @@ public class ProjectX {
             System.out.println("Select field");
             System.out.print("Turn x : ");
             int x = sc.nextInt();
-            for (int i = 0; i < 9; i++) {
-                if (closeArray[i] == x) {
-                    System.out.println("Enter another field");
-                    i = 0;
-                }
-            }
             closeArray[close] = x;
             for (int i = 0; i < heigth; i++) {
                 for (int j = 0; j < length; j++) {
@@ -84,12 +78,6 @@ public class ProjectX {
                 System.out.println("Select field");
                 System.out.print("Turn o : ");
                 int o = sc.nextInt();
-                for (int i = 0; i < 9; i++) {
-                    if (closeArray[i] == o) {
-                        System.out.println(closeArray[i]);
-                        i = 0;
-                    }
-                }
                 closeArray[close] = o;
                 close++;
                 for (int i = 0; i < heigth; i++) {
