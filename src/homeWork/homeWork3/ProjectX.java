@@ -10,7 +10,7 @@ public class ProjectX {
         int[][] array = new int[length][heigth];
         String[][] oXArray = new String[length][heigth];
         int[] closeArray = new int[9];
-        int count = 0;
+        int count = 1;
         int close = 0;
         boolean game = true;
         for (int i = 0; i < heigth; i++) {
@@ -35,8 +35,13 @@ public class ProjectX {
             System.out.println("Select field");
             System.out.print("Turn x : ");
             int x = sc.nextInt();
+            for (int i = 0; i < 9; i++) {
+                if (closeArray[i] == x) {
+                    System.out.println("Enter another field");
+                    i = 0;
+                }
+            }
             closeArray[close] = x;
-            close++;
             for (int i = 0; i < heigth; i++) {
                 for (int j = 0; j < length; j++) {
                     if (x == array[i][j]) {
@@ -79,6 +84,12 @@ public class ProjectX {
                 System.out.println("Select field");
                 System.out.print("Turn o : ");
                 int o = sc.nextInt();
+                for (int i = 0; i < 9; i++) {
+                    if (closeArray[i] == o) {
+                        System.out.println(closeArray[i]);
+                        i = 0;
+                    }
+                }
                 closeArray[close] = o;
                 close++;
                 for (int i = 0; i < heigth; i++) {
@@ -109,6 +120,6 @@ public class ProjectX {
                 }
             }
         }
-        System.out.println("Game is ower");
+        System.out.println("Game is over");
     }
 }
