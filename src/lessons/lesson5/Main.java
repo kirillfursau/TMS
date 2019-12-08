@@ -10,7 +10,7 @@ public class Main {
         st1.printInformation();
         System.out.println(st1.getFullName("Mr. "));
         st1.doHomeWork(2);
-        st1.doHomeWork(3);
+        st2.doHomeWork(2);
         int[] homeWorkDone = st1.getHomeWorkDone();
         for (int i = 0; i < homeWorkDone.length; i++) {
             System.out.println(homeWorkDone[i]);
@@ -24,7 +24,12 @@ public class Main {
         gr1.addStudent(st2);
         gr1.addStudent(st3);
 //        gr1.checkHomeWork(2);
-        System.out.println(gr1.checkHomeWork(2));
+//        gr1.checkHomeWork(2);
+        for (int i = 0; i < 5;i++){
+            System.out.println(gr1.checkHomeWork(2)[i]);
+        }
+
+
 //        System.out.println("В группе 1 ");
 //        gr1.printGroupInformation();
 //        gr2.printGroupInformation();

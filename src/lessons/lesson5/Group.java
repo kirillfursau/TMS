@@ -63,10 +63,9 @@ public class Group {
 
     Student[] checkHomeWork(int homeWorkToCheck) {
         int count = 0;
-        Student[] checkHomeWork = new Student[count];
-        boolean[] homeWork = new boolean[5];
-        for (int i = 0; i < students.length; i++) {
-            if (homeWork[i] == true) {
+        Student[] checkHomeWork = new Student[1];
+        for (int i = 0; i < students[i].homeWork.length; i++) {
+            if (students[i].homeWork[homeWorkToCheck] == true) {
                 checkHomeWork[count] = students[i];
                 count++;
             }
@@ -74,5 +73,6 @@ public class Group {
         return checkHomeWork;
     }
 }
+
 
 

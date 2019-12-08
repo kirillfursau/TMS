@@ -6,8 +6,9 @@ public class Student {
     String firstName;
     String lastName;
     int age;
-    boolean[] homeWork = new boolean[5];
+    public boolean[] homeWork = new boolean[5];
     static int students = 0;
+
     Scanner sc = new Scanner(System.in);
 
     Student(String firstName, String lastName, int age) {
