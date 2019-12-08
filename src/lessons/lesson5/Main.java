@@ -25,7 +25,7 @@ public class Main {
         gr1.addStudent(st3);
 //        gr1.checkHomeWork(2);
 //        gr1.checkHomeWork(2);
-        for (int i = 0; i < 5;i++){
+        for (int i = 0; i < 2;i++){
             System.out.println(gr1.checkHomeWork(2)[i]);
         }
 
