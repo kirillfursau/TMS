@@ -4,6 +4,7 @@ public class Group {
     int id;
     Student[] students = new Student[5];
     String programmingLanguage;
+    Group[] groups;
 
     Group(String programmingLanguage, int id) {
         this.programmingLanguage = programmingLanguage;
@@ -31,7 +32,7 @@ public class Group {
         }
     }
 
-    static Group[] groups = new Group[5];
+//    static Group[] groups = new Group[5];
 //    Group[] allGroups(Group group){
 //        for (int i = 0; i < groups.length;i++){
 //            groups[i] = group;
@@ -44,14 +45,14 @@ public class Group {
 //        }
 //    }
 
-    void addGroup(Group group) {
-        for (int i = 0; i < groups.length; i++) {
-            if (groups[i] == null) {
-                groups[i] = group;
-                break;
-            }
-        }
-    }
+//    void addGroup(Group group) {
+//        for (int i = 0; i < groups.length; i++) {
+//            if (groups[i] == null) {
+//                groups[i] = group;
+//                break;
+//            }
+//        }
+//    }
 
     void printGroupsInformation() {
         for (int i = 0; i < groups.length; i++) {
@@ -63,15 +64,15 @@ public class Group {
 
     Student[] checkHomeWork(int homeWorkToCheck) {
         int count = 0;
-        Student[] checkHomeWork = new Student[1];
-        for (int i = 0; i < 2; i++) {
-            for(int j = 0; j < students[i].getHomeWorkDone().length - 1;j++)
-            if (students[i].getHomeWorkDone()[j] == homeWorkToCheck) {
-                checkHomeWork[0] = students[i];
-                count++;
+        Student[] checkHomeWorkDone = new Student[students.length];
+        for (int i = 0; i < students.length; i++) {
+                for (int j = 0; j < students[i].getHomeWorkDone().length; j++)
+                    if (students[i].getHomeWorkDone()[j] == homeWorkToCheck) {
+                        checkHomeWorkDone[count] = students[i];
+                        count++;
+                    }
             }
-        }
-        return checkHomeWork;
+        return checkHomeWorkDone;
     }
 }
 

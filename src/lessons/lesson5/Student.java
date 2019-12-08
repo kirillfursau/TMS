@@ -17,13 +17,13 @@ public class Student {
         this.age = age;
         students++;
     }
-
-    Student() {
-        this.firstName = sc.nextLine();
-        this.lastName = sc.nextLine();
-        this.age = sc.nextInt();
-        students++;
-    }
+//
+//    Student() {
+//        this.firstName = sc.nextLine();
+//        this.lastName = sc.nextLine();
+//        this.age = sc.nextInt();
+//        students++;
+//    }
 
     void printInformation() {
         System.out.println(firstName);

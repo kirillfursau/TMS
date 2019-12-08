@@ -4,13 +4,13 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
-        Student st1 = new Student();
-        Student st2 = new Student();
-        Student st3 = new Student();
+        Student st1 = new Student("Kirul", "Fursau", 21);
+        Student st2 = new Student("Nikita", "Ivanov", 22);
+        Student st3 = new Student("Maksim", "Petrov", 23);
         st1.printInformation();
         System.out.println(st1.getFullName("Mr. "));
-        st1.doHomeWork(2);
         st2.doHomeWork(2);
+//        st2.doHomeWork(2);
         int[] homeWorkDone = st1.getHomeWorkDone();
         for (int i = 0; i < homeWorkDone.length; i++) {
             System.out.println(homeWorkDone[i]);
@@ -23,12 +23,12 @@ public class Main {
         gr1.addStudent(st1);
         gr1.addStudent(st2);
         gr1.addStudent(st3);
-//        gr1.checkHomeWork(2);
-//        gr1.checkHomeWork(2);
-        for (int i = 0; i < 2;i++){
-            System.out.println(gr1.checkHomeWork(2)[i]);
+        Student[] done = gr1.checkHomeWork(2);
+        for (int i = 0; i < done.length; i++) {
+            if (done[i] != null) {
+                System.out.println(done[i]);
+            }
         }
-
 
 //        System.out.println("В группе 1 ");
 //        gr1.printGroupInformation();
@@ -41,6 +41,7 @@ public class Main {
 //
 //        Coach co1 = new Coach("Yauhen", "Parmon", 23, 1, 5);
 //        co1.printInformation();
+
 
     }
 }
