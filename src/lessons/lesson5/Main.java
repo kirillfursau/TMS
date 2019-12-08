@@ -13,6 +13,10 @@ public class Main {
         Group gr1 = new Group("java", 1);
         gr1.addStudent(st1);
         gr1.printGroupInformation();
+        gr1.addGroup(gr1);
         Coach co1 = new Coach("Yauhen", "Parmon", 23, 1, 5);
+        co1.printInformation();
+        gr1.printGroupsInformation();
+        gr1.printGroupInformation();
     }
 }

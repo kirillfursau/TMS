@@ -30,11 +30,15 @@ public class Student {
         System.out.println(age);
     }
 
+    String getFullName() {
+        return firstName + " " + lastName;
+    }
+
     String getFullName(String prexif) {
         return prexif + firstName + " " + lastName;
     }
 
-    void birtDay() {
+    void birthDay() {
         age++;
     }
 

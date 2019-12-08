@@ -15,4 +15,21 @@ public class Coach {
         this.yearsOfExperience = yearsOfExperience;
     }
 
+    void printInformation() {
+        System.out.println(firstName);
+        System.out.println(lastName);
+        System.out.println(age);
+    }
+
+    String getFullName() {
+        return firstName + " " + lastName;
+    }
+
+    String getFullName(String prexif) {
+        return prexif + firstName + " " + lastName;
+    }
+
+    void birthDay() {
+        age++;
+    }
 }
