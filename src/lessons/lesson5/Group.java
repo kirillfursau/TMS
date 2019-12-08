@@ -18,5 +18,15 @@ public class Group {
             }
         }
     }
+
+    void printGroupInformation() {
+        for (int i = 0; i < students.length; i++) {
+            if (students[i] != null) {
+                students[i].printInformation();
+            }
+        }
+    }
+
 }
+
 

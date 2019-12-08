@@ -18,7 +18,6 @@ public class Student {
     }
 
     Student() {
-
         this.firstName = sc.nextLine();
         this.lastName = sc.nextLine();
         this.age = sc.nextInt();
