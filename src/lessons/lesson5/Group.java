@@ -64,7 +64,14 @@ public class Group {
 
     Student[] checkHomeWork(int homeWorkToCheck) {
         int count = 0;
+        for (int i = 0; i < students.length; i++) {
+            for (int j = 0; j < students[i].getHomeWorkDone().length; j++)
+                if (students[i].getHomeWorkDone()[j] == homeWorkToCheck) {
+                    count++;
+                }
+        }
         Student[] checkHomeWorkDone = new Student[students.length];
+        count = 0;
         if (checkHomeWorkDone[count] == null) {
             for (int i = 0; i < students.length; i++) {
                 for (int j = 0; j < students[i].getHomeWorkDone().length; j++)
@@ -74,9 +81,8 @@ public class Group {
                     }
             }
         }
-            return checkHomeWorkDone;
-        }
-
+        return checkHomeWorkDone;
+    }
 }
 
 
