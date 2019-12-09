@@ -37,7 +37,7 @@ public class Student extends Human {
     }
 
     void birthDay() {
-       setAge(getAge()+1);
+        setAge(getAge() + 1);
     }
 
     void doHomeWork(int i) {
@@ -64,5 +64,11 @@ public class Student extends Human {
 
     static int getNumberOfStudents() {
         return students;
+    }
+
+    @Override
+    void greet() {
+        super.greet();
+        System.out.println(" and i am a student");
     }
 }

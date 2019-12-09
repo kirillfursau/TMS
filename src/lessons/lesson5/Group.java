@@ -3,13 +3,16 @@ package lessons.lesson5;
 public class Group {
     private int id;
     String programmingLanguage;
-    Group[] groups;
+    static Group[] groups;
     int groupCount = 0;
-    Student[] students = new Student[5];
+    private static int countGroups = 0;
+    Student[] students;
 
     Group(String programmingLanguage, int id) {
         this.programmingLanguage = programmingLanguage;
         this.id = id;
+        groups = new Group[countGroups];
+        countGroups++;
     }
 
     String groupInformation() {
@@ -47,14 +50,14 @@ public class Group {
 //        }
 //    }
 
-//    void addGroup(Group group) {
-//        for (int i = 0; i < groups.length; i++) {
-//            if (groups[i] == null) {
-//                groups[i] = group;
-//                break;
-//            }
-//        }
-//    }
+    void addGroup(Group group) {
+        for (int i = 0; i < groups.length; i++) {
+            if (groups[i] == null) {
+                groups[i] = group;
+                break;
+            }
+        }
+    }
 
     void printGroupsInformation() {
         for (int i = 0; i < groups.length; i++) {
@@ -64,7 +67,7 @@ public class Group {
         }
     }
 
-    Student[] checkHomeWork(int homeWorkToCheck) {
+    Student[] checkHomeWorks(int homeWorkToCheck) {
         int count = 0;
         for (int i = 0; i < students.length; i++) {
             if (students[i] != null) {

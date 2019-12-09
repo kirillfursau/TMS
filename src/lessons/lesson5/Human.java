@@ -29,4 +29,7 @@ public class Human {
     public String getLastName() {
         return lastName;
     }
+    void greet(){
+        System.out.print("Hello. I am a human. My name is " +getFirstName() + " " + getLastName() );
+    }
 }

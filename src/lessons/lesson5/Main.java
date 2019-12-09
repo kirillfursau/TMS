@@ -23,12 +23,11 @@ public class Main {
         gr1.addStudent(st1);
         gr1.addStudent(st2);
         gr1.addStudent(st3);
-        Student[] done = gr1.checkHomeWork(2);
+        Student[] done = gr1.checkHomeWorks(2);
         for (int i = 0; i < done.length; i++) {
-                System.out.println(done[i].getFullName());
-            }
+            System.out.println(done[i].getFullName());
         }
-
+        st1.greet();
 //        System.out.println("В группе 1 ");
 //        gr1.printGroupInformation();
 //        gr2.printGroupInformation();
@@ -37,10 +36,9 @@ public class Main {
 //        gr3.addGroup(gr2);
 //        gr3.addGroup(gr3);
 //        gr3.printGroupsInformation();
-//
-//        Coach co1 = new Coach("Yauhen", "Parmon", 23, 1, 5);
-//        co1.printInformation();
+        Coach co1 = new Coach("Yauhen", "Parmon", 23, 1, 5);
+        co1.printInformation();
 
 
     }
-
+}
