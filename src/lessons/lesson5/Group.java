@@ -1,7 +1,7 @@
 package lessons.lesson5;
 
 public class Group {
-    int id;
+    private int id;
     Student[] students = new Student[5];
     String programmingLanguage;
     Group[] groups;

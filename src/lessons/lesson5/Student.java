@@ -2,19 +2,16 @@ package lessons.lesson5;
 
 import java.util.Scanner;
 
-public class Student {
-    String firstName;
-    String lastName;
-    int age;
+public class Student extends Human {
     public boolean[] homeWork = new boolean[5];
     static int students = 0;
 
     Scanner sc = new Scanner(System.in);
 
     Student(String firstName, String lastName, int age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
+        setFirstName(firstName);
+        setLastName(lastName);
+        setAge(age);
         students++;
     }
 //
@@ -26,21 +23,21 @@ public class Student {
 //    }
 
     void printInformation() {
-        System.out.println(firstName);
-        System.out.println(lastName);
-        System.out.println(age);
+        System.out.println(getFirstName());
+        System.out.println(getLastName());
+        System.out.println(getAge());
     }
 
     String getFullName() {
-        return firstName + " " + lastName;
+        return getFirstName() + " " + getLastName();
     }
 
     String getFullName(String prexif) {
-        return prexif + firstName + " " + lastName;
+        return prexif + getFirstName() + " " + getLastName();
     }
 
     void birthDay() {
-        age++;
+       setAge(getAge()+1);
     }
 
     void doHomeWork(int i) {

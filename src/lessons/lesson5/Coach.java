@@ -1,35 +1,32 @@
 package lessons.lesson5;
 
-public class Coach {
-    String firstName;
-    String lastName;
-    int age;
-    int yearsOfExperience;
-    int group;
+public class Coach extends Human {
+    private int yearsOfExperience;
+    private int group;
 
     Coach(String firstName, String lastName, int age, int group, int yearsOfExperience) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.group = group;
-        this.yearsOfExperience = yearsOfExperience;
+        setFirstName(firstName);
+        setLastName(lastName);
+        setAge(age);
+        group = group;
+        yearsOfExperience = yearsOfExperience;
     }
 
     void printInformation() {
-        System.out.println(firstName);
-        System.out.println(lastName);
-        System.out.println(age);
+        System.out.println(getFirstName());
+        System.out.println(getLastName());
+        System.out.println(getAge());
     }
 
     String getFullName() {
-        return firstName + " " + lastName;
+        return getFirstName() + " " + getLastName();
     }
 
     String getFullName(String prexif) {
-        return prexif + firstName + " " + lastName;
+        return prexif + getFirstName() + " " + getLastName();
     }
 
     void birthDay() {
-        age++;
+        setAge(getAge()+1);
     }
 }
