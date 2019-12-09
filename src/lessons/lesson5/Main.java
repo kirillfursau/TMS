@@ -25,7 +25,6 @@ public class Main {
         gr1.addStudent(st3);
         Student[] done = gr1.checkHomeWork(2);
         for (int i = 0; i < done.length; i++) {
-            if (done[i] != null) {
                 System.out.println(done[i]);
             }
         }
@@ -44,4 +43,4 @@ public class Main {
 
 
     }
-}
+

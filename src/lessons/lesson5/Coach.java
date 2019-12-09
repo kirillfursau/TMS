@@ -8,8 +8,8 @@ public class Coach extends Human {
         setFirstName(firstName);
         setLastName(lastName);
         setAge(age);
-        group = group;
-        yearsOfExperience = yearsOfExperience;
+        this.group = group;
+        this.yearsOfExperience = yearsOfExperience;
     }
 
     void printInformation() {
