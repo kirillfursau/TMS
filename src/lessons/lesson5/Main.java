@@ -36,7 +36,7 @@ public class Main {
 //        gr3.addGroup(gr2);
 //        gr3.addGroup(gr3);
 //        gr3.printGroupsInformation();
-        Coach co1 = new Coach("Yauhen", "Parmon", 23, 1, 5);
+        Coach co1 = new Coach("Yauhen", "Parmon", 23, 1, gr1);
         co1.printInformation();
 
 
