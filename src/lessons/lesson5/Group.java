@@ -2,7 +2,7 @@ package lessons.lesson5;
 
 public class Group {
     private int id;
-    Student[] students = new Student[5];
+    Student[] students = new Student[3];
     String programmingLanguage;
     Group[] groups;
 
@@ -64,13 +64,14 @@ public class Group {
 
     Student[] checkHomeWork(int homeWorkToCheck) {
         int count = 0;
+        int[] done = students[0].getHomeWorkDone();
         for (int i = 0; i < students.length; i++) {
             for (int j = 0; j < students[i].getHomeWorkDone().length; j++)
                 if (students[i].getHomeWorkDone()[j] == homeWorkToCheck) {
                     count++;
                 }
         }
-        Student[] checkHomeWorkDone = new Student[students.length];
+        Student[] checkHomeWorkDone = new Student[count];
         count = 0;
         if (checkHomeWorkDone[count] == null) {
             for (int i = 0; i < students.length; i++) {
