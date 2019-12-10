@@ -18,7 +18,7 @@ public class Group {
     }
 
     String groupInformation() {
-        return programmingLanguage + " " + id + groups;
+        return programmingLanguage + " " + id;
     }
 
     void addStudent(Student student) {
@@ -50,23 +50,23 @@ public class Group {
 //            System.out.println(groups[i]);
 //        }
 //    }
-
-    void addGroup(Group group) {
-        for (int i = 0; i < groups.length; i++) {
-            if (groups[i] == null) {
-                groups[i] = group;
-                break;
-            }
-        }
-    }
-
-    void printGroupsInformation() {
-        for (int i = 0; i < groups.length; i++) {
-            if (groups[i] != null) {
-                System.out.println(groups[i].groupInformation());
-            }
-        }
-    }
+//
+//    void addGroup(Group group) {
+//        for (int i = 0; i < groups.length; i++) {
+//            if (groups[i] == null) {
+//                groups[i] = group;
+//                break;
+//            }
+//        }
+//    }
+//
+//    void printGroupsInformation() {
+//        for (int i = 0; i < groups.length; i++) {
+//            if (groups[i] != null) {
+//                System.out.println(groups[i].groupInformation());
+//            }
+//        }
+//    }
 
     Student[] checkHomeWorks(int homeWorkToCheck) {
         int count = 0;

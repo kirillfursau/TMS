@@ -29,7 +29,26 @@ public class Human {
     public String getLastName() {
         return lastName;
     }
-    void greet(){
-        System.out.print("Hello. I am a human. My name is " +getFirstName() + " " + getLastName() );
+
+    void greet() {
+        System.out.print("Hello. I am a human. My name is " + getFirstName() + " " + getLastName());
+    }
+
+    void printInformation() {
+        System.out.println(getFirstName());
+        System.out.println(getLastName());
+        System.out.println(getAge());
+    }
+
+    String getFullName() {
+        return getFirstName() + " " + getLastName();
+    }
+
+    String getFullName(String prexif) {
+        return prexif + getFirstName() + " " + getLastName();
+    }
+
+    void birthDay() {
+        setAge(getAge() + 1);
     }
 }

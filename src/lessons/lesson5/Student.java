@@ -14,30 +14,12 @@ public class Student extends Human {
         setAge(age);
         students++;
     }
-//
-//    Student() {
-//        this.firstName = sc.nextLine();
-//        this.lastName = sc.nextLine();
-//        this.age = sc.nextInt();
-//        students++;
-//    }
 
-    void printInformation() {
-        System.out.println(getFirstName());
-        System.out.println(getLastName());
-        System.out.println(getAge());
-    }
-
-    String getFullName() {
-        return getFirstName() + " " + getLastName();
-    }
-
-    String getFullName(String prexif) {
-        return prexif + getFirstName() + " " + getLastName();
-    }
-
-    void birthDay() {
-        setAge(getAge() + 1);
+    Student() {
+        setFirstName(sc.nextLine());
+        setLastName(sc.nextLine());
+        setAge(sc.nextInt());
+        students++;
     }
 
     void doHomeWork(int i) {
