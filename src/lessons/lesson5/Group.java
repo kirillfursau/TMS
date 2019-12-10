@@ -4,7 +4,7 @@ public class Group {
     private int id;
     String programmingLanguage;
     static Group[] groups = new Group[1];
-    Student[] students;
+    Student[] students = new Student[3];
 
     Group(String programmingLanguage, int id) {
         this.programmingLanguage = programmingLanguage;
@@ -18,7 +18,7 @@ public class Group {
     }
 
     String groupInformation() {
-        return programmingLanguage + " " + id;
+        return programmingLanguage + " " + id + groups;
     }
 
     void addStudent(Student student) {
@@ -78,20 +78,20 @@ public class Group {
                     }
             }
         }
-        Student[] checkHomeWorkDone = new Student[count];
+        Student[] checkHomeWorksDone = new Student[count];
         count = 0;
-        if (checkHomeWorkDone[count] == null) {
+        if (checkHomeWorksDone[count] == null) {
             for (int i = 0; i < students.length; i++) {
                 if (students[i] != null) {
                     for (int j = 0; j < students[i].getHomeWorkDone().length; j++)
                         if (students[i].getHomeWorkDone()[j] == homeWorkToCheck) {
-                            checkHomeWorkDone[count] = students[i];
+                            checkHomeWorksDone[count] = students[i];
                             count++;
                         }
                 }
             }
         }
-        return checkHomeWorkDone;
+        return checkHomeWorksDone;
     }
 }
 

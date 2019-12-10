@@ -10,6 +10,7 @@ public class Main {
         st1.printInformation();
         System.out.println(st1.getFullName("Mr. "));
         st2.doHomeWork(2);
+        st1.doHomeWork(2);
 //        st2.doHomeWork(2);
         int[] homeWorkDone = st1.getHomeWorkDone();
         for (int i = 0; i < homeWorkDone.length; i++) {
@@ -38,7 +39,6 @@ public class Main {
 //        gr3.printGroupsInformation();
         Coach co1 = new Coach("Yauhen", "Parmon", 23, 1, gr1);
         co1.printInformation();
-
-
+        co1.checkHomeWork(2);
     }
 }

@@ -31,31 +31,8 @@ public class Coach extends Human {
     }
 
     Student[] checkHomeWork(int homeWorkToCheck) {
-        int count = 0;
-        for (int i = 0; i < group.length; i++) {
-            if (students[i] != null) {
-                for (int j = 0; j < students[i].getHomeWorkDone().length; j++)
-                    if (students[i].getHomeWorkDone()[j] == homeWorkToCheck) {
-                        count++;
-                    }
-            }
-        }
-        Student[] checkHomeWorkDone = new Student[count];
-        count = 0;
-        if (checkHomeWorkDone[count] == null) {
-            for (int i = 0; i < students.length; i++) {
-                if (students[i] != null) {
-                    for (int j = 0; j < students[i].getHomeWorkDone().length; j++)
-                        if (students[i].getHomeWorkDone()[j] == homeWorkToCheck) {
-                            checkHomeWorkDone[count] = students[i];
-                            count++;
-                        }
-                }
-            }
-        }
-        return checkHomeWorkDone;
-    }
-
+        Student[]checkHomeWork = group.checkHomeWorks(homeWorkToCheck);
+        return checkHomeWork;
 }
 
     @Override
