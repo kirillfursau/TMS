@@ -2,19 +2,35 @@ package lessons.lesson5;
 
 public class Group {
     private int id;
-    String programmingLanguage;
+    private String programmingLanguage;
     static Group[] groups = new Group[1];
     Student[] students = new Student[3];
 
     Group(String programmingLanguage, int id) {
-        this.programmingLanguage = programmingLanguage;
-        this.id = id;
+        setProgrammingLanguage(programmingLanguage);
+        setId(id);
         for (int i = 0; i < 1; i++) {
             if (groups[i] == null) {
                 groups[i] = this;
                 break;
             }
         }
+    }
+
+    public String getProgrammingLanguage() {
+        return programmingLanguage;
+    }
+
+    public void setProgrammingLanguage(String programmingLanguage) {
+        this.programmingLanguage = programmingLanguage;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     String groupInformation() {
