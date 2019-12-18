@@ -14,13 +14,13 @@ public class Circle extends Figure {
     }
 
     @Override
-    public String getFigureType() {
-        return "Circle";
+    public FigureType getFigureType() {
+        return FigureType.CIRCLE;
     }
 
     @Override
     public double getSquare() {
-        return radius ^ 2;
+        return Math.PI * (radius * radius);
     }
 
     @Override
@@ -29,13 +29,19 @@ public class Circle extends Figure {
     }
 
     @Override
-    public boolean containsPoint(Point center) {
-        return false;
+    public boolean containsPoint(Point point) {
+        if ((Math.pow((point.getX() - center.getX()), 2) + Math.pow((point.getY() - center.getY()), 2) <= Math.pow(radius, 2))) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public void printInformation() {
         super.printInformation();
-        System.out.println(radius);
+        System.out.println("Radius is " + radius + " .Square is " + getSquare() + " .Perimeter is " + getPerimeter() +
+                " .Figure type is " + getFigureType());
+
     }
 }

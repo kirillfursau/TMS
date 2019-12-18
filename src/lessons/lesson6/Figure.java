@@ -11,7 +11,7 @@ abstract class Figure implements Printable {
         return center;
     }
 
-    public abstract String getFigureType();
+    public abstract FigureType getFigureType();
 
     public abstract double getSquare();
 

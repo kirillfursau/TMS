@@ -1,27 +1,26 @@
 package lessons.lesson6;
 
-import java.sql.SQLOutput;
-
 public class Rectangle extends Figure {
     int width;
     int height;
 
-    Rectangle(Point point, int width, int height){
+    Rectangle(Point point, int width, int height) {
         super(point);
         this.width = width;
         this.height = height;
     }
 
-    int getWidth(){
+    int getWidth() {
         return width;
     }
-    int getHeight(){
+
+    int getHeight() {
         return width;
     }
 
     @Override
-    public String getFigureType() {
-        return "Rectangle";
+    public FigureType getFigureType() {
+        return FigureType.REACTANGLE;
     }
 
     @Override
@@ -35,13 +34,18 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    public boolean containsPoint(Point center) {
-        return false;
+    public boolean containsPoint(Point point) {
+        if (point.getX() <= center.getX() + width/2  && point.getY() <= center.getY() + height/2 ||
+                point.getX() <= center.getX() - width/2  && point.getY() <= center.getY() - height/2){
+            return true;
+        } else{
+            return false;
+        }
     }
 
     @Override
     public void printInformation() {
         super.printInformation();
-        System.out.println(width + " " + height );
+        System.out.println(width + " " + height);
     }
 }
