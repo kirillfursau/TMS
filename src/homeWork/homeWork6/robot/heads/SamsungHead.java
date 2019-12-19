@@ -1,18 +1,19 @@
 package homeWork.homeWork6.robot.heads;
 
-public class SonyHead implements IHead {
+public class SamsungHead implements IHead {
     private int price;
 
-    public SonyHead(int price) {
+    public SamsungHead(int price) {
         this.price = price;
     }
 
-    public SonyHead() {
+    public SamsungHead() {
     }
 
     @Override
     public void speek() {
-        System.out.println("Says head Sony");
+        System.out.println("Says head Samsung");
+
     }
 
     @Override
