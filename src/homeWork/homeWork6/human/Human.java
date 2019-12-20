@@ -54,6 +54,7 @@ public class Human {
         jacket.putOnJacket();
         pants.putOnPants();
         shoe.putOnShoe();
+        System.out.println();
     }
 
     void putOffAllThings() {
@@ -61,5 +62,6 @@ public class Human {
         jacket.putOffJacket();
         pants.putOffPants();
         shoe.putOffShoe();
+        System.out.println();
     }
 }
