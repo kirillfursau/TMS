@@ -50,12 +50,14 @@ public class Human {
     }
 
     void putOnAllThings() {
+        System.out.println(getName());
         jacket.putOnJacket();
         pants.putOnPants();
         shoe.putOnShoe();
     }
 
     void putOffAllThings() {
+        System.out.println(getName());
         jacket.putOffJacket();
         pants.putOffPants();
         shoe.putOffShoe();
