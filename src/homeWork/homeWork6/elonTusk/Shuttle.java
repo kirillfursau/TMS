@@ -1,7 +1,6 @@
 package homeWork.homeWork6.elonTusk;
 
 public class Shuttle implements IStart {
-
     @Override
     public boolean preLaunchSystemCheck() {
         int i = (int) (Math.random() * 11);
