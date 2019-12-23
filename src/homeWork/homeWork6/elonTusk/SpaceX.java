@@ -1,16 +1,6 @@
 package homeWork.homeWork6.elonTusk;
 
 public class SpaceX implements IStart {
-    void launch(IStart iStart) {
-        iStart.preLaunchSystemCheck();
-        if (iStart.preLaunchSystemCheck()) {
-            iStart.engineStart();
-            iStart.start();
-        } else {
-            System.out.println("SpaceX prelaunch check failed");
-        }
-    }
-
     @Override
     public boolean preLaunchSystemCheck() {
         int x = (int)(Math.random()*50);

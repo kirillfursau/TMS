@@ -1,15 +1,6 @@
 package homeWork.homeWork6.elonTusk;
 
 public class Shuttle implements IStart {
-    void launch(IStart iStart) {
-        iStart.preLaunchSystemCheck();
-        if (iStart.preLaunchSystemCheck()) {
-            iStart.engineStart();
-            iStart.start();
-        } else {
-            System.out.println("Shuttle prelaunch check failed");
-        }
-    }
 
     @Override
     public boolean preLaunchSystemCheck() {
