@@ -1,14 +1,14 @@
 package lessons.lesson7;
 
 public class StringUtils {
-    public static int countCharacterEnteries(String s, char c) {
-        int coutEnteries = 0;
+    public static int countCharacterEntries(String s, char c) {
+        int coutEntries = 0;
         for (int i = 0; i < s.length(); i++) {
             if ((s.charAt(i) == c)) {
-                coutEnteries++;
+                coutEntries++;
             }
         }
-        return coutEnteries;
+        return coutEntries;
     }
 
     public static boolean startsWithDigit(String s) {
@@ -47,7 +47,7 @@ public class StringUtils {
             s.indexOf("20", index);
             index = s.indexOf("20", index) + 1;
             counter++;
-            if (s.indexOf("20",index) == -1){
+            if (s.indexOf("20", index) == -1) {
                 break;
             }
         }
@@ -58,5 +58,46 @@ public class StringUtils {
             index = count20[i] + 1;
         }
         return count20;
+    }
+
+    public static char findMostFrequentChar(String s) {
+        char[] arrayChar = s.toCharArray();
+        char mostFrequent = arrayChar[0];
+        int counter = 0;
+        int mostCounter = 0;
+        for (int i = 0; i < arrayChar.length; i++) {
+            char current = arrayChar[i];
+            counter = 1;
+            for (int j = 0; j < arrayChar.length; j++) {
+                if (current == arrayChar[j]) {
+                    counter++;
+                }
+            }
+            if (mostCounter < counter) {
+                mostCounter = counter;
+                mostFrequent = arrayChar[i];
+            }
+        }
+
+        return mostFrequent;
+    }
+
+    public static char findFirstNonRepeating(String s) {
+        char[] arrayChar = s.toCharArray();
+        char firstNonRepeating = arrayChar[0];
+        for (int i = 0; i < arrayChar.length; i++) {
+            boolean repeat = false;
+            for (int j = 0; j < arrayChar.length; j++) {
+                if (arrayChar[i] == arrayChar[j] && i != j) {
+                    repeat = true;
+                    break;
+                }
+            }
+            if (repeat == false) {
+                firstNonRepeating = arrayChar[i];
+                break;
+            }
+        }
+        return firstNonRepeating;
     }
 }
