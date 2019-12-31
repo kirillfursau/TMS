@@ -100,16 +100,22 @@ public class StringUtils {
         }
         return firstNonRepeating;
     }
-    static void  divideAndPrint(String s, int n){
+
+    static void divideAndPrint(String s, int n) {
         char[] arrayChar = s.toCharArray();
         int symbols = 0;
-        for(int i = 0; i < s.length(); i++){
+        for (int i = 0; i < s.length(); i++) {
             System.out.print(arrayChar[i]);
             symbols++;
-            if(symbols == n){
+            if (symbols == n) {
                 System.out.println();
                 symbols = 0;
             }
         }
+    }
+
+    static String reverse(String s) {
+        StringBuffer reverse = new StringBuffer(s);
+        return reverse.reverse().toString();
     }
 }
