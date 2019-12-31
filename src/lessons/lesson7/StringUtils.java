@@ -118,4 +118,12 @@ public class StringUtils {
         StringBuffer reverse = new StringBuffer(s);
         return reverse.reverse().toString();
     }
+
+    static boolean isPalindrome(String s) {
+        boolean palindrome = false;
+        if (s.equalsIgnoreCase(reverse(s))) {
+            palindrome = true;
+        }
+        return palindrome;
+    }
 }

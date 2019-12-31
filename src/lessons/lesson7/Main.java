@@ -2,7 +2,7 @@ package lessons.lesson7;
 
 public class Main {
     public static void main(String[] args) {
-        String s1 = "20o2kek 202p0kek 20kek ll20";
+        String s1 = "kek";
         String s2 = "asdfghj";
         String s3 = "sdadsaaaaa";
         System.out.println(StringUtils.findLongest(s1, s2, s3));
@@ -18,6 +18,7 @@ public class Main {
         StringUtils.divideAndPrint(s1, 5);
         System.out.println();
         System.out.println(StringUtils.reverse(s1));
+        System.out.println(StringUtils.isPalindrome(s1));
     }
 }
 
