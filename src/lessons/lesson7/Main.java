@@ -15,6 +15,8 @@ public class Main {
         System.out.println(StringUtils.findMostFrequentChar(s1));
         System.out.println("not repeating");
         System.out.println(StringUtils.findFirstNonRepeating(s1));
+        StringUtils.divideAndPrint(s1, 5);
+
     }
 }
 

@@ -100,4 +100,16 @@ public class StringUtils {
         }
         return firstNonRepeating;
     }
+    static void  divideAndPrint(String s, int n){
+        char[] arrayChar = s.toCharArray();
+        int symbols = 0;
+        for(int i = 0; i < s.length(); i++){
+            System.out.print(arrayChar[i]);
+            symbols++;
+            if(symbols == n){
+                System.out.println();
+                symbols = 0;
+            }
+        }
+    }
 }
