@@ -126,13 +126,36 @@ public class StringUtils {
         }
         return palindrome;
     }
-    static String wow(String s){
+
+    static String wow(String s) {
         StringBuffer wow = new StringBuffer(s.toLowerCase());
         char[] arrayChar = s.toLowerCase().toCharArray();
-        for(int i = 0; i < wow.length();i+=2){
+        for (int i = 0; i < wow.length(); i += 2) {
             arrayChar[i] = Character.toUpperCase(arrayChar[i]);
             wow.setCharAt(i, arrayChar[i]);
         }
         return wow.toString();
+    }
+
+    static String repeat(String s, int times) {
+        StringBuffer repeat = new StringBuffer();
+        if (count20(s).length <= times) {
+            repeat.insert(0, s);
+        }
+        return repeat.toString();
+    }
+    static String shuffle(String s){
+        StringBuffer shuffle = new StringBuffer();
+        char[] arrayChar = s.toCharArray();
+        char[] shuffled = new char[arrayChar.length];
+        for(int i = 0; i < arrayChar.length;i++){
+            int j  = (int)(Math.random() * arrayChar.length );
+            if(shuffled[j] == " " ){
+                shuffled[j] = arrayChar[i];
+                shuffle.setCharAt(i,shuffled[j]);
+            }else{
+                i--;
+            }
+        }
     }
 }

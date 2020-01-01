@@ -20,6 +20,11 @@ public class Main {
         System.out.println(StringUtils.reverse(s1));
         System.out.println(StringUtils.isPalindrome(s1));
         System.out.println(StringUtils.wow(s2));
+        System.out.println(StringUtils.repeat(s1,2));
+        char[] array = new char[5];
+        for (int i =0; i < array.length;i++){
+            System.out.println(array[i]);
+        }
     }
 }
 
