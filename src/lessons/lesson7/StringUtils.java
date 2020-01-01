@@ -126,4 +126,13 @@ public class StringUtils {
         }
         return palindrome;
     }
+    static String wow(String s){
+        StringBuffer wow = new StringBuffer(s.toLowerCase());
+        char[] arrayChar = s.toLowerCase().toCharArray();
+        for(int i = 0; i < wow.length();i+=2){
+            arrayChar[i] = Character.toUpperCase(arrayChar[i]);
+            wow.setCharAt(i, arrayChar[i]);
+        }
+        return wow.toString();
+    }
 }
