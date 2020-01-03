@@ -119,7 +119,7 @@ public class StringUtils {
         return reverse.reverse().toString();
     }
 
-    static boolean isPalindrome(String s) {
+    public static boolean isPalindrome(String s) {
         boolean palindrome = false;
         if (s.equalsIgnoreCase(reverse(s))) {
             palindrome = true;
@@ -144,16 +144,17 @@ public class StringUtils {
         }
         return repeat.toString();
     }
-    static String shuffle(String s){
+
+    static String shuffle(String s) {
         StringBuffer shuffle = new StringBuffer();
         char[] arrayChar = s.toCharArray();
         char[] shuffled = new char[arrayChar.length];
-        for(int i = 0; i < arrayChar.length;i++){
-            int j  = (int)(Math.random() * arrayChar.length );
-            if(shuffled[j]== 1 ){
+        for (int i = 0; i < arrayChar.length; i++) {
+            int j = (int) (Math.random() * arrayChar.length);
+            if (shuffled[j] == 1) {
                 shuffled[j] = arrayChar[i];
-                shuffle.setCharAt(i,shuffled[j]);
-            }else{
+                shuffle.setCharAt(i, shuffled[j]);
+            } else {
                 i--;
             }
         }
