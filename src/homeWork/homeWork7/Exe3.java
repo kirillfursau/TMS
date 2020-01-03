@@ -35,7 +35,7 @@ public class Exe3 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        FileWriter nFile = new FileWriter("file1.txt");
+        FileWriter nFile = new FileWriter("file2.txt");
         for (int i = 0; i < strings.length; i++) {
             if (StringUtils.isPalindrome(strings[i])) {
                 nFile.write(strings[i] + "\n");

@@ -20,12 +20,14 @@ public class TextFormater {
         int startWord = 0;
         int wordNumber = 0;
         boolean haveAPalindrome = false;
-        String[] strings = new String[TextFormater.howMuchWordsInString(s)-1];
+        String[] strings = new String[TextFormater.howMuchWordsInString(s)];
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == ' ') {
                 strings[wordNumber] = s.substring(startWord, i);
                 startWord = i + 1;
                 wordNumber++;
+            } else if (i == s.length() - 1) {
+                strings[wordNumber] = s.substring(s.lastIndexOf(' ') + 1, s.length());
             }
         }
         for (int i = 0; i < strings.length; i++) {
