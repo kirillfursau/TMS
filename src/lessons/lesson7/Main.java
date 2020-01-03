@@ -21,11 +21,10 @@ public class Main {
         System.out.println(StringUtils.isPalindrome(s1));
         System.out.println(StringUtils.wow(s2));
         System.out.println(StringUtils.repeat(s1,2));
-        char[] array = new char[5];
+        char[] array = {1,2,2,3,4};
         for (int i =0; i < array.length;i++){
             System.out.println(array[i]);
         }
-
     }
 }
 
