@@ -1,12 +1,7 @@
 package homeWork.homeWork7.exe4;
 
-import lessons.lesson7.StringUtils;
-import org.w3c.dom.ls.LSOutput;
-
-import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
