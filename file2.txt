@@ -1,8 +1,4 @@
- Создать класс StringUtils
- Все последующие задания выполняются в виде отдельных статических методов в этом классе
- Можно использовать уже созданные методы в процессе для создания новых int countCharacterEntries(String s, char c) - подсчитать кол-во вхождений символа в строку boolean startsWithDigit(String s) - строка начинается с цифры String findLongest(String
- strings) - найти самую длинную строку
- Если несколько строк имеют одинаковую длину - вывести любую
- Или лучше их все, но необязательно
- kek(String s) - заменить все lol на kek unkek(String s) - удалить все kek из строки int[] count20(String s) - найти все индексы вхождений числа 20 в строку String[] sort(String
- strings) - отсортировать в лексикографическом (алфавитном) порядке, учесть регистр char findMostFrequentChar(String s) - найти самый часто встречающийся символchar findFirstNonRepeating(String s) - найти первый символ, который встречается в строке один раз divideAndPrint(String s, int n) - поделить строку  на части по n символов и вывести их одна под однойНа StringBuilder: String reverse(String s) - перевернуть строку boolean isPalindrome(String s) - строка является палиндромом String wow(String s) - СдЕлАтЬ Со сТрОкОй вОт тАкОе String repeat(String s, int times) - вернуть строку, в которой строка s повторяется times раз String shuffle(String s) - перемешать символы в строке случайным образом
+Создать класс StringUtils
+Или лучше их все, но необязательно
+kek(String s) - заменить все lol на kek6
+unkek(String s) - удалить все kek из строки7

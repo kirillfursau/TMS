@@ -23,7 +23,7 @@ public class TextFormater {
         String[] strings = new String[TextFormater.howMuchWordsInString(s)];
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == ' ') {
-                strings[wordNumber] = s.substring(startWord, i);
+                strings[wordNumber] = s.substring(startWord, i).trim();
                 startWord = i + 1;
                 wordNumber++;
             } else if (i == s.length() - 1) {

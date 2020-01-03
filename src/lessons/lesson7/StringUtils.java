@@ -121,7 +121,7 @@ public class StringUtils {
 
     public static boolean isPalindrome(String s) {
         boolean palindrome = false;
-        if (s.equalsIgnoreCase(reverse(s))) {
+        if (s.equalsIgnoreCase(reverse(s)) && s.length() != 1) {
             palindrome = true;
         }
         return palindrome;
