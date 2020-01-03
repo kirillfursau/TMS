@@ -9,7 +9,7 @@ import java.io.IOException;
 
 
 public class Exe3 {
-    public static void main(String[] args)throws Exception {
+    public static void main(String[] args) throws Exception {
         String fileName = "/Users/kirylfursau/Desktop/TMS/file.txt";
         int countlines = 0;
 
@@ -27,29 +27,22 @@ public class Exe3 {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
 
             String line;
+            int i = 0;
             while ((line = br.readLine()) != null) {
-                for (int i = 0; i < strings.length; i++)
-                    strings[i] = line;
+                strings[i] = line;
+                i++;
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
+        FileWriter nFile = new FileWriter("file1.txt");
         for (int i = 0; i < strings.length; i++) {
-            FileWriter nFile = new FileWriter("file1.txt");
             if (StringUtils.isPalindrome(strings[i])) {
-                nFile.write(strings[i]);
+                nFile.write(strings[i] + "\n");
             }
-        nFile.close();
         }
+        nFile.close();
     }
 }
 
-//    void findPalindrome(String[] strings) {
-//        for (int i = 0; i < strings.length; i++) {
-//            if (StringUtils.isPalindrome(strings[i])) {
-//                System.out.println(strings[i]);
-//            }
-//        }
-//    }
 
