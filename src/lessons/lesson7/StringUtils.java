@@ -150,12 +150,13 @@ public class StringUtils {
         char[] shuffled = new char[arrayChar.length];
         for(int i = 0; i < arrayChar.length;i++){
             int j  = (int)(Math.random() * arrayChar.length );
-            if(shuffled[j] == " " ){
+            if(shuffled[j]== 1 ){
                 shuffled[j] = arrayChar[i];
                 shuffle.setCharAt(i,shuffled[j]);
             }else{
                 i--;
             }
         }
+        return shuffle.toString();
     }
 }
