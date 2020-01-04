@@ -19,10 +19,8 @@ public class Exe12_Multidimensional {
         }
         int sumEvenMainDiagonal = 0;
         for (int i = 0; i < height; i++) {
-            for (int j = 0; j < length; j++) {
-                if (i == j && array[i][j] % 2 == 0) {
-                    sumEvenMainDiagonal += array[i][j];
-                }
+            if (array[i][i] % 2 == 0) {
+                sumEvenMainDiagonal += array[i][i];
             }
         }
         System.out.println("Sum of the even elements of the main diagonal : " + sumEvenMainDiagonal);
