@@ -7,7 +7,7 @@ public class Exe3 {
         array = new int[arrayLength];
         int evenNumbers = 0;
         for (int i = 0; i < arrayLength; i++) {
-            array[i] = (int) (Math.random() * 99);
+            array[i] = (int) (Math.random() * 100);
             System.out.print(" " + array[i]);
             if (array[i] % 2 == 0) {
                 evenNumbers++;

@@ -6,7 +6,7 @@ public class Exe6 {
         int[] array;
         array = new int[arrayLength];
         for (int i = 0; i < arrayLength; i++) {
-            array[i] = (int) (Math.random() * 10);
+            array[i] = (int) (Math.random() * 11);
             System.out.print(" " + array[i]);
         }
         System.out.println();

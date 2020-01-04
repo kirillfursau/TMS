@@ -7,33 +7,35 @@ public class Exe10 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number greater than 3 : ");
         int n = sc.nextInt();
-        int[] firstArray = new int[n];
         int countEven = 0;
-        if (n < 3) {
+        while (n <= 3) {
             System.out.println("Enter another number");
-        } else {
+            System.out.print("Enter a number greater than 3 : ");
+            n = sc.nextInt();
+        }
+        int[] firstArray = new int[n];
+        for (int i = 0; i < n; i++) {
+            firstArray[i] = (int) (Math.random() * n);
+            System.out.print(" " + firstArray[i]);
+            if (firstArray[i] % 2 == 0 || firstArray[i] == 0) {
+                countEven++;
+            }
+        }
+        System.out.println();
+        if (countEven > 0) {
+            System.out.println(countEven);
+            int[] secondArray = new int[countEven];
+            int j = 0;
             for (int i = 0; i < n; i++) {
-                firstArray[i] = (int) (Math.random() * n);
-                System.out.print(" " + firstArray[i]);
-                if (firstArray[i] % 2 == 0 && firstArray[i] != 0) {
-                    countEven++;
+                if (firstArray[i] % 2 == 0 || firstArray[i] == 0) {
+                    secondArray[j] = firstArray[i];
+                    System.out.print(" " + secondArray[j]);
+                    j++;
                 }
             }
-            System.out.println();
-            if (countEven > 0) {
-                System.out.println(countEven);
-                int[] secondArray = new int[countEven];
-                int j = 0;
-                for (int i = 0; i < n; i++) {
-                    if (firstArray[i] % 2 == 0 && firstArray[i] != 0) {
-                        secondArray[j] = firstArray[i];
-                        System.out.print(" " + secondArray[j]);
-                        j++;
-                    }
-                }
-            } else {
-                System.out.println("No even numbers inside");
-            }
+        } else {
+            System.out.println("No even numbers inside");
         }
     }
 }
+

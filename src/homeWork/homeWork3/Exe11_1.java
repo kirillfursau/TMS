@@ -21,38 +21,50 @@ public class Exe11_1 {
         }
         if (multThree == 1) {
             System.out.println("No elements multiples of three");
-            multThree = 0;
         } else {
             System.out.println("Multiplication of elements multiples of three: " + multThree);
         }
         int sumOdd = 0;
-        int howMuchOddNumbers = 0;
+        int howManyOddNumbers = 0;
         for (int i = 0; i < length; i++) { // find average arithmetic of the of odd elements
             if (i % 2 == 1) {
                 sumOdd += array[i];
-                howMuchOddNumbers++;
+                howManyOddNumbers++;
             }
         }
-        System.out.println("The average arithmetic of the of odd elements : " + (sumOdd / howMuchOddNumbers));
-        System.out.print("How many array elements to skip : ");
-        int skipElemnts = sc.nextInt();
+        System.out.println("The average arithmetic of the of odd elements : " + ((double) (sumOdd) / howManyOddNumbers));
+        System.out.print("Less than what number need to skip : ");
+        int moreThanNumber = sc.nextInt();
         int sumNoSkip = 0;
-        for (int i = skipElemnts; i < length; i++) { //find average arithmetic of the remaining elements
-            sumNoSkip += array[i];
+        int noSkipNumbers = 0;
+        for (int i = 0; i < length; i++) { //find average arithmetic of the some number
+            if (array[i] > moreThanNumber) {
+                sumNoSkip += array[i];
+                noSkipNumbers++;
+            }
         }
         System.out.println("The average arithmetic of the remaining elements : "
-                + (sumNoSkip / (length - skipElemnts)));
-        int lessElement = array[1];
-        for (int i = 1; i < length - 2; i += 2) { // find less odd element of the array is
+                + (double)(sumNoSkip) / noSkipNumbers);
+        int theLeastElement = array[1];
+        for (int i = 1; i < length - 2; i += 2) { // find the least odd element of the array is
             if (array[i] > array[i + 2]) {
-                lessElement = array[i + 2];
+                theLeastElement = array[i + 2];
             }
         }
-        System.out.println("The less odd element of the array is : " + lessElement);
+        System.out.println("The least odd element of the array is : " + theLeastElement);
         for (int i = 0; i < length; i++) {
             if (i % 2 == 1) {
                 array[i] = 0;
             }
+            System.out.print(" " + array[i]);
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 == 1) {
+                array[i] = 0; // replace every second number zero
+            }
+        }
+        System.out.println();
+        for (int i = 0; i < array.length; i++) {
             System.out.print(" " + array[i]);
         }
     }

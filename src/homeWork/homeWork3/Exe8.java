@@ -6,12 +6,12 @@ public class Exe8 {
         int length = 10;
         int[] firstArray = new int[length];
         int[] secondArray = new int[length];
-        float[] thirdArray = new float[length];
+        double[] thirdArray = new double[length];
         int countEven = 0;
         for (int i = 0; i < length; i++) {
-            firstArray[i] = (int) (Math.random() * 9);
-            secondArray[i] = (int) (Math.random() * 9);
-            thirdArray[i] = (float) (firstArray[i]) / (float) (secondArray[i]);
+            firstArray[i] = (int) (Math.random() * 10);
+            secondArray[i] = (int) (Math.random() * 10);
+            thirdArray[i] = (double) (firstArray[i]) / secondArray[i];
         }
         for (int i = 0; i < length; i++) {
             System.out.print(" " + firstArray[i]);

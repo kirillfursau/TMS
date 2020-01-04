@@ -7,9 +7,8 @@ public class Exe1_Expectation {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter length of array :");
         int length = sc.nextInt();
-        int[] array;
         if (length <= 10) {
-            array = new int[length];
+            int[] array= new int[length];
             for (int i = 0; i < length; i++) {
                 array[i] = 2 + (int) (Math.random() * 19);
                 if (array[i] % 2 == 0) {

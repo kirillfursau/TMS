@@ -7,8 +7,8 @@ public class Exe5 {
         int[] secondArray;
         firstArray = new int[arrayLength];
         secondArray = new int[arrayLength];
-        int sumFirstArray = 0;
-        int sumSecondArray = 0;
+        double sumFirstArray = 0;
+        double sumSecondArray = 0;
         for (int i = 0; i < arrayLength; i++) {
             firstArray[i] = (int) (Math.random() * 15);
             System.out.print(" " + firstArray[i]);
