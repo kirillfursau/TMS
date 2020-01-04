@@ -26,12 +26,12 @@ public class Exe12_Multidimensional {
         System.out.println("Sum of the even elements of the main diagonal : " + sumEvenMainDiagonal);
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < length; j++) {
-                if (j <= i) {
+                if (j <= i && array[i][j] % 2 == 1) {
                     System.out.print(" " + array[i][j]);
                 }
             }
-            System.out.println();
         }
+        System.out.println();
         int multReverseDiagonal = 1;
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < length; j++) {
@@ -50,6 +50,8 @@ public class Exe12_Multidimensional {
         }
         if (multMainDiagonal > multReverseDiagonal) {
             System.out.println("Multiplication main diagonal is greater");
+        } else if (multMainDiagonal == multReverseDiagonal) {
+            System.out.println("Multiplication of diagonals is equals");
         } else {
             System.out.println("Multiplication reverse diagonal is greater");
         }
