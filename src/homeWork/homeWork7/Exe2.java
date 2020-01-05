@@ -5,13 +5,11 @@ public class Exe2 {
         String s = "HELLO WORLD";
         char needToReplaceSymbol = s.charAt(3);
         char replaceSymbol = s.charAt(0);
-        char[] sChars = s.toCharArray();
-        for (int i = 0; i < sChars.length; i++) {
-            if (sChars[i] == needToReplaceSymbol) {
-                sChars[i] = replaceSymbol;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == needToReplaceSymbol) {
+                s = s.replace(needToReplaceSymbol, replaceSymbol);
             }
         }
-        s = String.valueOf(sChars);
         System.out.println(s);
     }
 }

@@ -25,14 +25,13 @@ public class Exe11_1 {
             System.out.println("Multiplication of elements multiples of three: " + multThree);
         }
         int sumOdd = 0;
-        int howManyOddNumbers = 0;
         for (int i = 0; i < length; i++) { // find average arithmetic of the of odd elements
             if (i % 2 == 1) {
                 sumOdd += array[i];
-                howManyOddNumbers++;
             }
         }
-        System.out.println("The average arithmetic of the of odd elements : " + ((double) (sumOdd) / howManyOddNumbers));
+        System.out.println("The average arithmetic of the of odd elements : "
+                + ((double) (sumOdd) / (array.length/2)));
         System.out.print("Less than what number need to skip : ");
         int moreThanNumber = sc.nextInt();
         int sumNoSkip = 0;

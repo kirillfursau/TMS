@@ -22,24 +22,24 @@ public class Run {
         У всех роботов вызовите метод action.
         Среди 3-х роботов найдите самого дорогого.
         */
-        SamsungHand samsungHand = new SamsungHand(4);
-        SonyHand sonyHand = new SonyHand(3);
-        ToshibaHand toshibaHand = new ToshibaHand(5);
-        SamsungHead samsungHead = new SamsungHead(7);
-        SonyHead sonyHead = new SonyHead(11);
-        ToshibaHead toshibaHead = new ToshibaHead(11);
-        SamsungLeg samsungLeg = new SamsungLeg(10);
-        SonyLeg sonyLeg = new SonyLeg(4);
-        ToshibaLeg toshibaLeg = new ToshibaLeg(3);
+        SamsungHand samsungHand = new SamsungHand(1);
+        SonyHand sonyHand = new SonyHand(0);
+        ToshibaHand toshibaHand = new ToshibaHand(1);
+        SamsungHead samsungHead = new SamsungHead(1);
+        SonyHead sonyHead = new SonyHead(0);
+        ToshibaHead toshibaHead = new ToshibaHead(1);
+        SamsungLeg samsungLeg = new SamsungLeg(1);
+        SonyLeg sonyLeg = new SonyLeg(1);
+        ToshibaLeg toshibaLeg = new ToshibaLeg(0);
         Robot robot = new Robot(samsungHead, samsungHand, sonyLeg);
         Robot robot1 = new Robot(sonyHead, sonyHand, toshibaLeg);
         Robot robot2 = new Robot(toshibaHead, toshibaHand, samsungLeg);
         robot.action();
         robot1.action();
         robot2.action();
-        if (robot.getPrice() > robot1.getPrice() && robot.getPrice() > robot2.getPrice()) {
+        if (robot.getPrice() >= robot1.getPrice() && robot.getPrice() >= robot2.getPrice()) {
             System.out.println("First robot is expensive");
-        } else if (robot1.getPrice() > robot.getPrice() && robot1.getPrice() > robot2.getPrice()) {
+        } else if (robot1.getPrice() >= robot.getPrice() && robot1.getPrice() >= robot2.getPrice()) {
             System.out.println("Second robot is expensive");
         } else {
             System.out.println("Third robot is expensive");

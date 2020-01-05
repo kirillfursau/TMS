@@ -2,7 +2,7 @@ package homeWork.homeWork6.robot.hands;
 
 public class SonyHand implements IHand {
     private int price;
-    static boolean upHandChecker = false;
+    boolean upHandChecker = false;
 
     public SonyHand(int price) {
         this.price = price;
@@ -13,7 +13,7 @@ public class SonyHand implements IHand {
 
     @Override
     public void upHand() {
-        if (upHandChecker== false) {
+        if (!upHandChecker) {
             System.out.println("Up Sony hand");
             upHandChecker = true;
         } else {
