@@ -62,10 +62,9 @@ public class Main {
                 throw new MyException2();
             }
         } catch (MyException | MyException2 | MyException3 e) {
-            System.out.println("Not work");
+            System.out.println();
         }
     }
-
 }
 
 
