@@ -7,5 +7,7 @@ public class Main {
         Car car1 = new Car("Opel", 110, 10000);
         Car car2 = new Car("Nissan", 100, 8000);
         car.tryToStartCar();
+        car1.tryToStartCar();
+        car2.tryToStartCar();
     }
 }

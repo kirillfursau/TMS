@@ -44,6 +44,7 @@ public class Car {
             try {
                 throw new MyException();
             } catch (Exception e) {
+                System.out.println("Cant stat car " + getBrand());
             }
         } else {
             System.out.println("Car " + getBrand() + " was started");

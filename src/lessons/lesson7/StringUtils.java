@@ -149,9 +149,10 @@ public class StringUtils {
         StringBuffer shuffle = new StringBuffer();
         char[] arrayChar = s.toCharArray();
         char[] shuffled = new char[arrayChar.length];
+        char[] arr = new char[1];
         for (int i = 0; i < arrayChar.length; i++) {
             int j = (int) (Math.random() * arrayChar.length);
-            if (shuffled[j] == 1) {
+            if (shuffled[j] != arr[0]) {
                 shuffled[j] = arrayChar[i];
                 shuffle.setCharAt(i, shuffled[j]);
             } else {
