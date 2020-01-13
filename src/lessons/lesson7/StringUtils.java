@@ -146,17 +146,13 @@ public class StringUtils {
     }
 
     static String shuffle(String s) {
-        StringBuffer shuffle = new StringBuffer();
-        char[] arrayChar = s.toCharArray();
-        char[] shuffled = new char[arrayChar.length];
-        char[] arr = new char[1];
-        for (int i = 0; i < arrayChar.length; i++) {
-            int j = (int) (Math.random() * arrayChar.length);
-            if (shuffled[j] != arr[0]) {
-                shuffled[j] = arrayChar[i];
-                shuffle.setCharAt(i, shuffled[j]);
-            } else {
-                i--;
+        StringBuffer shuffle = new StringBuffer(s);
+        for (int i = 0; i < shuffle.length(); i++) {
+            int j = (int) (Math.random() * shuffle.length());
+            if (shuffle.charAt(i) != ' ' &&  shuffle.charAt(j) != ' ') {
+                char k = shuffle.charAt(i);
+                shuffle.setCharAt(i, shuffle.charAt(j));
+                shuffle.setCharAt(j,k);
             }
         }
         return shuffle.toString();

@@ -61,7 +61,7 @@ public class Main {
             }else{
                 throw new MyException2();
             }
-        } catch (MyException | MyException2 | MyException3 e) {
+        } catch (MyException | MyException2 e) {
             System.out.println();
         }
     }
