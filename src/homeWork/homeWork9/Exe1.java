@@ -63,15 +63,18 @@ public class Exe1 {
                 }
             }
             int startWordInText = 0;
+            boolean[] blackSentens = new boolean[sentensis];
             for (int i = 0; i < sentens.length; i++) {
                 for (int j = 0; j < sentens[i].length(); j++) {
-                    if (sentens[i].charAt(j) == ' ') {
+                    if (sentens[i].charAt(j) == ' ' || j == sentens[i].length()) {
                         for (int k = 0; k < blackWords.length; k++) {
                             if (sentens[i].substring(startWordInText, j).equals(blackWords[k]) && j != sentens[i].length()) {
                                 System.out.println(sentens[i]);
+                                blackSentens[i] = false;
                             } else if (j == sentens[i].length() &&
-                                    sentens[i].substring(startWordInText, j - 1).equals(blackWords[k])) {
+                                    sentens[i].substring(startWordInText,j).equals(blackWords[k])) {
                                 System.out.println(sentens[i]);
+                                blackSentens[i] = false;
                             } else {
 
                             }
@@ -80,6 +83,11 @@ public class Exe1 {
                     }
                 }
                 startWordInText = 0;
+            }
+            for (int i = 0; i < blackSentens.length;i++){
+                if (blackSentens[i] = false){
+                    System.out.println(i);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();

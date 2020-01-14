@@ -1,5 +1,1 @@
-Создать класс StringUtils
 Или лучше их все, но необязательно
-kek(String s) - заменить все lol на kek6
-unkek(String s) - удалить все kek из строки7
-String repeat(String s, int times) - вернуть строку, в которой строка s повторяется times раз или
