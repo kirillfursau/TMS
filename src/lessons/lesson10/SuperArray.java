@@ -27,15 +27,19 @@ public class SuperArray<T extends Number> {
         return array;
     }
 
-    void add(T element) throws SuperArrayOverflowException {
+    Number[] add(T element)  {
         if (i < array.length) {
             array[i] = element;
             i++;
+        } else {
+            throw new SuperArrayOverflowException("Out off array length");
         }
+        return array;
     }
-    void getSum(){
+
+    void getSum() {
         double sum = 0;
-        for (int i = 0; i < array.length;i++) {
+        for (int i = 0; i < array.length; i++) {
             sum += array[i].doubleValue();
         }
         System.out.println(sum);
@@ -44,13 +48,9 @@ public class SuperArray<T extends Number> {
     public static void main(String[] args) {
         SuperArray<Long> n = new SuperArray<>(3);
         System.out.println(n.getSize());
-        try {
-            n.add(3l);
-            n.add(3l);
-            n.add(3l);
-        } catch (SuperArrayOverflowException e) {
-
-        }
+        n.add(3l);
+        n.add(3l);
+        n.add(3l);
         n.getSum();
     }
 }
