@@ -40,6 +40,7 @@ public class SuperArray<T extends Number> {
         }
         System.out.println(sum);
     }
+
     public static void main(String[] args) {
         SuperArray<Long> n = new SuperArray<>(3);
         System.out.println(n.getSize());
