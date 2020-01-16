@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Exe1 {
+public class FormatText {
     public static void main(String[] args) {
         String fileName = "/Users/kirylfursau/Downloads/strings.txt";
         String fileName1 = "/Users/kirylfursau/Downloads/blackList.txt";
