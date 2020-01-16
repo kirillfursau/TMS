@@ -38,6 +38,7 @@ public class FormatText {
                 }
             }
             if(!blackSentences.isEmpty()){
+                System.out.println("You need to format " + blackSentences.size() + " sentences.");
                 System.out.print("Sentences that failed verification ");
                 for (Integer i : blackSentences){
                     System.out.print(i + ";");
