@@ -27,7 +27,7 @@ public class SuperArray<T extends Number> {
         return array;
     }
 
-    Number[] add(T element)  {
+    Number[] add(T element) {
         if (i < array.length) {
             array[i] = element;
             i++;
