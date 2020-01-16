@@ -23,16 +23,16 @@ public class Main {
                 }
             }
         }
-        int startSentens = 0;
-        int sentensNumber = 0;
+        int startSentence = 0;
+        int sentenceNumber = 0;
         String[] sentens = new String[sentensis];
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '.') {
-                sentens[sentensNumber] = s.substring(startSentens, i);
-                startSentens = i + 1;
-                sentensNumber++;
+                sentens[sentenceNumber] = s.substring(startSentence, i);
+                startSentence = i + 1;
+                sentenceNumber++;
             } else if (i == s.length() - 1) {
-                sentens[sentensNumber] = s.substring(s.lastIndexOf('.'), s.length());
+                sentens[sentenceNumber] = s.substring(s.lastIndexOf('.'), s.length());
             }
         }
         for (int i = 0; i < sentens.length; i++) {

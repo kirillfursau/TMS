@@ -14,7 +14,7 @@ public class Exe11_1 {
         }
         System.out.println();
         int multThree = 1;
-        for (int i = 0; i < length; i++) { // find elements multiple three
+        for (int i = 0; i < length; i++) { //Найти произведение элементов, кратных 3.
             if (array[i] % 3 == 0) {
                 multThree = array[i] * multThree;
             }
@@ -25,7 +25,7 @@ public class Exe11_1 {
             System.out.println("Multiplication of elements multiples of three: " + multThree);
         }
         int sumOdd = 0;
-        for (int i = 0; i < length; i++) { // find average arithmetic of the of odd elements
+        for (int i = 0; i < length; i++) { //Найти среднее арифметическое элементов с нечетными номерами.
             if (i % 2 == 1) {
                 sumOdd += array[i];
             }
@@ -36,7 +36,7 @@ public class Exe11_1 {
         int moreThanNumber = sc.nextInt();
         int sumNoSkip = 0;
         int noSkipNumbers = 0;
-        for (int i = 0; i < length; i++) { //find average arithmetic of the some number
+        for (int i = 0; i < length; i++) { //Найти средне арифметическое элементов массива, превосходящих некоторое число С.
             if (array[i] > moreThanNumber) {
                 sumNoSkip += array[i];
                 noSkipNumbers++;
@@ -45,21 +45,21 @@ public class Exe11_1 {
         System.out.println("The average arithmetic of the remaining elements : "
                 + (double)(sumNoSkip) / noSkipNumbers);
         int theLeastElement = array[1];
-        for (int i = 1; i < length - 2; i += 2) { // find the least odd element of the array is
+        for (int i = 1; i < length - 2; i += 2) { //Найти наименьший нечетный элемент.
             if (array[i] > array[i + 2]) {
                 theLeastElement = array[i + 2];
             }
         }
         System.out.println("The least odd element of the array is : " + theLeastElement);
         for (int i = 0; i < length; i++) {
-            if (i % 2 == 1) {
+            if (i % 2 == 1) {  // «Сожмите» массив, выбросив из него каждый второй элемент.
                 array[i] = 0;
             }
             System.out.print(" " + array[i]);
         }
         for (int i = 0; i < array.length; i++) {
             if (i % 2 == 1) {
-                array[i] = 0; // replace every second number zero
+                array[i] = 0; // «Освободившиеся» места массива заполните нулями.
             }
         }
         System.out.println();

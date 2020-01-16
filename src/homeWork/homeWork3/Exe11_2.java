@@ -13,7 +13,7 @@ public class Exe11_2 {
             array[i] = (int) (Math.random() * 50);
             System.out.print(" " + array[i]);
         }
-        for (int i = 0; i < length; i++) { // find equal elements
+        for (int i = 0; i < length; i++) { //Проверить, различны ли все элементы массива.
             for (int j = i + 1; j < length; j++) {
                 if (array[i] == array[j]) {
                     equal = true;
@@ -27,8 +27,8 @@ public class Exe11_2 {
         } else {
             System.out.println("Array elements are not equal");
         }
-        System.out.print("Enter number need to find : "); // find some number
-        int findNumber = sc.nextInt();
+        System.out.print("Enter number need to find : "); // Подсчитать, сколько раз встречается элемент
+        int findNumber = sc.nextInt();                    // с заданным значением.
         int timesFindNumber = 0;
         for (int i = 0; i < length; i++) {
             if (array[i] == findNumber) {
@@ -43,10 +43,10 @@ public class Exe11_2 {
             }
         }
         if (length <= 1) {
-            System.out.println("No second element");
-        } else {
+            System.out.println("No second element");//Найти второй по величине (
+        } else {                                    //т.е. следующий по величине за максимальным) элемент в массиве.
             int secondMaxArray = 0;
-            for (int i = 0; i < length; i++) { // find second max array
+            for (int i = 0; i < length; i++) {
                 if (secondMaxArray < array[i] && array[i] != maxArray) {
                     secondMaxArray = array[i];
                 }
@@ -62,8 +62,8 @@ public class Exe11_2 {
                     lessEvenElement = array[i + 2];
                 }
             }
-            System.out.println("The less even element is " + lessEvenElement);
-            int zeroArray = array[0];
+            System.out.println("The less even element is " + lessEvenElement); //
+            int zeroArray = array[0];         // Найти наименьший элемент среди элементов с четными индексами массива
             for (int i = 1; i < length; i++) {
                 if (array[i] == maxArray) {
                     array[0] = maxArray;
@@ -71,8 +71,8 @@ public class Exe11_2 {
                 }
             }
             System.out.println("Array when we swap max array number with zero array number");
-            for (int i = 0; i < length; i++) {
-                System.out.print(" " + array[i]);
+            for (int i = 0; i < length; i++) {    // Найти максимальный элемент в массиве
+                System.out.print(" " + array[i]); // и поменять его местами с нулевым элементом
             }
         }
     }

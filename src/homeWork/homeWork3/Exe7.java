@@ -2,6 +2,11 @@ package homeWork.homeWork3;
 
 public class Exe7 {
     public static void main(String[] args) {
+        /*
+        Создайте массив из 12 случайных целых чисел из отрезка [0;15].
+        Определите какой элемент является в этом массиве максимальным
+        и сообщите индекс его последнего вхождения в массив.
+        */
         int length = 12;
         int[] array;
         array = new int[length];

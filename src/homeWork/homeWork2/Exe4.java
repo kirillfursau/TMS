@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Exe4 {
     public static void main(String[] args) {
+        /*
+        Составьте программу, вычисляющую A*B, не пользуясь операцией
+        */
         Scanner sc = new Scanner(System.in);
         System.out.print("Write first number : ");
         int firstNumber = sc.nextInt();

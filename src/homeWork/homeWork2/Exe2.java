@@ -2,6 +2,9 @@ package homeWork.homeWork2;
 
 public class Exe2 {
     public static void main(String[] args) {
+        /*
+        Одноклеточная амеба каждые 3 часа делится на 2 клетки. Определить,
+        */
         int amountAmeb = 1;
         for (int hours = 0; hours <= 24; hours = hours + 3) {
             if (hours == 0) {

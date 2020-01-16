@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class ProjectX {
     public static void main(String[] args) {
+        /*
+        Разработать консольную игру крестики-нолики. В игре участвуют 2 игрока.
+        Они по очереди вводят координаты клетки в которую хотят сделать ход.
+        После каждого хода, в консоли отрисовывается игровое поле с текущим состоянием.
+        Игра продолжается до победы одного из игроков или ничьи.
+        */
         Scanner sc = new Scanner(System.in);
         int length = 3;
         int heigth = length;
