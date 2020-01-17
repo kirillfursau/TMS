@@ -3,6 +3,10 @@ package homeWork.homeWork9;
 import java.io.*;
 
 public class Car implements Serializable {
+    /*
+    Сеарилизовать объект Автомобиль(Марка, скорость, цена).
+    После сериализации произвести обратный процесс.
+    */
     String brand;
     int speed;
     int price;

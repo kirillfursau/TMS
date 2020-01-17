@@ -10,6 +10,11 @@ import java.io.IOException;
 
 public class Exe3 {
     public static void main(String[] args) throws Exception {
+        /*
+        В исходном файле находятся слова, каждое слово на новой стороке.
+        После запуска программы должен создать файл, который будет содержать
+        в себе только полиндромы
+        */
         String fileName = "/Users/kirylfursau/Desktop/TMS/file.txt";
         int countlines = 0;
 
