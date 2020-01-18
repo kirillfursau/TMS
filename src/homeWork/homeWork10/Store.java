@@ -2,8 +2,6 @@ package homeWork.homeWork10;
 
 import homeWork.homeWork8.MyException;
 
-import java.io.InputStream;
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class Store {
@@ -151,17 +149,17 @@ public class Store {
                         addProduct(product);
                         break;
                     case 3:
-                        System.out.println("Введите id товара: ");
+                        System.out.print("Введите id товара: ");
                         int deleteId = sc.nextInt();
                         deleteProduct(deleteId);
                         break;
                     case 4:
-                        System.out.println("Введите id товара для редактирования: ");
+                        System.out.print("Введите id товара для редактирования: ");
                         int replaceId = sc.nextInt();
                         sc.nextLine();
-                        System.out.println("Введите новое наименование товара: ");
+                        System.out.print("Введите новое наименование товара: ");
                         String replaceName = sc.next();
-                        System.out.println("Введите новую цену товара: ");
+                        System.out.print("Введите новую цену товара: ");
                         int replacePrice = sc.nextInt();
                         Product replaceProduct = new Product(replaceId, replaceName, replacePrice);
                         replaceProduct(replaceProduct);
