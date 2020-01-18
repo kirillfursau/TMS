@@ -25,7 +25,7 @@ public class Main {
             System.out.println(product);
         }
         System.out.println();
-        List<Product> priceSortList = new ArrayList<>(store.printAllProducts());
+        List<Product> priceSortList = new ArrayList<>(store.returnAllProducts());
         Collections.sort(priceSortList);
         for (Product product : priceSortList){
             System.out.println(product);
