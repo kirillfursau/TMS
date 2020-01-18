@@ -44,7 +44,7 @@ public class Store {
         try {
             boolean findId = false;
             int numberDeleteProduct = 0;
-            for (int i = 0; i < Products.size();i++) {
+            for (int i = 0; i < Products.size(); i++) {
                 if (Products.get(i).getId() == id) {
                     findId = true;
                     numberDeleteProduct = i;
@@ -102,6 +102,12 @@ public class Store {
         System.out.println("5. Выход");
     }
 
+    void printSecondMenu() {
+        System.out.println("1. По цене(возрастание)");
+        System.out.println("2. По цене(убывание)");
+        System.out.println("3. По добавлению(сначала новые, потом более старые)");
+    }
+
     Scanner sc = new Scanner(System.in);
 
     public void start() {
@@ -113,7 +119,28 @@ public class Store {
                 key = sc.nextInt();
                 switch (key) {
                     case 1:
-                        printAllProducts();
+                        printSecondMenu();
+                        System.out.print("Введите номер меню: ");
+                        key = sc.nextInt();
+                        switch (key) {
+                            case 1:
+                                for (Product p : priceSortList()) {
+                                    System.out.println(p);
+                                }
+                                break;
+                            case 2:
+                                for (int i = Products.size(); i > 0; i--) {
+                                    System.out.println(priceSortList().get(i - 1));
+                                }
+                                break;
+                            case 3:
+                                for (Product p : sortByLastAddToList()) {
+                                    System.out.println(p);
+                                }
+                                break;
+                            default:
+                                System.out.println("Вы ввели неверное значение меню...\n");
+                        }
                         break;
                     case 2:
                         System.out.print("Введите id товара: ");
@@ -134,10 +161,10 @@ public class Store {
                         System.out.println("Введите id товара для редактирования: ");
                         int replaceId = sc.nextInt();
                         System.out.println("Введите новое наименование товара: ");
-                        String replaceName = sc.nextLine();
+                        String replaceName = sc.next();
                         System.out.println("Введите новую цену товара: ");
                         int replacePrice = sc.nextInt();
-                        Product replaceProduct = new Product();
+                        Product replaceProduct = new Product(replaceId, replaceName, replacePrice);
                         replaceProduct(replaceProduct);
                         break;
                     case 5:
