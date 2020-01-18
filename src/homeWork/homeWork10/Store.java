@@ -4,10 +4,7 @@ import homeWork.homeWork8.MyException;
 
 import java.io.InputStream;
 import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Store {
     static List<Product> Products = new ArrayList<>();
@@ -108,11 +105,11 @@ public class Store {
         System.out.println("3. По добавлению(сначала новые, потом более старые)");
     }
 
-    Scanner sc = new Scanner(System.in);
 
     public void start() {
-        int key;
-        if (this.sc != null) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            int key;
             do {
                 printFirstMenu();
                 System.out.print("Введите номер меню: ");
@@ -145,8 +142,9 @@ public class Store {
                     case 2:
                         System.out.print("Введите id товара: ");
                         int id = sc.nextInt();
+                        sc.nextLine();
                         System.out.print("Введите наименование товара: ");
-                        String name = sc.next();
+                        String name = sc.nextLine();
                         System.out.print("Введите цену товара: ");
                         int price = sc.nextInt();
                         Product product = new Product(id, name, price);
@@ -160,6 +158,7 @@ public class Store {
                     case 4:
                         System.out.println("Введите id товара для редактирования: ");
                         int replaceId = sc.nextInt();
+                        sc.nextLine();
                         System.out.println("Введите новое наименование товара: ");
                         String replaceName = sc.next();
                         System.out.println("Введите новую цену товара: ");
@@ -173,6 +172,9 @@ public class Store {
                         System.out.println("Вы ввели неверное значение меню...\n");
                 }
             } while (key != 5);
+        } catch (InputMismatchException e) {
+            System.out.println("Неверный тип данных попробуйте снова");
+            start();
         }
     }
 }
