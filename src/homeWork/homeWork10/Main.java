@@ -17,14 +17,20 @@ public class Main {
         store.addProduct(pepsi);
         store.addProduct(banana);
         store.printAllProducts();
-        List<Product> priceSortList = new ArrayList<>(store.returnAllProducts());
-        Collections.sort(priceSortList);
-        for (Product p : priceSortList){
-            System.out.println(p);
+        List<Product> sortByLastAddToList = new ArrayList<>();
+        for (int i = store.returnAllProducts().size(); i > 0; i--) {
+            sortByLastAddToList.add(store.returnAllProducts().get(i - 1));
         }
-        store.sortByLastAddToList();
-        store.printAllProducts();
+        for (Product product : sortByLastAddToList){
+            System.out.println(product);
+        }
+        System.out.println();
+        List<Product> priceSortList = new ArrayList<>(store.printAllProducts());
+        Collections.sort(priceSortList);
+        for (Product product : priceSortList){
+            System.out.println(product);
+        }
+        System.out.println();
         store.replaceProduct(cola);
-        store.printAllProducts();
     }
 }

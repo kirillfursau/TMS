@@ -3,6 +3,7 @@ package homeWork.homeWork10;
 import homeWork.homeWork8.MyException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Store {
@@ -72,13 +73,5 @@ public class Store {
         } catch (MyException e) {
             System.out.println("You dont have product with this id");
         }
-    }
-
-    List<Product> sortByLastAddToList() {
-        List<Product> sortByLastAddToList = new ArrayList<>();
-        for (int i = Products.size(); i > 0; i--) {
-            sortByLastAddToList.add(Products.get(i - 1));
-        }
-        return Products = sortByLastAddToList;
     }
 }
