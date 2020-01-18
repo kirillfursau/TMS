@@ -1,9 +1,5 @@
 package homeWork.homeWork10;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         Product apple = new Product(0, "Apple", 250);
@@ -17,20 +13,16 @@ public class Main {
         store.addProduct(pepsi);
         store.addProduct(banana);
         store.printAllProducts();
-        List<Product> priceSortList = new ArrayList<>(store.returnAllProducts());
-        Collections.sort(priceSortList);
-        for (Product product : priceSortList) {
+        for (Product product : store.priceSortList()) {
             System.out.println(product);
         }
         System.out.println();
-        List<Product> sortByLastAddToList = new ArrayList<>();
-        for (int i = store.returnAllProducts().size(); i > 0; i--) {
-            sortByLastAddToList.add(store.returnAllProducts().get(i - 1));
-        }
-        for (Product product : sortByLastAddToList) {
+        store.deleteProduct(1);
+        for (Product product : store.sortByLastAddToList()) {
             System.out.println(product);
         }
         System.out.println();
         store.replaceProduct(cola);
+        store.printAllProducts();
     }
 }

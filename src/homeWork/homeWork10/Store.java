@@ -25,8 +25,7 @@ public class Store {
 
     List<Product> printAllProducts() {
         for (Product p : Products) {
-            System.out.println("Product " + p.getName() + ". Product id " + p.getId()
-                    + ". Product price " + p.getPrice());
+            System.out.println(p.toString());
         }
         System.out.println();
         return Products;
@@ -73,5 +72,19 @@ public class Store {
         } catch (MyException e) {
             System.out.println("You dont have product with this id");
         }
+    }
+
+    List<Product> priceSortList() {
+        List<Product> priceSortList = new ArrayList<>(Products);
+        Collections.sort(priceSortList);
+        return priceSortList;
+    }
+
+    List<Product> sortByLastAddToList() {
+        List<Product> sortByLastAddToList = new ArrayList<>();
+        for (int i = Products.size(); i > 0; i--) {
+            sortByLastAddToList.add(Products.get(i - 1));
+        }
+        return sortByLastAddToList;
     }
 }
