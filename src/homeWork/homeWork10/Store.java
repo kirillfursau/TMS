@@ -22,13 +22,19 @@ public class Store {
         }
     }
 
-    List<Product> allProducts() {
+    List<Product> printAllProducts() {
         for (Product p : Products) {
             System.out.println("Product " + p.getName() + ". Product id " + p.getId()
                     + ". Product price " + p.getPrice());
         }
+        System.out.println();
         return Products;
     }
+
+    List<Product> returnAllProducts() {
+        return Products;
+    }
+
 
     void deleteProduct(int id) {
         try {
@@ -48,12 +54,13 @@ public class Store {
             System.out.println("You dont have product with this id");
         }
     }
-    void replaceProduct(Product product){
-        try{
+
+    void replaceProduct(Product product) {
+        try {
             boolean findId = false;
-            for (int i = 0; i < Products.size();i++) {
+            for (int i = 0; i < Products.size(); i++) {
                 if (Products.get(i).getId() == product.getId()) {
-                    Products.set(i,product);
+                    Products.set(i, product);
                     findId = true;
                     break;
                 }
@@ -62,8 +69,16 @@ public class Store {
                 throw new MyException();
             }
             System.out.println("Replace product successful");
-        }catch (MyException e){
+        } catch (MyException e) {
             System.out.println("You dont have product with this id");
         }
+    }
+
+    List<Product> sortByLastAddToList() {
+        List<Product> sortByLastAddToList = new ArrayList<>();
+        for (int i = Products.size(); i > 0; i--) {
+            sortByLastAddToList.add(Products.get(i - 1));
+        }
+        return Products = sortByLastAddToList;
     }
 }
