@@ -1,90 +1,68 @@
 package homeWork.homeWork10;
 
-import homeWork.homeWork8.MyException;
-
 import java.util.*;
 
 public class Store {
-    static List<Product> Products = new ArrayList<>();
+    private final List<Product> products = new ArrayList<>();
 
 
     void addProduct(Product product) {
-        try {
-            for (Product p : Products) {
-                if (p.getId() == product.getId()) {
-                    throw new MyException();
-                }
-            }
+        if (products.indexOf(product) != -1) {
+            System.out.println("You have product with this id.");
+        } else {
             System.out.println("Add successful");
-            Products.add(product);
-        } catch (MyException e) {
-            System.out.println("You have product with this id ");
+            products.add(product);
         }
     }
 
+
     List<Product> printAllProducts() {
-        for (Product p : Products) {
+        for (Product p : products) {
             System.out.println(p.toString());
         }
         System.out.println();
-        return Products;
+        return products;
     }
 
-    List<Product> returnAllProducts() {
-        return Products;
+    List<Product> getAllProducts() {
+        return products;
     }
 
 
     void deleteProduct(int id) {
-        try {
-            boolean findId = false;
-            int numberDeleteProduct = 0;
-            for (int i = 0; i < Products.size(); i++) {
-                if (Products.get(i).getId() == id) {
-                    findId = true;
-                    numberDeleteProduct = i;
-                    break;
-                }
+        boolean deleteProduct = false;
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getId() == id) {
+                products.remove(i);
+                deleteProduct = true;
+                System.out.println("Delete product successful");
+                break;
             }
-            if (!findId) {
-                throw new MyException();
-            }
-            Products.remove(numberDeleteProduct);
-            System.out.println("Delete product successful");
-        } catch (MyException e) {
+        }
+        if (!deleteProduct) {
             System.out.println("You dont have product with this id");
         }
     }
 
     void replaceProduct(Product product) {
-        try {
-            boolean findId = false;
-            for (int i = 0; i < Products.size(); i++) {
-                if (Products.get(i).getId() == product.getId()) {
-                    Products.set(i, product);
-                    findId = true;
-                    break;
-                }
-            }
-            if (!findId) {
-                throw new MyException();
-            }
+        if (products.indexOf(product) != -1) {
+            products.set(products.indexOf(product), product);
             System.out.println("Replace product successful");
-        } catch (MyException e) {
+        } else {
             System.out.println("You dont have product with this id");
         }
     }
 
     List<Product> priceSortList() {
-        List<Product> priceSortList = new ArrayList<>(Products);
+        List<Product> priceSortList = new ArrayList<>(products);
         Collections.sort(priceSortList);
         return priceSortList;
     }
 
     List<Product> sortByLastAddToList() {
         List<Product> sortByLastAddToList = new ArrayList<>();
-        for (int i = Products.size(); i > 0; i--) {
-            sortByLastAddToList.add(Products.get(i - 1));
+        for (int i = products.size(); i > 0; i--) {
+            sortByLastAddToList.add(products.get(i - 1));
         }
         return sortByLastAddToList;
     }
@@ -111,12 +89,14 @@ public class Store {
             do {
                 printFirstMenu();
                 System.out.print("Введите номер меню: ");
-                key = sc.nextInt();
+                String keyString = sc.nextLine();
+                key = Integer.parseInt(keyString.trim());
                 switch (key) {
                     case 1:
                         printSecondMenu();
                         System.out.print("Введите номер меню: ");
-                        key = sc.nextInt();
+                        keyString = sc.nextLine();
+                        key = Integer.parseInt(keyString.trim());
                         switch (key) {
                             case 1:
                                 for (Product p : priceSortList()) {
@@ -124,7 +104,7 @@ public class Store {
                                 }
                                 break;
                             case 2:
-                                for (int i = Products.size(); i > 0; i--) {
+                                for (int i = products.size(); i > 0; i--) {
                                     System.out.println(priceSortList().get(i - 1));
                                 }
                                 break;
@@ -145,12 +125,14 @@ public class Store {
                         String name = sc.nextLine();
                         System.out.print("Введите цену товара: ");
                         int price = sc.nextInt();
+                        sc.nextLine();
                         Product product = new Product(id, name, price);
                         addProduct(product);
                         break;
                     case 3:
                         System.out.print("Введите id товара: ");
                         int deleteId = sc.nextInt();
+                        sc.nextLine();
                         deleteProduct(deleteId);
                         break;
                     case 4:
@@ -161,17 +143,21 @@ public class Store {
                         String replaceName = sc.next();
                         System.out.print("Введите новую цену товара: ");
                         int replacePrice = sc.nextInt();
+                        sc.nextLine();
                         Product replaceProduct = new Product(replaceId, replaceName, replacePrice);
                         replaceProduct(replaceProduct);
                         break;
                     case 5:
                         break;
                     default:
-                        System.out.println("Вы ввели неверное значение меню...\n");
+                        System.out.println("Вы ввели неверное номер меню\n");
                 }
             } while (key != 5);
         } catch (InputMismatchException e) {
-            System.out.println("Неверный тип данных попробуйте снова");
+            System.out.println("Вы ввели неверное значение. Необходимо ввести цифу\n");
+            start();
+        } catch (NumberFormatException e) {
+            System.out.println("Вы ввели неверное значение меню. Введите цифу\n");
             start();
         }
     }
