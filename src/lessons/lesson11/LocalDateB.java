@@ -18,15 +18,19 @@ public class LocalDateB {
                 LocalDate.now()));
     }
 
-    public static List<LocalDate> chetoTam (LocalDate ... localDates){
+    public static List<LocalDate> chetoTam(LocalDate... localDates) {
         List<LocalDate> localDateList = new ArrayList<>();
-        for (LocalDate l : localDates){
+        for (LocalDate l : localDates) {
             localDateList.add(l);
         }
-        localDateList.sort();
+        localDateList.sort((date1, date2) -> date2.getMonthValue() - date1.getMonthValue());
+        return localDateList;
     }
+
 
     public static void main(String[] args) {
         dateBack2();
+        System.out.println(chetoTam(LocalDate.now(), LocalDate.now().plusMonths(22),
+                LocalDate.now().plusMonths(200)));
     }
 }
