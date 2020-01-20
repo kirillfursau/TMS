@@ -46,8 +46,7 @@ public class Product implements Comparable<Product> {
 
     @Override
     public int compareTo(Product o) {
-        int compareQuantity = o.getPrice();
-        return this.price - compareQuantity;
+        return this.price - o.getPrice();
     }
 
     @Override
@@ -59,10 +58,7 @@ public class Product implements Comparable<Product> {
             return false;
         }
         Product guest = (Product) product;
-        if (id != guest.getId()) {
-            return false;
-        }
-        return true;
+        return id == guest.getId();
     }
 
     @Override
