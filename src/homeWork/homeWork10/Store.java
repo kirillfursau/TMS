@@ -55,7 +55,7 @@ public class Store {
 
     List<Product> priceSortList() {
         List<Product> priceSortList = new ArrayList<>(products);
-        Collections.sort(priceSortList);
+        priceSortList.sort((product1, product2) -> product2.getPrice() - product1.getPrice());
         return priceSortList;
     }
 
@@ -97,13 +97,13 @@ public class Store {
                         key = sc.nextLine().trim();
                         switch (key) {
                             case "1":
-                                for (Product p : priceSortList()) {
-                                    System.out.println(p);
+                                for (int i = products.size(); i > 0; i--) {
+                                    System.out.println(priceSortList().get(i - 1));
                                 }
                                 break;
                             case "2":
-                                for (int i = products.size(); i > 0; i--) {
-                                    System.out.println(priceSortList().get(i - 1));
+                                for (Product p : priceSortList()) {
+                                    System.out.println(p);
                                 }
                                 break;
                             case "3":

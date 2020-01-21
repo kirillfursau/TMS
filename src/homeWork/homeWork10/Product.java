@@ -1,6 +1,6 @@
 package homeWork.homeWork10;
 
-public class Product implements Comparable<Product> {
+public class Product {
     private int id;
     private String name;
     private int price;
@@ -44,10 +44,6 @@ public class Product implements Comparable<Product> {
                 + ". Product price " + getPrice();
     }
 
-    @Override
-    public int compareTo(Product o) {
-        return this.price - o.getPrice();
-    }
 
     @Override
     public boolean equals(Object product) {
