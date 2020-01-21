@@ -85,30 +85,28 @@ public class Store {
     public void start() {
         Scanner sc = new Scanner(System.in);
         try {
-            int key;
+            String key;
             do {
                 printFirstMenu();
                 System.out.print("Введите номер меню: ");
-                String keyString = sc.nextLine();
-                key = Integer.parseInt(keyString.trim());
+                key = sc.nextLine().trim();
                 switch (key) {
-                    case 1:
+                    case "1":
                         printSecondMenu();
                         System.out.print("Введите номер меню: ");
-                        keyString = sc.nextLine();
-                        key = Integer.parseInt(keyString.trim());
+                        key = sc.nextLine().trim();
                         switch (key) {
-                            case 1:
+                            case "1":
                                 for (Product p : priceSortList()) {
                                     System.out.println(p);
                                 }
                                 break;
-                            case 2:
+                            case "2":
                                 for (int i = products.size(); i > 0; i--) {
                                     System.out.println(priceSortList().get(i - 1));
                                 }
                                 break;
-                            case 3:
+                            case "3":
                                 for (Product p : sortByLastAddToList()) {
                                     System.out.println(p);
                                 }
@@ -117,7 +115,7 @@ public class Store {
                                 System.out.println("Вы ввели неверное значение меню...\n");
                         }
                         break;
-                    case 2:
+                    case "2":
                         System.out.print("Введите id товара: ");
                         int id = sc.nextInt();
                         sc.nextLine();
@@ -129,13 +127,13 @@ public class Store {
                         Product product = new Product(id, name, price);
                         addProduct(product);
                         break;
-                    case 3:
+                    case "3":
                         System.out.print("Введите id товара: ");
                         int deleteId = sc.nextInt();
                         sc.nextLine();
                         deleteProduct(deleteId);
                         break;
-                    case 4:
+                    case "4":
                         System.out.print("Введите id товара для редактирования: ");
                         int replaceId = sc.nextInt();
                         sc.nextLine();
@@ -147,18 +145,17 @@ public class Store {
                         Product replaceProduct = new Product(replaceId, replaceName, replacePrice);
                         replaceProduct(replaceProduct);
                         break;
-                    case 5:
+                    case "5":
                         break;
                     default:
-                        System.out.println("Вы ввели неверное номер меню\n");
+                        System.out.println("Вы ввели неверное значение меню.\n");
                 }
-            } while (key != 5);
+            } while (key != "5");
         } catch (InputMismatchException e) {
             System.out.println("Вы ввели неверное значение. Необходимо ввести цифу\n");
-            start();
-        } catch (NumberFormatException e) {
-            System.out.println("Вы ввели неверное значение меню. Введите цифу\n");
             start();
         }
     }
 }
+
+
