@@ -11,7 +11,7 @@ public class StreamApiExercises {
      */
     boolean containsEmptyString(Collection<String> strings) {
         return strings.stream()
-                .anyMatch(s -> s.equalsIgnoreCase(""));
+                .anyMatch(s -> s.equals(""));
     }
 
     /*
@@ -20,7 +20,7 @@ public class StreamApiExercises {
      */
     int countShortStrings(Set<String> strings, int maxLength) {
         return (int) strings.stream()
-                .filter(s -> s.length() < maxLength)
+                .filter(s -> s.length() <= maxLength)
                 .count();
     }
 
@@ -31,8 +31,7 @@ public class StreamApiExercises {
      */
     String findLongestString(Collection<String> strings) throws IllegalArgumentException {
         return strings.stream()
-                .sorted((s1, s2) -> s2.length() - s1.length())
-                .findFirst()
+                .max((s1, s2) -> s2.length() - s1.length())
                 .orElseThrow(() -> {
                     throw new IllegalArgumentException();
                 });
@@ -62,9 +61,10 @@ public class StreamApiExercises {
     печатает нечётные числа, в столбик, отсортированные по убыванию
      */
     void printOddNumbers(Collection<Integer> numbers) {
-        System.out.println(numbers.stream()
+        numbers.stream()
                 .filter(number -> number % 2 == 1)
-                .sorted((number1, number2) -> number2 - number1));
+                .sorted((number1, number2) -> number2 - number1)
+                .forEach(s -> System.out.println(s));
     }
 
     /*
@@ -93,7 +93,7 @@ public class StreamApiExercises {
      */
     List<Integer> incrementEach(List<Integer> numbers) {
         return numbers.stream()
-                .map(number -> number++)
+                .map(number -> ++number)
                 .collect(Collectors.toList());
     }
 }
