@@ -93,7 +93,7 @@ public class StreamApiExercises {
      */
     List<Integer> incrementEach(List<Integer> numbers) {
         return numbers.stream()
-                .map(number -> ++number)
+                .peek(number -> number++)
                 .collect(Collectors.toList());
     }
 }
