@@ -3,6 +3,10 @@ package homeWork.homeWork10WithStreamAndLambda;
 import java.time.LocalTime;
 import java.util.*;
 import java.util.stream.Collectors;
+import lessons.lesson11.DateUtils;
+
+import static lessons.lesson11.DateUtils.printNowDate;
+
 
 public class Store {
     private final List<Product> products = new ArrayList<>();
@@ -18,9 +22,9 @@ public class Store {
     }
 
 
-    List<Product> printAllProducts() {
-        return products.stream()
-                .collect(Collectors.toList());
+    void printAllProducts() {
+        products.stream()
+                .forEach(product -> System.out.println(product));
     }
 
     List<Product> getAllProducts() {
@@ -86,8 +90,8 @@ public class Store {
         try {
             String key;
             do {
-                LocalTime time = LocalTime.now();
-                System.out.println("Текущее время : " + time);
+                System.out.print("Текущая дата и время : ");
+                printNowDate();
                 printFirstMenu();
                 System.out.print("Введите номер меню: ");
                 key = sc.nextLine().trim();
@@ -103,14 +107,12 @@ public class Store {
                                 }
                                 break;
                             case "2":
-                                for (Product p : priceSortList()) {
-                                    System.out.println(p);
-                                }
+                                priceSortList().stream()
+                                        .forEach(product -> System.out.println(product));
                                 break;
                             case "3":
-                                for (Product p : sortByLastAddToList()) {
-                                    System.out.println(p);
-                                }
+                                sortByLastAddToList().stream()
+                                        .forEach(product -> System.out.println(product));
                                 break;
                             default:
                                 System.out.println("Вы ввели неверное значение меню...\n");
