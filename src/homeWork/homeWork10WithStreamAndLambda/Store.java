@@ -1,7 +1,8 @@
-package homeWork.homeWork10;
+package homeWork.homeWork10WithStreamAndLambda;
 
 import java.time.LocalTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Store {
     private final List<Product> products = new ArrayList<>();
@@ -18,11 +19,8 @@ public class Store {
 
 
     List<Product> printAllProducts() {
-        for (Product p : products) {
-            System.out.println(p.toString());
-        }
-        System.out.println();
-        return products;
+        return products.stream()
+                .collect(Collectors.toList());
     }
 
     List<Product> getAllProducts() {
@@ -55,9 +53,9 @@ public class Store {
     }
 
     List<Product> priceSortList() {
-        List<Product> priceSortList = new ArrayList<>(products);
-        priceSortList.sort((product1, product2) -> product2.getPrice() - product1.getPrice());
-        return priceSortList;
+        return products.stream()
+                .sorted((product1, product2) -> product2.getPrice() - product1.getPrice())
+                .collect(Collectors.toList());
     }
 
     List<Product> sortByLastAddToList() {
