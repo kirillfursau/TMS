@@ -56,7 +56,7 @@ public class Store {
 
     List<Product> priceSortList() {
         List<Product> priceSortList = new ArrayList<>(products);
-        priceSortList.sort((product1, product2) -> product2.getPrice() - product1.getPrice());
+        Collections.sort(priceSortList);
         return priceSortList;
     }
 

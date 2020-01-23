@@ -13,14 +13,10 @@ public class Main {
         store.addProduct(pepsi);
         store.addProduct(banana);
         store.printAllProducts();
-        for (Product product : store.priceSortList()) {
-            System.out.println(product);
-        }
+        store.priceSortList().stream()
+                .forEach(product -> System.out.println(product));
         System.out.println();
         store.deleteProduct(1);
-        for (Product product : store.sortByLastAddToList()) {
-            System.out.println(product);
-        }
         System.out.println();
         store.replaceProduct(cola);
         store.printAllProducts();
