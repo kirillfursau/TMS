@@ -3,7 +3,6 @@ package lessons.lesson10;
 import static lessons.lesson7.StringUtils.isPalindrome;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 public class Collections<T extends Object> {
     /*
@@ -74,17 +73,31 @@ public class Collections<T extends Object> {
     Создайте метод sort(List<String>), который будет сортировать строки по длине,
     а если длина одинаковая - лексикографически. Он должен возвращать ArrayList
      */
+    public static List<String> sort(List<String> strings) {
+        List<String> list = new ArrayList<>(strings);
+        list.sort((o1, o2) -> {
+            if (o1.length() > o2.length()) {
+                return 1;
+            } else if (o2.length() > o1.length()) {
+                return -1;
+            }
+            return o1.compareTo(o2);
+        });
+        return list;
+    }
+
     public static void main(String[] args) {
-        ArrayList<String> stringCollection = new ArrayList<>();
-        String st1 = "Firsstss strssing";
-        String st2 = "Second string";
-        String st3 = "Third string";
-        String st4 = "Four string";
+        List<String> stringCollection = new ArrayList<>();
+        String st1 = "AAAAa";
+        String st2 = "AAAAd";
+        String st3 = "AAAAc";
+        String st4 = "AAAAb";
         stringCollection.add(st1);
         stringCollection.add(st2);
         stringCollection.add(st3);
         stringCollection.add(st4);
-        System.out.println(randomArrayList(stringCollection));
         System.out.println(findMostFrequentChar(st1));
+        System.out.println(sort(stringCollection));
+        System.out.println(randomArrayList((ArrayList) stringCollection));
     }
 }
