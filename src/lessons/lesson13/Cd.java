@@ -54,7 +54,7 @@ public class Cd {
 
     @Override
     public String toString() {
-        return "Title " + getTitle() + ". Artist" + getArtist()
-                + ". Product price " + getPrice() + ". Year "+  getYear() + "\n";
+        return "\n" + "Title " + getTitle() + ". Artist" + getArtist()
+                + ". Product price " + getPrice() + ". Year "+  getYear();
     }
 }

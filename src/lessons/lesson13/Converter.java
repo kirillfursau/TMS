@@ -27,20 +27,24 @@ public class Converter {
         }
     }
 
-    public static void readFromXml(String fileName) {
+    public static Catalog readFromXml(String fileName) {
         try {
             File file = new File(FILECATALOG + fileName);
             JAXBContext context = JAXBContext.newInstance(Catalog.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
-            Catalog catalog = (Catalog) unmarshaller.unmarshal(file);
-            System.out.println(catalog);
+            return (Catalog) unmarshaller.unmarshal(file);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     public void convertToJson(Catalog catalog, String fileName) {
-
+        try {
+            ObjectMapper
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void readFromJson(String fileName) {
@@ -57,6 +61,6 @@ public class Converter {
         cds.add(cd1);
         Catalog catalog = new Catalog(cds);
         convertToXml(catalog, "Xml.xml");
-        readFromXml("Xml.xml");
+        System.out.println(readFromXml("Xml.xml"));
     }
 }

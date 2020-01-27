@@ -1,7 +1,7 @@
 package lessons.lesson13;
 
 import javax.xml.bind.annotation.XmlRootElement;
-
+import com.
 @XmlRootElement
 public class Artist {
     private String name;
