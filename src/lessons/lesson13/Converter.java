@@ -51,7 +51,7 @@ public class Converter {
         Artist artist = new Artist("Bob marley", Instruments.GUITAR);
         Cd cd = new Cd("HeartSongs", artist, 1993, 100);
         Artist artist1 = new Artist("Edwar", Instruments.DRUM);
-        Cd cd1 = new Cd("Some songs", artist1, 1998,200);
+        Cd cd1 = new Cd("Some songs", artist1, 1998, 200);
         List<Cd> cds = new ArrayList<>();
         cds.add(cd);
         cds.add(cd1);
