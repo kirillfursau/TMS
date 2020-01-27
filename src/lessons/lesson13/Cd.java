@@ -12,7 +12,8 @@ public class Cd {
     Cd() {
 
     }
-    Cd(String title, Artist artist, int year, int price){
+
+    Cd(String title, Artist artist, int year, int price) {
         setTitle(title);
         setArtist(artist);
         setYear(year);
@@ -49,5 +50,11 @@ public class Cd {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "Title " + getTitle() + ". Artist" + getArtist()
+                + ". Product price " + getPrice() + ". Year "+  getYear();
     }
 }

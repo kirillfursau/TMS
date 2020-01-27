@@ -29,4 +29,8 @@ public class Artist {
     public void setInstruments(Instruments instruments) {
         this.instruments = instruments;
     }
+    @Override
+    public String toString() {
+        return "Artist name " + getName() + ". Instrument " + getInstruments();
+    }
 }

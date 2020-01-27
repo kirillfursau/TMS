@@ -20,4 +20,8 @@ public class Catalog {
     public void setCds(List<Cd> cds) {
         this.cds = cds;
     }
+    @Override
+    public String toString() {
+        return "Cd " + getCds();
+    }
 }

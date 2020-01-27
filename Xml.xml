@@ -6,7 +6,16 @@
             <name>Bob marley</name>
         </artist>
         <price>100</price>
-        <title>Songs</title>
+        <title>HeartSongs</title>
         <year>1993</year>
+    </cds>
+    <cds>
+        <artist>
+            <instruments>DRUM</instruments>
+            <name>Edwar</name>
+        </artist>
+        <price>200</price>
+        <title>Some songs</title>
+        <year>1998</year>
     </cds>
 </catalog>
