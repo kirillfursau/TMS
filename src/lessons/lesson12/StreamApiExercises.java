@@ -29,13 +29,12 @@ public class StreamApiExercises {
     возвращает самую длинную строку. если строк нет -
      выбрасывает IllegalArgumentException
      */
-    String findLongestString(Collection<String> strings) throws IllegalArgumentException{
+    String findLongestString(Collection<String> strings) throws IllegalArgumentException {
         return strings.stream()
                 .max((s1, s2) -> s2.length() - s1.length())
-                .orElseThrow(() -> {
-                    throw new IllegalArgumentException();
-                });
+                .orElseThrow(() -> new IllegalArgumentException());
     }
+
 
     /*
     String getFirst(List<String> strings) -

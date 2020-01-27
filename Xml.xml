@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+    <cds>
+        <artist>
+            <instruments>GUITAR</instruments>
+            <name>Bob marley</name>
+        </artist>
+        <price>100</price>
+        <title>Songs</title>
+        <year>1993</year>
+    </cds>
+</catalog>
