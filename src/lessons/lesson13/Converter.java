@@ -1,15 +1,16 @@
 package lessons.lesson13;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import java.io.File;
-import java.io.FileReader;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlRootElement;
-
 @XmlRootElement
 public class Converter {
     private static final String FILECATALOG = "/Users/kirylfursau/Desktop/TMS/";
