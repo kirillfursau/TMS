@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlRootElement;
+
 @XmlRootElement
 public class Converter {
     private static final String FILECATALOG = "/Users/kirylfursau/Desktop/TMS/";
@@ -36,22 +37,29 @@ public class Converter {
             return (Catalog) unmarshaller.unmarshal(file);
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     public static void convertToJson(Catalog catalog, String fileName) {
         try {
             File file = new File(FILECATALOG + fileName);
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.writeValue(file, catalog);
+            ObjectMapper writeMapper = new ObjectMapper();
+            writeMapper.writeValue(file, catalog);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void readFromJson(String fileName) {
-
+    public static Catalog readFromJson(String fileName) {
+        try {
+            File file = new File(FILECATALOG + fileName);
+            ObjectMapper readMapper = new ObjectMapper();
+            return readMapper.readValue(file, Catalog.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public static void main(String[] args) {
@@ -66,5 +74,7 @@ public class Converter {
         convertToXml(catalog, "Xml.xml");
         System.out.println(readFromXml("Xml.xml"));
         convertToJson(catalog, "Xml2.xml");
+        System.out.println(readFromJson("Xml2.xml"));
+
     }
 }

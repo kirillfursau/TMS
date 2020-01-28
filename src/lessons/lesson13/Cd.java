@@ -1,5 +1,6 @@
 package lessons.lesson13;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -19,7 +20,7 @@ public class Cd {
         setYear(year);
         setPrice(price);
     }
-
+    @XmlElement(name = "Price",defaultValue = "Unknown price")
     public int getPrice() {
         return price;
     }
