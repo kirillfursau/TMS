@@ -52,13 +52,13 @@ public class Main {
     }
 
 
-    void threesome() {
+    void threesome() throws MyException3 {
         try {
             if (true) {
                 throw new MyException();
-            }else if(true) {
+            } else if (true) {
                 throw new MyException3();
-            }else{
+            } else {
                 throw new MyException2();
             }
         } catch (MyException | MyException2 e) {

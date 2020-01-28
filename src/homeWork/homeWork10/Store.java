@@ -4,7 +4,7 @@ import java.time.LocalTime;
 import java.util.*;
 
 public class Store {
-    private final List<Product> products = new ArrayList<>();
+    private final List<Product> products = new ArrayList<Product>();
 
 
     void addProduct(Product product) {

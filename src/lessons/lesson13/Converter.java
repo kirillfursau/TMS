@@ -40,9 +40,11 @@ public class Converter {
         return null;
     }
 
-    public void convertToJson(Catalog catalog, String fileName) {
+    public static void convertToJson(Catalog catalog, String fileName) {
         try {
-            ObjectMapper
+            File file = new File(FILECATALOG + fileName);
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.writeValue(file, catalog);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -57,11 +59,12 @@ public class Converter {
         Cd cd = new Cd("HeartSongs", artist, 1993, 100);
         Artist artist1 = new Artist("Edwar", Instruments.DRUM);
         Cd cd1 = new Cd("Some songs", artist1, 1998, 200);
-        List<Cd> cds = new ArrayList<>();
+        List<Cd> cds = new ArrayList<Cd>();
         cds.add(cd);
         cds.add(cd1);
         Catalog catalog = new Catalog(cds);
         convertToXml(catalog, "Xml.xml");
         System.out.println(readFromXml("Xml.xml"));
+        convertToJson(catalog, "Xml2.xml");
     }
 }
