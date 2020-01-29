@@ -1,33 +1,30 @@
 package lessons.lesson14;
 
 public class Account {
-    long balance = 1000;
+    long balance;
 
     public Account(long balance) {
-        setBalance(balance);
+        this.balance = balance;
     }
 
     public Account() {
 
     }
 
-    @Override
-    public void run() {
-
-    }
-
-    public long getBalance() {
-        return balance;
-    }
-
-    public void setBalance(long balance) {
-        this.balance = balance;
-    }
 
     public static void main(String[] args) {
         Account account = new Account(1000);
-        Thread thread = new Thread(String.valueOf(account.getBalance() - 1));
-        Thread thread1 = new Thread(String.valueOf(account.getBalance() + 1));
+        Thread thread = new Thread(() -> {
+        for (int i = 0; i < 100_000; i++) {
+            synchronized (account){account.balance++;}
+        }});
+        Thread thread1 = new Thread(() ->{
+        for (int i = 0; i < 100_000; i++) {
+            synchronized (account){account.balance--;}
+        }});
+        thread.start();
+        thread1.start();
+        System.out.println(account.balance);
     }
 }
 
