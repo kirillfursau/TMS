@@ -1,5 +1,7 @@
 package homeWork.homeWork11;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import java.io.File;
@@ -24,6 +26,13 @@ public class Main {
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(booksList, file);
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            File file = new File(fileCatalog + "Books.json");
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(file,booksList);
+        }catch (Exception e){
             e.printStackTrace();
         }
     }

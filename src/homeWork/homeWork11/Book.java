@@ -1,9 +1,13 @@
 package homeWork.homeWork11;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 import java.util.List;
+
 @XmlRootElement
 public class Book {
     private int article;
@@ -45,12 +49,11 @@ public class Book {
     public void setYear(int year) {
         this.year = year;
     }
-
+    @JsonIgnore
     @XmlTransient
     public List<Book> getBooks() {
         return books;
     }
-
     public void setBooks(List<Book> books) {
         this.books = books;
     }
