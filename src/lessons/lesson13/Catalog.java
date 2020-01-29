@@ -2,7 +2,9 @@ package lessons.lesson13;
 
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.List;
+
 
 @XmlRootElement
 public class Catalog {

@@ -1,17 +1,22 @@
 package homeWork.homeWork11;
 
-import java.util.List;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
+import java.util.List;
+@XmlRootElement
 public class Book {
     private int article;
     private String name;
     private int year;
-    private List<Book> books;
+    private static List<Book> books;
 
-    public Book(int article, String name, int year) {
+
+    public Book(int article, String name, int year, List<Book> books) {
         setArticle(article);
         setName(name);
         setYear(year);
+        setBooks(books);
     }
 
     public Book() {
@@ -41,11 +46,22 @@ public class Book {
         this.year = year;
     }
 
+    @XmlTransient
     public List<Book> getBooks() {
         return books;
     }
 
     public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "article=" + article +
+                ", name='" + name + '\'' +
+                ", year=" + year +
+                ", books=" + books +
+                '}';
     }
 }

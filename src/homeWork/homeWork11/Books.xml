@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<booksList>
+    <books>
+        <article>101</article>
+        <name>Harry Potter</name>
+        <year>2001</year>
+    </books>
+    <books>
+        <article>102</article>
+        <name>Harry Shproter</name>
+        <year>2003</year>
+    </books>
+    <books>
+        <article>103</article>
+        <name>Henry Proper</name>
+        <year>2005</year>
+    </books>
+</booksList>

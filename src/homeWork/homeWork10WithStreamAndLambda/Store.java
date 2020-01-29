@@ -7,34 +7,34 @@ import static lessons.lesson11.DateUtils.printNowDate;
 
 
 public class Store {
-    private final List<Product> products = new ArrayList<>();
+    private final List<Product> PRODUCTS = new ArrayList<>();
 
 
     void addProduct(Product product) {
-        if (products.indexOf(product) != -1) {
+        if (PRODUCTS.indexOf(product) != -1) {
             System.out.println("You have product with this id.");
         } else {
             System.out.println("Add successful");
-            products.add(product);
+            PRODUCTS.add(product);
         }
     }
 
 
     void printAllProducts() {
-        products.stream()
+        PRODUCTS.stream()
                 .forEach(product -> System.out.println(product));
     }
 
     List<Product> getAllProducts() {
-        return products;
+        return PRODUCTS;
     }
 
 
     void deleteProduct(int id) {
         boolean deleteProduct = false;
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getId() == id) {
-                products.remove(i);
+        for (int i = 0; i < PRODUCTS.size(); i++) {
+            if (PRODUCTS.get(i).getId() == id) {
+                PRODUCTS.remove(i);
                 deleteProduct = true;
                 System.out.println("Delete product successful");
                 break;
@@ -46,8 +46,8 @@ public class Store {
     }
 
     void replaceProduct(Product product) {
-        if (products.indexOf(product) != -1) {
-            products.set(products.indexOf(product), product);
+        if (PRODUCTS.indexOf(product) != -1) {
+            PRODUCTS.set(PRODUCTS.indexOf(product), product);
             System.out.println("Replace product successful");
         } else {
             System.out.println("You dont have product with this id");
@@ -55,15 +55,15 @@ public class Store {
     }
 
     List<Product> priceSortList() {
-        return products.stream()
+        return PRODUCTS.stream()
                 .sorted((product1, product2) -> product2.getPrice() - product1.getPrice())
                 .collect(Collectors.toList());
     }
 
     List<Product> sortByLastAddToList() {
         List<Product> sortByLastAddToList = new ArrayList<>();
-        for (int i = products.size(); i > 0; i--) {
-            sortByLastAddToList.add(products.get(i - 1));
+        for (int i = PRODUCTS.size(); i > 0; i--) {
+            sortByLastAddToList.add(PRODUCTS.get(i - 1));
         }
         return sortByLastAddToList;
     }
@@ -100,7 +100,7 @@ public class Store {
                         key = sc.nextLine().trim();
                         switch (key) {
                             case "1":
-                                for (int i = products.size(); i > 0; i--) {
+                                for (int i = PRODUCTS.size(); i > 0; i--) {
                                     System.out.println(priceSortList().get(i - 1));
                                 }
                                 break;
