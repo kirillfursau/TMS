@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Converter {
-    private static final String FILECATALOG = "/Users/kirylfursau/Desktop/TMS/";
+    private static final String FILECATALOG = "/Users/kirylfursau/Desktop/TMS/src/lessons/lesson13/";
 
     public static void convertToXml(Catalog catalog, String fileName) {
         try {
@@ -73,8 +73,7 @@ public class Converter {
         Catalog catalog = new Catalog(cds);
         convertToXml(catalog, "Xml.xml");
         System.out.println(readFromXml("Xml.xml"));
-        convertToJson(catalog, "Xml2.xml");
-        System.out.println(readFromJson("Xml2.xml"));
-
+        convertToJson(catalog, "Json.json");
+        System.out.println(readFromJson("Json.Json"));
     }
 }
