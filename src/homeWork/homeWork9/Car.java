@@ -1,5 +1,7 @@
 package homeWork.homeWork9;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.*;
 
 public class Car implements Serializable {
@@ -11,9 +13,43 @@ public class Car implements Serializable {
     int speed;
     int price;
 
+    public Car() {
+    }
+
     Car(String brand, int speed, int price) {
+        setBrand(brand);
+        setSpeed(speed);
+        setPrice(price);
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(new File(
+                    ("/Users/kirylfursau/Desktop/TMS/src/homeWork/homeWork9/" + brand + speed+ "Car.json")),this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
         this.price = price;
     }
 

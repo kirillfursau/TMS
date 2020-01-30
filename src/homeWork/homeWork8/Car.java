@@ -25,8 +25,8 @@ public class Car {
         setBrand(brand);
         setSpeed(speed);
         setPrice(price);
-        ObjectMapper objectMapper = new ObjectMapper();
         try {
+            ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writeValue(new File(
                     ("/Users/kirylfursau/Desktop/TMS/src/homeWork/homeWork8/" + brand + speed+ "Car.json")),this);
         } catch (IOException e) {
