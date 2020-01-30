@@ -12,6 +12,7 @@ public class PassengerCar extends GroundTransport {
     private int totalPassengers;
 
     public PassengerCar() {
+
     }
 
     PassengerCar(int power, int maxSpeed, int weight, String brand, int numberOfWheels, int fuelConsumption,

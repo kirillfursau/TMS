@@ -8,6 +8,7 @@ public class AirTransport extends Transport {
     private int minimumRunway;
 
     AirTransport() {
+
     }
 
     AirTransport(int power, int maxSpeed, int weight, String brand, int wingspan, int minimumRunway) {

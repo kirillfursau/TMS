@@ -11,6 +11,7 @@ public class WarAirTransport extends AirTransport {
     private int totalRockets;
 
     public WarAirTransport() {
+
     }
 
     WarAirTransport(int power, int maxSpeed, int weight, String brand, int wingspan, int minimumRunway,

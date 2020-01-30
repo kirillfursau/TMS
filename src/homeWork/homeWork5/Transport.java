@@ -10,7 +10,6 @@ public class Transport {
     private String brand;
 
     public Transport() {
-
     }
 
     Transport(int power, int maxSpeed, int weight, String brand) {
