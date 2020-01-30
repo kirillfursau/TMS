@@ -1,5 +1,10 @@
 package homeWork.homeWork8;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
+import java.io.IOException;
+
 public class Car {
     /*
     Создать собственное исключение
@@ -20,6 +25,13 @@ public class Car {
         setBrand(brand);
         setSpeed(speed);
         setPrice(price);
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            objectMapper.writeValue(new File(
+                    ("/Users/kirylfursau/Desktop/TMS/src/homeWork/homeWork8/" + brand + speed+ "Car.json")),this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     Car() {
