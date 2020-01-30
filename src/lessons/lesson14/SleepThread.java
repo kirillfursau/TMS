@@ -1,6 +1,12 @@
 package lessons.lesson14;
 
 public class SleepThread extends Thread {
+    /*
+    2.1 Создать SleeperThread, метод run() которого спит 5 секунд, после чего выводит в консоль "Good morning!
+    I'm awake.", если этот тред не прервали. А если прервали, то выводит "Damn, neighbors, again. I'm awake."
+    2.2 В main запускаем SleeperThread, после чего генерим случайное число от 1 до 10 (выведите его на консоль
+    для наглядности), и через это число секунд интерраптим SleeperThread.
+    */
     public SleepThread() {
     }
 

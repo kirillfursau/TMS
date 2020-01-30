@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.Map;
 
 public class PersonThread extends Thread {
+    /*
+    5.1 Создать PersonThread, который раз в секунду с вероятностью 20% заканчивается.
+    5.2 В main создаём 10 PersonThread'ов и раз в секунду выводим кол-во тредов, которые ещё не закончились.
+    5.3 Помним, что мы ненамного удачливее, чем PersonThread'ы, и радуемся, что живы. Каждую секунду. Окей, каждый день.
+    */
     public PersonThread() {
     }
 
