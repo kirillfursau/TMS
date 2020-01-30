@@ -1,6 +1,9 @@
 package homeWork.homeWork6.human.pants;
 
 public class ReebokPants implements Pants {
+    public ReebokPants() {
+    }
+
     @Override
     public void putOnPants() {
         System.out.println("Now i'm in my Reebok pants");

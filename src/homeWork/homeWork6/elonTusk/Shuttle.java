@@ -1,6 +1,13 @@
 package homeWork.homeWork6.elonTusk;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
+
 public class Shuttle implements IStart {
+    public Shuttle() {
+    }
+
     @Override
     public boolean preLaunchSystemCheck() {
         int i = (int) (Math.random() * 11);
@@ -23,4 +30,5 @@ public class Shuttle implements IStart {
     public void start() {
         System.out.println("Start shuttle");
     }
+
 }

@@ -1,6 +1,9 @@
 package homeWork.homeWork6.human.shoes;
 
 public class PumaShoe implements Shoe {
+    public PumaShoe() {
+    }
+
     @Override
     public void putOnShoe() {
         System.out.println("Put on Puma shoe");

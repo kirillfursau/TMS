@@ -1,13 +1,16 @@
 package homeWork.homeWork6.elonTusk;
 
 public class SpaceX implements IStart {
+    public SpaceX() {
+    }
+
     @Override
     public boolean preLaunchSystemCheck() {
-        int x = (int)(Math.random()*50);
-        int y = (int)(Math.random()*50);
-        if (x > y ){
+        int x = (int) (Math.random() * 50);
+        int y = (int) (Math.random() * 50);
+        if (x > y) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

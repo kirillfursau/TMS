@@ -10,6 +10,9 @@ public class Human {
     private Shoe shoe;
     private String name;
 
+    public Human() {
+    }
+
     Human(String name, Jacket jacket, Pants pants, Shoe shoe) {
         setName(name);
         setJacket(jacket);
