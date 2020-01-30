@@ -20,5 +20,9 @@ public class Main {
         ca1.maxPassengers(115);
         wa1.shot();
         wa1.bailout();
+        /*
+        Если при реализации Xml поле обозначено как Public пусть даже у него есть геттеры и сеттеры и пустой конструктор
+        будет вылетать и исключение IllegalAnnotationsException
+         */
     }
 }

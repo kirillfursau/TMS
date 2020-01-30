@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<truck>
+    <brand>BMW</brand>
+    <maxSpeed>120</maxSpeed>
+    <power>210</power>
+    <weight>3700</weight>
+    <fuelConsumption>23</fuelConsumption>
+    <numberOfWheels>8</numberOfWheels>
+</truck>

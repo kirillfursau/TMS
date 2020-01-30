@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<warAirTransport>
+    <brand>Killer</brand>
+    <maxSpeed>890</maxSpeed>
+    <power>900</power>
+    <weight>21000</weight>
+    <minimumRunway>900</minimumRunway>
+    <wingspan>26</wingspan>
+</warAirTransport>

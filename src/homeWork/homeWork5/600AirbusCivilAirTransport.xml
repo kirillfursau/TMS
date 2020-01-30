@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<civilAirTransport>
+    <brand>Airbus</brand>
+    <maxSpeed>700</maxSpeed>
+    <power>600</power>
+    <weight>23000</weight>
+    <minimumRunway>1500</minimumRunway>
+    <wingspan>32</wingspan>
+    <bissnes>true</bissnes>
+    <totalPassengers>110</totalPassengers>
+</civilAirTransport>
