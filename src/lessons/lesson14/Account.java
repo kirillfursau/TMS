@@ -11,23 +11,25 @@ public class Account {
 
     }
 
-    public synchronized long deposit(long amount) {
-        System.out.println(balance);
+    public synchronized void deposit(long amount) {
+        System.out.println(balance + " when try to deposit");
+        balance = balance + amount;
+        System.out.println(balance + " after deposit");
         notifyAll();
-        return balance = balance + amount;
     }
 
-    public synchronized long withdraw(long amount) {
-        if (balance < balance + amount) {
+    public synchronized void withdraw(long amount) {
+        System.out.println("Try to withdraw " + balance + ". Amount try to withdraw " + amount);
+        while (balance - amount < 0) {
             try {
-                System.out.println(balance);
+                System.out.println("Cant with draw");
                 wait();
-                System.out.println(balance);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        return balance - amount;
+        balance = balance - amount;
+        System.out.println(balance + " when withdraw");
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -51,11 +53,14 @@ public class Account {
         thread.join();
         thread1.start();
         thread1.join();
-        System.out.println(account.balance);
-        account.withdraw(100000000);
-        System.out.println(account.balance);
-        account.deposit(100000);
-        System.out.println(account.balance);
+        System.out.println("Thread " + account.balance);
+        Thread thread2 = new Thread(() -> account.withdraw(1001));
+        Thread thread3 = new Thread(() -> account.deposit(1000));
+        thread2.start();
+        thread3.start();
+        thread2.join();
+        thread3.join();
+        System.out.println(account.balance + " end balance");
     }
 }
 
