@@ -11,7 +11,7 @@ public class ToshibaHead implements IHead {
     }
 
     @Override
-    public void speek() {
+    public void speak() {
         System.out.println("Says head Toshiba");
     }
 
