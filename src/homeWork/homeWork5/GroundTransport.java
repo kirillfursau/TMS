@@ -9,7 +9,6 @@ public class GroundTransport extends Transport {
     private int fuelConsumption;
 
     public GroundTransport() {
-
     }
 
     public GroundTransport(int power, int maxSpeed, int weight, String brand, int numberOfWheels, int fuelConsumption) {

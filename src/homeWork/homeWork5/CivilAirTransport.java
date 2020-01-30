@@ -12,7 +12,6 @@ public class CivilAirTransport extends AirTransport {
     private boolean bissnes;
 
     CivilAirTransport() {
-
     }
 
     CivilAirTransport(int power, int maxSpeed, int weight, String brand, int wingspan, int minimumRunway,

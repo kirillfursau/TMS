@@ -12,7 +12,6 @@ public class PassengerCar extends GroundTransport {
     private int totalPassengers;
 
     public PassengerCar() {
-
     }
 
     PassengerCar(int power, int maxSpeed, int weight, String brand, int numberOfWheels, int fuelConsumption,
@@ -40,7 +39,7 @@ public class PassengerCar extends GroundTransport {
     String getInformation() {
 
         return "Power in horses : " + getPower() + ". Max speed km/h : " + getMaxSpeed() + ". Weight(Kg) : " +
-                getWeight()+ ". Brand : " + getBrand() + ". Number of Wheels : " + getNumberOfWheels() +
+                getWeight() + ". Brand : " + getBrand() + ". Number of Wheels : " + getNumberOfWheels() +
                 ". Fuel consumption(L/100km) : " + getFuelConsumption() + ". Type of body : " + bodyType +
                 " Total passengers : " + totalPassengers + ". Power in kilowat : " + powerKW();
     }
@@ -48,7 +47,7 @@ public class PassengerCar extends GroundTransport {
 
     void kiloPerFuel(double time) {
         double distance = time * getMaxSpeed();
-        System.out.println("For the time " + time + "h car " + getBrand() + " moving at maximum speed " + getMaxSpeed()+
+        System.out.println("For the time " + time + "h car " + getBrand() + " moving at maximum speed " + getMaxSpeed() +
                 " it will drive " + distance + " km and use up " +
                 +fuelConsumptionDistance(distance) + " liters of fuel.");
     }

@@ -11,7 +11,6 @@ public class Truck extends GroundTransport {
     private int carrying;
 
     public Truck() {
-
     }
 
     Truck(int power, int maxSpeed, int weight, String brand, int numberOfWheels, int fuelConsumption, int carrying) {
