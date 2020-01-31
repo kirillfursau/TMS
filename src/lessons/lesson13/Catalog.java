@@ -5,7 +5,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.List;
 
-
+/*
+Создайте класс Сatalog c полем cds.
+*/
 @XmlRootElement
 public class Catalog {
     private List<Cd> cds;

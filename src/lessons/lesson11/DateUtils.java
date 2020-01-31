@@ -3,7 +3,13 @@ package lessons.lesson11;
 import java.time.*;
 import java.util.GregorianCalendar;
 
-
+/*
+1. Класс DateUtils, в нЄм создаЄм следующие статические методы
+2. вывод текущей даты-времени в формате dd.MM.yyyy hh:mm:ss
+3. то же, что в п.2, но с указанием таймзоны (метод принимает код зоны)
+4. метод принимает LocalDateTime и возвращает LocalDateTime, который на 4 часа 30 минут позже
+5. метод, который принимает дату и возвращает boolean: €вл€етс€ ли год високосным
+ */
 public class DateUtils {
         public static void printNowDate(){
             LocalTime time = LocalTime.now();

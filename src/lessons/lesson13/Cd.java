@@ -2,7 +2,9 @@ package lessons.lesson13;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-
+/*
+Создайте класс CD с полями title, artist, year, price.
+*/
 @XmlRootElement
 public class Cd {
     private String title;

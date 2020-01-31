@@ -11,7 +11,16 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlRootElement;
-
+/*
+Создайте класс Converter, а в нём методы convertToXml(Catalog catalog, String fileName), readFromXml(String fileName),
+convertToJson(Catalog catalog, String fileName), readFromJson(String fileName).
+Все методы пишут и читают файлы, расположенные в конкретной директории, путь к которой указан в private static final
+поле в классе Converter.
+6. Можно приделать консольный интерфейс в виде меню, чтобы программа стала чуть-чуть похожа на БД магазина :)
+типа можно записать новый альбом в каталог, удалить из каталога итд.
+Также можно искать в каталоге все cd по имени исполнителя, а ещё можно выводить их в разных форматах на консоль
+(XML, JSON, просто текстом как раньше). Если мало идей, я могу ещё подкинуть)
+*/
 @XmlRootElement
 public class Converter {
     private static final String FILECATALOG = "/Users/kirylfursau/Desktop/TMS/src/lessons/lesson13/";
