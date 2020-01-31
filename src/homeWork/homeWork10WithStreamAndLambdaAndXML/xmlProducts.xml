@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Store>
+    <Product>
+        <Id>2</Id>
+        <Name>2</Name>
+        <Price>2</Price>
+    </Product>
+    <Product>
+        <Id>1</Id>
+        <Name>1</Name>
+        <Price>1</Price>
+    </Product>
+</Store>

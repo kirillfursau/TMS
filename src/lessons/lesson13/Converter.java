@@ -18,7 +18,6 @@ public class Converter {
 
     public static void convertToXml(Catalog catalog, String fileName) {
         try {
-
             File file = new File(FILECATALOG + fileName);
             JAXBContext context = JAXBContext.newInstance(Catalog.class);
             Marshaller marshaller = context.createMarshaller();

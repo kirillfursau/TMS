@@ -1,5 +1,9 @@
-package homeWork.homeWork10WithStreamAndLambda;
+package homeWork.homeWork10WithStreamAndLambdaAndXML;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Product {
     private int id;
     private String name;
@@ -25,15 +29,15 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
-
+    @XmlElement(name = "Price")
     public int getPrice() {
         return price;
     }
-
+    @XmlElement(name = "Id")
     public int getId() {
         return id;
     }
-
+    @XmlElement(name = "Name")
     public String getName() {
         return name;
     }

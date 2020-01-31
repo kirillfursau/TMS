@@ -1,4 +1,4 @@
-package homeWork.homeWork10WithStreamAndLambda;
+package homeWork.homeWork10WithStreamAndLambdaAndXML;
 
 
 public class Console {

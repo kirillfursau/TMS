@@ -15,7 +15,6 @@ public class Catalog {
     }
 
     Catalog() {
-
     }
 
     public List<Cd> getCds() {
