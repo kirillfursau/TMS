@@ -77,7 +77,7 @@ public class Store {
             Unmarshaller unmarshaller = context.createUnmarshaller();
             return (XmlProducts) unmarshaller.unmarshal(file);
         } catch (JAXBException e) {
-            System.out.println("У вас в магазине нет продуктов");
+            System.out.println("У вас в магазине нет товаров");
             return null;
         }
     }
