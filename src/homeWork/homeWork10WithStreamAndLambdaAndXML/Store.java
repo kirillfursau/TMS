@@ -157,11 +157,11 @@ public class Store {
         try {
             String key;
             do {
-                System.out.print("Текущая дата и время : ");
-                printNowDate();
                 printFirstMenu();
                 System.out.print("Введите номер меню: ");
                 key = sc.nextLine().trim();
+                System.out.print("Текущая дата и время : ");
+                printNowDate();
                 switch (key) {
                     case "1":
                         printSecondMenu();
@@ -232,7 +232,7 @@ public class Store {
                     default:
                         System.out.println("Вы ввели неверное значение меню.\n");
                 }
-            } while (key != "6");
+            } while (!key.equals("6"));
         } catch (InputMismatchException e) {
             System.out.println("Вы ввели неверное значение. Необходимо ввести цифу\n");
             start();

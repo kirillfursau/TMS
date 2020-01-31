@@ -154,6 +154,7 @@ public class Store {
                         System.out.println("Вы ввели неверное значение меню.\n");
                 }
             } while (key != "5");
+            System.out.println("6");
         } catch (InputMismatchException e) {
             System.out.println("Вы ввели неверное значение. Необходимо ввести цифу\n");
             start();
