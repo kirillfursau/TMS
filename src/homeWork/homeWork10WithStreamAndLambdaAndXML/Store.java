@@ -233,6 +233,7 @@ public class Store {
                         System.out.println("Вы ввели неверное значение меню.\n");
                 }
             } while (!key.equals("6"));
+            System.out.println("Завершение программы. Все данные сохранены.");
         } catch (InputMismatchException e) {
             System.out.println("Вы ввели неверное значение. Необходимо ввести цифу\n");
             start();

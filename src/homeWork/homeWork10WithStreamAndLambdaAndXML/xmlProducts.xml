@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Store>
+    <Product>
+        <Id>1</Id>
+        <Name>pepsi</Name>
+        <Price>50</Price>
+    </Product>
+    <Product>
+        <Id>2</Id>
+        <Name>cola</Name>
+        <Price>100</Price>
+    </Product>
+    <Product>
+        <Id>3</Id>
+        <Name>fanta</Name>
+        <Price>70</Price>
+    </Product>
+</Store>

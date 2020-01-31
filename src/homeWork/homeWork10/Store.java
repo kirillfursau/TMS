@@ -153,8 +153,7 @@ public class Store {
                     default:
                         System.out.println("Вы ввели неверное значение меню.\n");
                 }
-            } while (key != "5");
-            System.out.println("6");
+            } while (!key.equals("5"));
         } catch (InputMismatchException e) {
             System.out.println("Вы ввели неверное значение. Необходимо ввести цифу\n");
             start();
