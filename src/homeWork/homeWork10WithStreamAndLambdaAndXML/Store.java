@@ -59,15 +59,18 @@ public class Store {
     }
 
     public void convertToXml() {
-        try {
-            XmlProducts xmlProducts = new XmlProducts(products);
-            JAXBContext context = JAXBContext.newInstance(XmlProducts.class);
-            Marshaller marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            marshaller.marshal(xmlProducts, new File(FILEPATH));
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
+        Thread thread = new Thread(() -> {
+            try {
+                XmlProducts xmlProducts = new XmlProducts(products);
+                JAXBContext context = JAXBContext.newInstance(XmlProducts.class);
+                Marshaller marshaller = context.createMarshaller();
+                marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+                marshaller.marshal(xmlProducts, new File(FILEPATH));
+            } catch (JAXBException e) {
+                e.printStackTrace();
+            }
+        });
+        thread.start();
     }
 
     public XmlProducts readFromXml() {
