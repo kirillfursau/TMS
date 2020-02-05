@@ -29,7 +29,7 @@ public class CountryRepository {
         return countries;
     }
 
-    public Optional<Country> getCountryByCode(String code) {
+    static public Optional<Country> getCountryByCode(String code) {
         try {
             Connection connection = DriverManager.
                     getConnection("jdbc:mysql://localhost:3306/new_schema", "root", "rootroot");

@@ -47,4 +47,15 @@ public class City {
     public void setCapital(boolean capital) {
         isCapital = capital;
     }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", countryId=" + countryId +
+                ", isCapital=" + isCapital +
+                '}';
+    }
 }
+

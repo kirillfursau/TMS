@@ -1,3 +1,5 @@
+package lessons.lesson3;
+
 public class Task3 {
     public static void main(String[] args) {
         int num1 = 1;

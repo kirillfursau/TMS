@@ -1,4 +1,4 @@
-package lesson4;
+package lessons.lesson3;
 
 import java.util.Scanner;
 
@@ -16,8 +16,8 @@ public class Exe1 {
         }
         System.out.println();
         for (int i = 0; i < length; i++) {
-                for (int j = i + 1; j < length; j++) {
-                    if (array[i] > array[j]) {
+            for (int j = i + 1; j < length; j++) {
+                if (array[i] > array[j]) {
                     sort = array[i];
                     array[i] = array[j];
                     array[j] = sort;

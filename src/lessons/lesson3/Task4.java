@@ -1,3 +1,5 @@
+package lessons.lesson3;
+
 public class Task4 {
     public static void main(String[] args) {
         for (int i = 13; i < 57; i++) {

@@ -1,3 +1,5 @@
+package lessons.lesson3;
+
 public class HomeWork2Ex1 {
     public static void main(String[] args) {
         double dist = 10;

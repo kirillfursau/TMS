@@ -1,3 +1,5 @@
+package lessons.lesson3;
+
 public class Task1 {
     public static void main(String[] args) {
         int i = 13;
