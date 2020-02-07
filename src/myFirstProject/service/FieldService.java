@@ -11,6 +11,6 @@ public class FieldService {
     }
 
     makeMove(Field field, int x, int y) {
-        field.setFigure(x, y, );
+        field.setFigure(Figx, y );
     }
 }
