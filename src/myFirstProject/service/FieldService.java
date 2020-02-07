@@ -2,7 +2,10 @@ package myFirstProject.service;
 
 import myFirstProject.model.Field;
 import myFirstProject.model.Figure;
+import myFirstProject.model.exception.AlreadyOccupiedException;
+import myFirstProject.model.exception.MoveOutOfBoundsException;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FieldService {
@@ -35,14 +38,27 @@ public class FieldService {
     }
 
     public void makeMove(Field field) {
-        whoTurn(field);
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter x : ");
-        int x = scanner.nextInt();
-        System.out.print("Enter y : ");
-        int y = scanner.nextInt();
-        if (field.getFigure(x, y) != Figure.X && field.getFigure(x, y) != Figure.O) {
-            field.setFigure(x, y, getNextFigure(field));
+        try {
+            whoTurn(field);
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter x : ");
+            int x = scanner.nextInt();
+            System.out.print("Enter y : ");
+            int y = scanner.nextInt();
+            if (x > 2 || y > 2) {
+                throw new MoveOutOfBoundsException();
+            }
+            if (field.getFigure(x, y) != Figure.X && field.getFigure(x, y) != Figure.O) {
+                field.setFigure(x, y, getNextFigure(field));
+            } else {
+                throw new AlreadyOccupiedException();
+            }
+        } catch (AlreadyOccupiedException e) {
+            System.out.println("This field is occupied");
+        } catch (MoveOutOfBoundsException e) {
+            System.out.println("There is no such field");
+        } catch (InputMismatchException e) {
+            System.out.println("You did't enter a number");
         }
     }
 
@@ -61,6 +77,9 @@ public class FieldService {
     public void draw(Field field) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
+                if (field.getFigure(i, j) == null) {
+                    field.setFigure(i, j, Figure._);
+                }
                 System.out.print(field.getFigure(i, j) + " ");
             }
             System.out.println();

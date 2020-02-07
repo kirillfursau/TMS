@@ -58,6 +58,7 @@ public class GameService {
             return false;
         }
         new FieldService().draw(game.getField());
+        System.out.println("The winner is " + getWinner(game));
         return true;
     }
 }

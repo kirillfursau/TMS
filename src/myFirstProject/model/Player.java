@@ -24,4 +24,9 @@ public class Player {
     public void setFigure(Figure figure) {
         this.figure = figure;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
