@@ -1,10 +1,9 @@
 package myFirstProject.model;
 
 public class Field {
-    static Figure[][] figure = new Figure[3][3];
+    private Figure[][] figure = new Figure[3][3];
 
-    public Field(Figure[][] figure) {
-        this.figure = figure;
+    public Field() {
     }
 
     public Figure getFigure(int x, int y) {

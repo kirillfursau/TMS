@@ -1,14 +1,13 @@
 package myFirstProject.model;
 
 public class Game {
-    Player player1;
-    Player player2;
-    Field field;
+    private Player player1;
+    private Player player2;
 
-    public Game(Player player1, Player player2, Field field) {
+    public Game(Player player1, Player player2) {
         setPlayer1(player1);
         setPlayer2(player2);
-        setField(field);
+        new Field();
     }
 
     public Player getPlayer1() {
@@ -25,13 +24,5 @@ public class Game {
 
     public void setPlayer2(Player player2) {
         this.player2 = player2;
-    }
-
-    public Field getField() {
-        return field;
-    }
-
-    public void setField(Field field) {
-        this.field = field;
     }
 }

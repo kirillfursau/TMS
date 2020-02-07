@@ -1,8 +1,8 @@
 package myFirstProject.model;
 
 public class Player {
-    String name;
-    Figure figure;
+    private String name;
+    private Figure figure;
 
     public Player(String name, Figure figure) {
         setName(name);
