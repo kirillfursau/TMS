@@ -3,9 +3,6 @@ package myFirstProject.model;
 public class Field {
     private Figure[][] figure = new Figure[3][3];
 
-    public Field() {
-    }
-
     public Figure getFigure(int x, int y) {
         return figure[x][y];
     }
