@@ -3,28 +3,49 @@ package myFirstProject.service;
 import myFirstProject.model.Field;
 import myFirstProject.model.Figure;
 
+import java.util.Scanner;
+
 public class FieldService {
 
     Figure getNextFigure(Field field) {
-        int counter = 0;
+        int counterX = 0;
+        int counterO = 0;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (field.getFigure(i, j) == Figure.X) {
-                    counter++;
+                    counterX++;
+                }
+                if (field.getFigure(i, j) == Figure.O) {
+                    counterO++;
                 }
             }
         }
-        if (counter % 2 == 0) {
+        if (counterX == counterO) {
             return Figure.X;
         }
         return Figure.O;
     }
 
-    public void makeMove(Field field, int x, int y) {
-        if (field.getFigure(x, y) != Figure.O && field.getFigure(x, y) != Figure.X) {
+    void whoTurn(Field field) {
+        if (getNextFigure(field) == Figure.O) {
+            System.out.println("Turn O");
+        } else {
+            System.out.println("Turn X");
+        }
+    }
+
+    public void makeMove(Field field) {
+        whoTurn(field);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter x : ");
+        int x = scanner.nextInt();
+        System.out.print("Enter y : ");
+        int y = scanner.nextInt();
+        if (field.getFigure(x, y) != Figure.X && field.getFigure(x, y) != Figure.O) {
             field.setFigure(x, y, getNextFigure(field));
         }
     }
+
 
     public boolean isFull(Field field) {
         for (int i = 0; i < 3; i++) {

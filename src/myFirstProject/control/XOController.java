@@ -40,11 +40,11 @@ public class XOController {
         Field field = new Field();
         GameService gameService = new GameService();
         FieldService fieldService = new FieldService();
-        XOController xoController = new XOController(gameService,fieldService);
+        XOController xoController = new XOController(gameService, fieldService);
         Game game = new Game(new Player(xPlayerName, Figure.X), new Player(yPlayerName, Figure.O), field);
         while (!getGameService().isOver(game)) {
             getFieldService().draw(field);
-            getFieldService().makeMove(field,scanner.nextInt(),scanner.nextInt());
+            getFieldService().makeMove(field);
         }
     }
 }
