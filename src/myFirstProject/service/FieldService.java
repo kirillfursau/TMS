@@ -20,13 +20,13 @@ public class FieldService {
         return Figure.O;
     }
 
-    void makeMove(Field field, int x, int y) {
+    public void makeMove(Field field, int x, int y) {
         if (field.getFigure(x, y) != Figure.O && field.getFigure(x, y) != Figure.X) {
             field.setFigure(x, y, getNextFigure(field));
         }
     }
 
-    boolean isFull(Field field) {
+    public boolean isFull(Field field) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (field.getFigure(i, j) != Figure.O && field.getFigure(i, j) != Figure.X) {
@@ -37,10 +37,10 @@ public class FieldService {
         return true;
     }
 
-    void draw(Field field) {
+    public void draw(Field field) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                System.out.println(field.getFigure(i, j));
+                System.out.print(field.getFigure(i, j) + " ");
             }
             System.out.println();
         }

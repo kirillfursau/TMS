@@ -7,7 +7,7 @@ import myFirstProject.model.Player;
 import java.util.Optional;
 
 public class GameService {
-    Optional<Player> getWinner(Game game) {
+    public Optional<Player> getWinner(Game game) {
         for (int p = 0; p < 3; p++) {
             if ((game.getField().getFigure(p, 0) == Figure.X && game.getField().getFigure(p, 1) == Figure.X &&
                     game.getField().getFigure(p, 1) == Figure.X) ||
@@ -53,7 +53,7 @@ public class GameService {
         return Optional.empty();
     }
 
-    boolean isOver(Game game) {
+    public boolean isOver(Game game) {
         if (getWinner(game) != null && new FieldService().isFull(game.getField()) == false) {
             return false;
         }
