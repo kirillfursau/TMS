@@ -43,9 +43,9 @@ public class PersonRepository {
             e.printStackTrace();
         }
     }
-    Collection<People> getAllPeopleOfAge(int n){
-
-    }
+//    Collection<People> getAllPeopleOfAge(int n){
+//
+//    }
 
     public static void main(String[] args) {
         PersonRepository personRepository = new PersonRepository();
