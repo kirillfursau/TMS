@@ -1,21 +1,13 @@
 package myFirstProject.model;
 
-public class Player {
-    private String name;
+public abstract class Player {
     private Figure figure;
 
-    public Player(String name, Figure figure) {
-        setName(name);
+    public Player(Figure figure) {
         setFigure(figure);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    abstract public String getName();
 
     public Figure getFigure() {
         return figure;
@@ -27,6 +19,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return " name  " + name + ". The figure is " + figure;
+        return "The figure is " + figure;
     }
 }
