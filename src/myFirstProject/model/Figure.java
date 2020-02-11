@@ -1,5 +1,5 @@
 package myFirstProject.model;
 
 public enum Figure {
-    X, O,_
+    X, O
 }

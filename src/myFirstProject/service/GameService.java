@@ -34,7 +34,7 @@ public class GameService {
                     game.getField().getFigure(p, 2) == Figure.O) ||
                     (game.getField().getFigure(0, p) == Figure.O && game.getField().getFigure(1, p) == Figure.O &&
                             game.getField().getFigure(2, p) == Figure.O)) {
-                if (game.getPlayer1().getFigure() == Figure.X) {
+                if (game.getPlayer1().getFigure() == Figure.O) {
                     return Optional.of(game.getPlayer1());
                 } else {
                     return Optional.of(game.getPlayer2());
@@ -43,7 +43,7 @@ public class GameService {
                     == Figure.O && game.getField().getFigure(2, 2) == Figure.O) ||
                     (game.getField().getFigure(2, 0) == Figure.O && game.getField().getFigure(1, 1)
                             == Figure.O && game.getField().getFigure(0, 2) == Figure.O)) {
-                if (game.getPlayer1().getFigure() == Figure.X) {
+                if (game.getPlayer1().getFigure() == Figure.O) {
                     return Optional.of(game.getPlayer1());
                 } else {
                     return Optional.of(game.getPlayer2());
@@ -53,12 +53,12 @@ public class GameService {
         return Optional.empty();
     }
 
-    public boolean isOver(Game game) {
-        if (!getWinner(game).isPresent() && new FieldService().isFull(game.getField()) == false) {
+    public boolean isOver(Game game, FieldService fieldService) {
+        if (!getWinner(game).isPresent() && fieldService.isFull(game.getField()) == false) {
             return false;
         }
-        new FieldService().draw(game.getField());
-        System.out.println("The winner is " + getWinner(game));
+        fieldService.draw(game.getField());
+        System.out.println("The winner is " + getWinner(game).get().getName());
         return true;
     }
 }

@@ -8,7 +8,7 @@ public class Game {
     public Game(Player player1, Player player2, Field field) {
         setPlayer1(player1);
         setPlayer2(player2);
-        setField(field);
+        this.field = field;
     }
 
     public Player getPlayer1() {
@@ -31,7 +31,4 @@ public class Game {
         return field;
     }
 
-    public void setField(Field field) {
-        this.field = field;
-    }
 }

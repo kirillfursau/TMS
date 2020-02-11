@@ -4,25 +4,31 @@ import myFirstProject.model.Field;
 import myFirstProject.model.Figure;
 import myFirstProject.model.exception.AlreadyOccupiedException;
 import myFirstProject.model.exception.MoveOutOfBoundsException;
+import myFirstProject.model.exception.XOException;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+
+import java.util.*;
+
 
 public class FieldService {
 
     Figure getNextFigure(Field field) {
-        int counterX = 0;
-        int counterO = 0;
+        List<Figure> figures = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (field.getFigure(i, j) == Figure.X) {
-                    counterX++;
-                }
-                if (field.getFigure(i, j) == Figure.O) {
-                    counterO++;
+                if (field.getFigure(i, j) != null) {
+                    figures.add(field.getFigure(i, j));
                 }
             }
         }
+        int counterX = (int) figures.stream()
+                .filter(Figure -> Figure == myFirstProject.model.Figure.X)
+                .count();
+
+        int counterO = (int) figures.stream()
+                .filter(Figure -> Figure == myFirstProject.model.Figure.O)
+                .count();
+
         if (counterX == counterO) {
             return Figure.X;
         }
@@ -37,28 +43,15 @@ public class FieldService {
         }
     }
 
-    public void makeMove(Field field) {
-        try {
-            whoTurn(field);
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Enter x : ");
-            int x = scanner.nextInt();
-            System.out.print("Enter y : ");
-            int y = scanner.nextInt();
-            if (x > 2 || y > 2) {
-                throw new MoveOutOfBoundsException();
-            }
-            if (field.getFigure(x, y) != Figure.X && field.getFigure(x, y) != Figure.O) {
-                field.setFigure(x, y, getNextFigure(field));
-            } else {
-                throw new AlreadyOccupiedException();
-            }
-        } catch (AlreadyOccupiedException e) {
-            System.out.println("This field is occupied");
-        } catch (MoveOutOfBoundsException e) {
-            System.out.println("There is no such field");
-        } catch (InputMismatchException e) {
-            System.out.println("You did't enter a number");
+    public void makeMove(Field field, int x, int y) throws XOException {
+        whoTurn(field);
+        if (x > 2 || y > 2) {
+            throw new MoveOutOfBoundsException();
+        }
+        if (field.getFigure(x, y) != Figure.X && field.getFigure(x, y) != Figure.O) {
+            field.setFigure(x, y, getNextFigure(field));
+        } else {
+            throw new AlreadyOccupiedException();
         }
     }
 
@@ -78,9 +71,10 @@ public class FieldService {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (field.getFigure(i, j) == null) {
-                    field.setFigure(i, j, Figure._);
+                    System.out.print("_ ");
+                } else {
+                    System.out.print(field.getFigure(i, j) + " ");
                 }
-                System.out.print(field.getFigure(i, j) + " ");
             }
             System.out.println();
         }
