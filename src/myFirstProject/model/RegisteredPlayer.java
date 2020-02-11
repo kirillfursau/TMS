@@ -1,15 +1,15 @@
 package myFirstProject.model;
 
 public class RegisteredPlayer extends Player {
-    private String name;
+    private User user;
 
-    public RegisteredPlayer(String name, Figure figure) {
+    public RegisteredPlayer(Figure figure, User user) {
         super(figure);
-        this.name = name;
+
     }
 
     @Override
     public String getName() {
-        return name;
+        return user.getName();
     }
 }
