@@ -10,7 +10,7 @@ public class TrackedGame extends Game {
                        int gameId, DateUtils dateUtils) {
         super(player1, player2, field);
         setGameId(gameId);
-        setDateUtils(dateUtils);
+        this.dateUtils = dateUtils;
     }
 
     @Override
@@ -40,7 +40,4 @@ public class TrackedGame extends Game {
         return dateUtils;
     }
 
-    public void setDateUtils(DateUtils dateUtils) {
-        this.dateUtils = dateUtils;
-    }
 }
