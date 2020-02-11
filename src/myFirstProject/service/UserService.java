@@ -2,8 +2,7 @@ package myFirstProject.service;
 
 import myFirstProject.model.User;
 import myFirstProject.model.UserRepository;
-
-import java.util.Optional;
+import myFirstProject.model.exception.NotFoundException;
 
 public class UserService {
     private UserRepository userRepository;
@@ -21,13 +20,10 @@ public class UserService {
         return userRepository;
     }
 
-    public Optional<User> getUserByName(String name) {
-        Optional<User> findUserByName = InMemoryUserRepository.getUsers().stream()
-                .filter(user -> user.getName() == name)
-                .findAny();
-        if (findUserByName == null) {
-            return Optional.empty();
+    public User findUserByName(String name, InMemoryUserRepository inMemoryUserRepository) throws NotFoundException {
+        if (inMemoryUserRepository.getUserByName(name).isPresent()) {
+            return inMemoryUserRepository.getUserByName(name).get();
         }
-        return findUserByName;
+        throw new NotFoundException();
     }
 }

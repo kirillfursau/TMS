@@ -5,7 +5,6 @@ public class RegisteredPlayer extends Player {
 
     public RegisteredPlayer(Figure figure, User user) {
         super(figure);
-
     }
 
     @Override

@@ -42,8 +42,8 @@ public class XOController {
     public void startGame(String xPlayerName, String yPlayerName) {
         Field field = new Field();
         FieldService fieldService = new FieldService();
-        Game game = new Game(new Player(xPlayerName, Figure.X), new Player(yPlayerName, Figure.O), field);
-        while (!getGameService().isOver(game, fieldService)) {
+//        Game game = new Game(new Player(xPlayerName, Figure.X), new Player(yPlayerName, Figure.O), field);
+//        while (!getGameService().isOver(game, fieldService)) {
             try {
                 Scanner scanner = new Scanner(System.in);
                 getFieldService().draw(field);
@@ -63,4 +63,4 @@ public class XOController {
             }
         }
     }
-}
+//}
