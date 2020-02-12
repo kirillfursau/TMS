@@ -8,6 +8,7 @@ import myFirstProject.model.exception.XOException;
 
 
 import java.util.*;
+import java.util.stream.Stream;
 
 
 public class FieldService {
@@ -22,12 +23,14 @@ public class FieldService {
             }
         }
 
-        long counterX = figures.stream()
-                .filter(x -> x == myFirstProject.model.Figure.X)
+        long counterX = Arrays.stream(field.getFigures())
+                .flatMap(e -> Stream.of(e)
+                        .filter(el -> el == Figure.X))
                 .count();
 
-        long counterO = figures.stream()
-                .filter(x -> x == myFirstProject.model.Figure.O)
+        long counterO = Arrays.stream(field.getFigures())
+                .flatMap(e -> Stream.of(e)
+                        .filter(el -> el == Figure.O))
                 .count();
 
         if (counterX == counterO) {
@@ -50,12 +53,12 @@ public class FieldService {
 
 
     public boolean isFull(Field field) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (field.getFigure(i, j) == null) {
-                    return false;
-                }
-            }
+        long empty = Arrays.stream(field.getFigures())
+                .flatMap(e -> Stream.of(e)
+                        .filter(el -> el == null))
+                .count();
+        if (empty > 0) {
+            return false;
         }
         return true;
     }

@@ -1,13 +1,17 @@
 package myFirstProject.model;
 
 public class Field {
-    private Figure[][] figure = new Figure[3][3];
+    private Figure[][] figures= new Figure[3][3];
 
     public Figure getFigure(int x, int y) {
-        return figure[x][y];
+        return figures[x][y];
     }
 
     public void setFigure(int x, int y, Figure figureEnter) {
-        figure[x][y] = figureEnter;
+        figures[x][y] = figureEnter;
+    }
+
+    public Figure[][] getFigures() {
+        return figures;
     }
 }
