@@ -16,12 +16,8 @@ public class FieldService {
     public Figure getNextFigure(Field field) {
         if (Arrays.stream(field.getFigures())
                 .flatMap(e -> Stream.of(e)
-                        .filter(el -> el == Figure.X))
-                .count() ==
-                Arrays.stream(field.getFigures())
-                        .flatMap(e -> Stream.of(e)
-                                .filter(el -> el == Figure.O))
-                        .count()) {
+                        .filter(el -> el == Figure.X || el == Figure.O))
+                .count() % 2 == 0) {
             return Figure.X;
         }
         return Figure.O;
