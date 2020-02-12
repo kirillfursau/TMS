@@ -14,26 +14,14 @@ import java.util.stream.Stream;
 public class FieldService {
 
     public Figure getNextFigure(Field field) {
-        List<Figure> figures = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (field.getFigure(i, j) != null) {
-                    figures.add(field.getFigure(i, j));
-                }
-            }
-        }
-
-        long counterX = Arrays.stream(field.getFigures())
+        if (Arrays.stream(field.getFigures())
                 .flatMap(e -> Stream.of(e)
                         .filter(el -> el == Figure.X))
-                .count();
-
-        long counterO = Arrays.stream(field.getFigures())
-                .flatMap(e -> Stream.of(e)
-                        .filter(el -> el == Figure.O))
-                .count();
-
-        if (counterX == counterO) {
+                .count() ==
+                Arrays.stream(field.getFigures())
+                        .flatMap(e -> Stream.of(e)
+                                .filter(el -> el == Figure.O))
+                        .count()) {
             return Figure.X;
         }
         return Figure.O;
@@ -53,14 +41,10 @@ public class FieldService {
 
 
     public boolean isFull(Field field) {
-        long empty = Arrays.stream(field.getFigures())
+        return Arrays.stream(field.getFigures())
                 .flatMap(e -> Stream.of(e)
                         .filter(el -> el == null))
-                .count();
-        if (empty > 0) {
-            return false;
-        }
-        return true;
+                .count() == 0;
     }
 
     public void draw(Field field) {
