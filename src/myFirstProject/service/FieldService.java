@@ -12,7 +12,7 @@ import java.util.*;
 
 public class FieldService {
 
-    Figure getNextFigure(Field field) {
+    public Figure getNextFigure(Field field) {
         List<Figure> figures = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -21,12 +21,13 @@ public class FieldService {
                 }
             }
         }
-        int counterX = (int) figures.stream()
-                .filter(Figure -> Figure == myFirstProject.model.Figure.X)
+
+        long counterX = figures.stream()
+                .filter(x -> x == myFirstProject.model.Figure.X)
                 .count();
 
-        int counterO = (int) figures.stream()
-                .filter(Figure -> Figure == myFirstProject.model.Figure.O)
+        long counterO = figures.stream()
+                .filter(x -> x == myFirstProject.model.Figure.O)
                 .count();
 
         if (counterX == counterO) {
@@ -35,17 +36,9 @@ public class FieldService {
         return Figure.O;
     }
 
-    void whoTurn(Field field) {
-        if (getNextFigure(field) == Figure.O) {
-            System.out.println("Turn O");
-        } else {
-            System.out.println("Turn X");
-        }
-    }
 
     public void makeMove(Field field, int x, int y) throws XOException {
-        whoTurn(field);
-        if (x > 2 || y > 2) {
+        if (x > 2 || y > 2 || x < 0 || y < 0) {
             throw new MoveOutOfBoundsException();
         }
         if (field.getFigure(x, y) != Figure.X && field.getFigure(x, y) != Figure.O) {
@@ -59,7 +52,7 @@ public class FieldService {
     public boolean isFull(Field field) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (field.getFigure(i, j) != Figure.O && field.getFigure(i, j) != Figure.X) {
+                if (field.getFigure(i, j) == null) {
                     return false;
                 }
             }

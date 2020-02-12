@@ -1,4 +1,6 @@
-package myFirstProject.model;
+package myFirstProject.repository;
+
+import myFirstProject.model.User;
 
 import java.util.Optional;
 

@@ -7,7 +7,7 @@ public abstract class Player {
         setFigure(figure);
     }
 
-    abstract public String getName();
+    public abstract String getName();
 
     public Figure getFigure() {
         return figure;

@@ -1,7 +1,6 @@
-package myFirstProject.service;
+package myFirstProject.repository;
 
 import myFirstProject.model.User;
-import myFirstProject.model.UserRepository;
 
 import java.util.List;
 import java.util.Optional;

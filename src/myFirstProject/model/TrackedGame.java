@@ -2,15 +2,18 @@ package myFirstProject.model;
 
 import lessons.lesson11.DateUtils;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class TrackedGame extends Game {
     private int gameId;
-    private DateUtils dateUtils;
+    private LocalDateTime localDateTime;
 
     public TrackedGame(RegisteredPlayer player1, RegisteredPlayer player2, Field field,
-                       int gameId, DateUtils dateUtils) {
+                       int gameId, LocalDateTime localDateTime) {
         super(player1, player2, field);
         setGameId(gameId);
-        this.dateUtils = dateUtils;
+        this.localDateTime = localDateTime;
     }
 
     @Override
@@ -36,8 +39,5 @@ public class TrackedGame extends Game {
         this.gameId = gameId;
     }
 
-    public DateUtils getDateUtils() {
-        return dateUtils;
-    }
 
 }

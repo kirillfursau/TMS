@@ -1,9 +1,9 @@
 package myFirstProject.model;
 
 public abstract class Game {
-    private Player player1;
-    private Player player2;
-    private Field field;
+    public Player player1;
+    public Player player2;
+    public Field field;
 
     public Game(Player player1, Player player2, Field field) {
         this.player1 = player1;

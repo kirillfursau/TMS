@@ -1,15 +1,15 @@
 package myFirstProject.control;
 
-import myFirstProject.model.Field;
-import myFirstProject.model.Figure;
-import myFirstProject.model.Game;
-import myFirstProject.model.Player;
+import lessons.lesson11.DateUtils;
+import myFirstProject.model.*;
 import myFirstProject.model.exception.AlreadyOccupiedException;
 import myFirstProject.model.exception.MoveOutOfBoundsException;
 import myFirstProject.model.exception.XOException;
 import myFirstProject.service.FieldService;
 import myFirstProject.service.GameService;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -39,14 +39,31 @@ public class XOController {
         this.fieldService = fieldService;
     }
 
-    public void startGame(String xPlayerName, String yPlayerName) {
+
+    public void startGameNonRegisteredGame(String xPlayerName, String yPlayerName) {
         Field field = new Field();
-        FieldService fieldService = new FieldService();
-//        Game game = new Game(new Player(xPlayerName, Figure.X), new Player(yPlayerName, Figure.O), field);
-//        while (!getGameService().isOver(game, fieldService)) {
+        Game game = new QuickGame(new NotRegisteredPlayer(Figure.X, xPlayerName),
+                new NotRegisteredPlayer(Figure.O, yPlayerName), field);
+        gameSickle(game, field);
+    }
+
+    public void startGameRegisteredGame(String xPlayerName, String yPlayerName) {
+        Field field = new Field();
+        Game game = new TrackedGame(new RegisteredPlayer(Figure.X, new User(1, xPlayerName)),
+                new RegisteredPlayer(Figure.O, new User(2, yPlayerName)), field, 1, LocalDateTime.now());
+        gameSickle(game, field);
+    }
+
+    public void gameSickle(Game game, Field field) {
+        while (!getGameService().isOver(game, fieldService)) {
             try {
                 Scanner scanner = new Scanner(System.in);
                 getFieldService().draw(field);
+                if (fieldService.getNextFigure(field) == Figure.O) {
+                    System.out.println("Turn O");
+                } else {
+                    System.out.println("Turn X");
+                }
                 System.out.print("Enter x : ");
                 int x = scanner.nextInt();
                 System.out.print("Enter y : ");
@@ -63,4 +80,4 @@ public class XOController {
             }
         }
     }
-//}
+}

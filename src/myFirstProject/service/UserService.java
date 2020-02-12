@@ -1,8 +1,9 @@
 package myFirstProject.service;
 
 import myFirstProject.model.User;
-import myFirstProject.model.UserRepository;
+import myFirstProject.repository.UserRepository;
 import myFirstProject.model.exception.NotFoundException;
+import myFirstProject.repository.InMemoryUserRepository;
 
 public class UserService {
     private UserRepository userRepository;

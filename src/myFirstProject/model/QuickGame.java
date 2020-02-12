@@ -7,16 +7,16 @@ public class QuickGame extends Game {
 
     @Override
     public Player getPlayer1() {
-        return getPlayer1();
+        return player1;
     }
 
     @Override
     public Player getPlayer2() {
-        return getPlayer2();
+        return player2;
     }
 
     @Override
     public Field getField() {
-        return getField();
+        return field;
     }
 }
