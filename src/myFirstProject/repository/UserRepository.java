@@ -5,7 +5,7 @@ import myFirstProject.model.User;
 import java.util.Optional;
 
 public interface UserRepository {
-    public User saveUser(User user);
+    User saveUser(User user);
 
     Optional<User> getUserByName(String name);
 }

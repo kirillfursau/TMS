@@ -7,19 +7,21 @@ import java.util.Optional;
 
 public class InMemoryUserRepository implements UserRepository {
     private static List<User> users;
+    static int countId;
 
-    public List<User> addUser(User user) {
-
+    public List<User> addUserToList(User user) {
+        users.add(user);
         return users;
     }
 
-    public static List<User> getUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
     @Override
     public User saveUser(User user) {
-        users.add(user);
+        user.setId(countId);
+        countId++;
         return user;
     }
 
