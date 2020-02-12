@@ -7,6 +7,6 @@ import myFirstProject.service.GameService;
 public class Main {
     public static void main(String[] args) {
         XOController xoController = new XOController(new GameService(), new FieldService());
-        xoController.startNonRegisteredGame("Kiryl", "Dima");
+        xoController.startRegisteredGame("Kiryl","Dima");
     }
 }
