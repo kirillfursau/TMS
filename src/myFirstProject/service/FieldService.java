@@ -23,7 +23,6 @@ public class FieldService {
         return Figure.O;
     }
 
-
     public void makeMove(Field field, int x, int y) throws XOException {
         if (x > 2 || y > 2 || x < 0 || y < 0) {
             throw new MoveOutOfBoundsException();
