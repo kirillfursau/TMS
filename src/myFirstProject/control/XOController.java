@@ -40,14 +40,14 @@ public class XOController {
     }
 
 
-    public void startGameNonRegisteredGame(String xPlayerName, String yPlayerName) {
+    public void startNonRegisteredGame(String xPlayerName, String yPlayerName) {
         Field field = new Field();
         Game game = new QuickGame(new NotRegisteredPlayer(Figure.X, xPlayerName),
                 new NotRegisteredPlayer(Figure.O, yPlayerName), field);
         gameSickle(game, field);
     }
 
-    public void startGameRegisteredGame(String xPlayerName, String yPlayerName) {
+    public void startRegisteredGame(String xPlayerName, String yPlayerName) {
         Field field = new Field();
         Game game = new TrackedGame(new RegisteredPlayer(Figure.X, new User(1, xPlayerName)),
                 new RegisteredPlayer(Figure.O, new User(2, yPlayerName)), field, 1, LocalDateTime.now());
