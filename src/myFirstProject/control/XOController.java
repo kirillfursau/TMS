@@ -5,6 +5,7 @@ import myFirstProject.model.*;
 import myFirstProject.model.exception.AlreadyOccupiedException;
 import myFirstProject.model.exception.MoveOutOfBoundsException;
 import myFirstProject.model.exception.XOException;
+import myFirstProject.repository.DatabaseGameRepository;
 import myFirstProject.repository.DatabaseUserRepository;
 import myFirstProject.service.FieldService;
 import myFirstProject.service.GameService;
@@ -53,10 +54,12 @@ public class XOController {
         User user = new User(2, xPlayerName);
         User user1 = new User(3, yPlayerName);
         DatabaseUserRepository databaseUserRepository = new DatabaseUserRepository();
+        DatabaseGameRepository  databaseGameRepository = new DatabaseGameRepository();
         databaseUserRepository.saveUser(user);
         databaseUserRepository.saveUser(user1);
-        Game game = new TrackedGame(new RegisteredPlayer(Figure.X, user),
+        TrackedGame game = new TrackedGame(new RegisteredPlayer(Figure.X, user),
                 new RegisteredPlayer(Figure.O, user1), field, 1, LocalDateTime.now());
+        databaseGameRepository.saveGame(game);
         gameSickle(game, field);
     }
 

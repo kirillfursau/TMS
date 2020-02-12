@@ -1,8 +1,5 @@
 package myFirstProject.model;
 
-import lessons.lesson11.DateUtils;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class TrackedGame extends Game {
@@ -29,6 +26,10 @@ public class TrackedGame extends Game {
     @Override
     public Field getField() {
         return field;
+    }
+
+    public LocalDateTime getLocalDateTime() {
+        return localDateTime.now();
     }
 
     public int getGameId() {
