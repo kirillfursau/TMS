@@ -1,6 +1,5 @@
 package myFirstProject.repository;
 
-import lessons.lesson15.Country;
 import myFirstProject.model.User;
 
 import java.sql.*;

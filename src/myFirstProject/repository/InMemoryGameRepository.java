@@ -1,6 +1,5 @@
 package myFirstProject.repository;
 
-import myFirstProject.model.Game;
 import myFirstProject.model.TrackedGame;
 
 import java.util.List;
