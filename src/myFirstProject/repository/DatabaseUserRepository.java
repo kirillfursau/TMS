@@ -13,7 +13,8 @@ public class DatabaseUserRepository implements UserRepository {
             Connection connection = DriverManager.
                     getConnection("jdbc:mysql://localhost:3306/XO_schema", "root", "rootroot");
             Statement statement = connection.createStatement();
-            statement.executeUpdate("INSERT INTO users VALUES (" + user.getId() + ",'" + user.getName() + "')");
+            statement.executeUpdate("REPLACE INTO users SET id = " + user.getId() + ",name = '"
+                    + user.getName() + "'");
         } catch (SQLException e) {
             e.printStackTrace();
         }

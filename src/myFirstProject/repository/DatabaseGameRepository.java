@@ -2,10 +2,7 @@ package myFirstProject.repository;
 
 import myFirstProject.model.TrackedGame;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class DatabaseGameRepository implements GameRepository {
     @Override
@@ -14,9 +11,9 @@ public class DatabaseGameRepository implements GameRepository {
             Connection connection = DriverManager.
                     getConnection("jdbc:mysql://localhost:3306/XO_schema", "root", "rootroot");
             Statement statement = connection.createStatement();
-            statement.executeUpdate("INSERT INTO games VALUES ('" + trackedGame.getPlayer1().getName() + "','"
-                    + trackedGame.getPlayer2().getName() + "'," + trackedGame.getGameId() + ",'"
-                    + trackedGame.getLocalDateTime() + "')");
+            statement.executeUpdate("REPLACE INTO games SET x_user = '" + trackedGame.getPlayer1().getName()
+                    + "',o_user = '" + trackedGame.getPlayer2().getName() + "', id = " + trackedGame.getGameId()
+                    + ",time = '" + trackedGame.getLocalDateTime() + "'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
