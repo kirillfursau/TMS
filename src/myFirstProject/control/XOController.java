@@ -1,6 +1,5 @@
 package myFirstProject.control;
 
-import lessons.lesson11.DateUtils;
 import myFirstProject.model.*;
 import myFirstProject.model.exception.AlreadyOccupiedException;
 import myFirstProject.model.exception.MoveOutOfBoundsException;
@@ -10,7 +9,6 @@ import myFirstProject.repository.DatabaseUserRepository;
 import myFirstProject.service.FieldService;
 import myFirstProject.service.GameService;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -50,26 +48,22 @@ public class XOController {
     }
 
     public void startRegisteredGame(String xPlayerName, String yPlayerName) {
-        try {
-            Field field = new Field();
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Enter X user name : ");
-            xPlayerName = scanner.nextLine();
-            User user = new User((int) (Math.random() * 100), xPlayerName);
-            System.out.print("Enter O user name : ");
-            yPlayerName = scanner.nextLine();
-            User user1 = new User((int) (Math.random() * 100), yPlayerName);
-            DatabaseUserRepository databaseUserRepository = new DatabaseUserRepository();
-            DatabaseGameRepository databaseGameRepository = new DatabaseGameRepository();
-            databaseUserRepository.saveUser(user);
-            databaseUserRepository.saveUser(user1);
-            TrackedGame game = new TrackedGame(new RegisteredPlayer(Figure.X, user),
-                    new RegisteredPlayer(Figure.O, user1), field, (int) (Math.random() * 100), LocalDateTime.now());
-            databaseGameRepository.saveGame(game);
-            gameSickle(game, field);
-        } catch (InputMismatchException e) {
-            System.out.println("You did't enter a number");
-        }
+        Field field = new Field();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter X user name : ");
+        xPlayerName = scanner.nextLine();
+        User user = new User((int) (Math.random() * 100), xPlayerName);
+        System.out.print("Enter O user name : ");
+        yPlayerName = scanner.nextLine();
+        User user1 = new User((int) (Math.random() * 100), yPlayerName);
+        DatabaseUserRepository databaseUserRepository = new DatabaseUserRepository();
+        DatabaseGameRepository databaseGameRepository = new DatabaseGameRepository();
+        databaseUserRepository.saveUser(user);
+        databaseUserRepository.saveUser(user1);
+        TrackedGame game = new TrackedGame(new RegisteredPlayer(Figure.X, user),
+                new RegisteredPlayer(Figure.O, user1), field, (int) (Math.random() * 100), LocalDateTime.now());
+        databaseGameRepository.saveGame(game);
+        gameSickle(game, field);
     }
 
     public void gameSickle(Game game, Field field) {
