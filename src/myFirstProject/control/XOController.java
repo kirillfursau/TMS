@@ -62,8 +62,8 @@ public class XOController {
         databaseUserRepository.saveUser(user1);
         TrackedGame game = new TrackedGame(new RegisteredPlayer(Figure.X, user),
                 new RegisteredPlayer(Figure.O, user1), field, (int) (Math.random() * 100), LocalDateTime.now());
-        databaseGameRepository.saveGame(game);
         gameSickle(game, field);
+        databaseGameRepository.saveGame(game, gameService);
     }
 
     public void gameSickle(Game game, Field field) {

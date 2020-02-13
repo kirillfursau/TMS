@@ -1,6 +1,7 @@
 package myFirstProject.repository;
 
 import myFirstProject.model.TrackedGame;
+import myFirstProject.service.GameService;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class InMemoryGameRepository implements GameRepository {
     }
 
     @Override
-    public TrackedGame saveGame(TrackedGame trackedGame) {
+    public TrackedGame saveGame(TrackedGame trackedGame, GameService gameService) {
         trackedGame.setGameId(countGames);
         countGames++;
         return trackedGame;
