@@ -11,7 +11,7 @@ $(document).on('click', '#submit-btn', function (e) {
         success: function (data) {
             console.log('запрос успешно получен');
             console.log(data);
-            $('div').empty();
+            $('#films').empty();
             data.results.forEach(el => {
                 const name = document.createElement("film");
                 name.src = el.title;
@@ -21,9 +21,12 @@ $(document).on('click', '#submit-btn', function (e) {
                     $('#films').append('Name = ' + el.name + ', Type  = ' + el.media_type + "<br>");
                 }
             });
-            jQuery('body').append('<a href="https://www.google.com/">For more info go to google</a>');
+            jQuery('#films').append('<a href="https://www.google.com/" style="font-size: 18px">For more info go to google</a>');
         }
     });
 // jQuery('document').ready(function () {
+});
+$(document).on('click', '#clear-btn', function (e) {
+    $('#films').empty();
 });
 // });
