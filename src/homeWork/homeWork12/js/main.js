@@ -8,11 +8,11 @@ $(document).on('click', '#submit-btn', function (e) {
         type: "GET",
         url: 'https://api.themoviedb.org/3/search/multi?language=ru-RU&api_key=5ffb6f8846617f59fd811710ba742559',
         data: {query: val},
-        success: function (dat) {
+        success: function (data) {
             console.log('запрос успешно получен');
-            console.log(dat);
+            console.log(data);
             $('div').empty();
-            dat.results.forEach(el => {
+            data.results.forEach(el => {
                 const name = document.createElement("film");
                 name.src = el.title;
                 if (el.title != null) {
