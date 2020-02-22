@@ -21,3 +21,24 @@ header {
     color: black;
     font-size: 24px;
 }
+
+#title {
+    text-align: center;
+    font-size: 26px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#myTable {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+tr:hover {
+    border: rebeccapurple;
+    background-color: rebeccapurple;
+}

@@ -11,27 +11,25 @@ $(document).on('click', '#submit-btn', function (e) {
         success: function (data) {
             console.log('запрос успешно получен');
             console.log(data);
-            $('#myTable').empty();
-            // $('#myTable').append('<tr id=tr_' + el.title + '><td>overview</td></tr>');
+            $('#films').empty();
+            $('#films').append('<table id="myTable" ><tbody></tbody></table>');
+            $('#myTable').append('<tr id = "title"><td>Name</td><td>Type</td><td>Overview</td></tr>');
             data.results.forEach(el => {
                 const name = document.createElement("film");
                 name.src = el.title;
                 if (el.title != null) {
-                    // $("#myTable > tbody").append("<tr><td>row content</td></tr>");
                     $('#myTable').append('<tr id=tr_' + el.title + '><td>' + el.title + '</td><td>'
-                        + el.media_type + '</td><td>' + el.overview+ '</td></tr>');
-                    // $('#myTable').after('<tr>' + el.title + '</tr><tr>' + el.media_type + '</tr>');
+                        + el.media_type + '</td><td>' + el.overview + '</td></tr>');
                 } else {
                     $('#myTable').append('<tr id=tr_' + el.name + '><td>' + el.name + '</td><td>'
-                        + el.media_type + '</td><td>' + el.overview+ '</td></tr>');
+                        + el.media_type + '</td><td>' + el.overview + '</td></tr>');
                 }
             });
-            jQuery('#films').append('<a href="https://www.google.com/" style="font-size: 18px">For more info go to google</a>');
+            jQuery('#films')
+                .append('<a href="https://www.google.com/" style="font-size: 18px">For more info go to google</a>');
         }
     });
-// jQuery('document').ready(function () {
 });
 $(document).on('click', '#clear-btn', function (e) {
-    $('#myTable').empty();
+    $('#films').empty();
 });
-// });
