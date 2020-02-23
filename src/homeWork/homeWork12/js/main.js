@@ -1,6 +1,6 @@
 // $('Field').submit(function () {
 //     var str = "кино";
-$(document).on('click', '#submit-btn', function (e) {
+$(document).on("click keyCode === 13", '#submit-btn', function (e) {
     e.preventDefault();
     var text = document.getElementsByTagName("input")[0];
     var val = text.value;

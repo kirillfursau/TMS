@@ -1,5 +1,5 @@
 body {
-    background-image: url("../img/wuH1RBlvcc4z.jpg");
+    background-image: url("../img/wuH1RBlvcc4z1.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,6 +33,7 @@ header {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
 th, td {
     padding: 20px;
     border: 1px solid black;
