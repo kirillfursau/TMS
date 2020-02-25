@@ -15,4 +15,9 @@
         <Name>fanta</Name>
         <Price>70</Price>
     </Product>
+    <Product>
+        <Id>4</Id>
+        <Name>sprite</Name>
+        <Price>80</Price>
+    </Product>
 </Store>
