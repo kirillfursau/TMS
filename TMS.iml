@@ -17,7 +17,7 @@
     <facet type="web" name="Web2">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/com.homeWork/homeWork13/src/webapp/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/com.homeWork/webapp/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/com.homeWork/homeWork13/src/webapp" relative="/" />
@@ -35,7 +35,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/homeWork/homeWork13/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/com.homeWork/homeWork13/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/com.homeWork/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
