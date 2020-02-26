@@ -15,6 +15,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>SignInServlet</servlet-name>
-        <url-pattern>/hello.do</url-pattern>
+        <url-pattern>/signin.do</url-pattern>
     </servlet-mapping>
 </web-app>

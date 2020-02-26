@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="TMS:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/TMS_war_exploded/META-INF</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/TMS_war_exploded</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -14,6 +14,7 @@
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="TMS/web/Web2" />
       <element id="javaee-facet-resources" facet="TMS/web/Web" />
     </root>
   </artifact>
