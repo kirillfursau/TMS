@@ -13,7 +13,7 @@ public class UserRepository {
         return users;
     }
 
-    public static boolean findUser(User user) {
+    public static boolean doesUserExist(User user) {
         return users.containsKey(user.getLogin());
     }
 

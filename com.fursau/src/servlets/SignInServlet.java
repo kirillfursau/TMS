@@ -20,9 +20,9 @@ public class SignInServlet extends HttpServlet {
         User user = new User(req.getParameter(LOGIN), req.getParameter(PASSWORD));
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
-        if (UserRepository.findUser(user) && UserRepository.checkPassword(user)) {
+        if (UserRepository.doesUserExist(user) && UserRepository.checkPassword(user)) {
             printHtml("Your login and password is right", req, resp);
-        } else if (UserRepository.findUser(user)) {
+        } else if (UserRepository.doesUserExist(user)) {
             printHtml("User with this id is already sign up", req, resp);
         } else {
             UserRepository.addUser(user);
