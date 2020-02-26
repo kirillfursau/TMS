@@ -1,6 +1,4 @@
-/.idea/
-/target/
-/out/
-/com.fursau/
-/com.homeWork/
-/.gitignore/
+/.idea
+/target
+/out
+/.gitignore
