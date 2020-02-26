@@ -2,11 +2,11 @@ package repository;
 
 import model.User;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class UserRepository {
-    public static Map<String, String> users = new HashMap<>();
+    public static Map<String, String> users = new ConcurrentHashMap<>();
 
     public static Map<String, String> addUser(User user) {
         users.put(user.getLogin(), user.getPassword());
