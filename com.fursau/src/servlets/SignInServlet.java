@@ -1,7 +1,7 @@
 package servlets;
 
 import model.User;
-import repository.userRepository;
+import repository.UserRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,12 +20,12 @@ public class SignInServlet extends HttpServlet {
         User user = new User(req.getParameter(LOGIN), req.getParameter(PASSWORD));
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
-        if (userRepository.findUser(user) && userRepository.checkPassword(user)) {
+        if (UserRepository.findUser(user) && UserRepository.checkPassword(user)) {
             printHtml("Your login and password is right", req, resp);
-        } else if (userRepository.findUser(user)) {
+        } else if (UserRepository.findUser(user)) {
             printHtml("User with this id is already sign up", req, resp);
         } else {
-            userRepository.addUser(user);
+            UserRepository.addUser(user);
             printHtml("User sign up", req, resp);
         }
     }
