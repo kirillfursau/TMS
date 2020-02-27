@@ -19,7 +19,6 @@ abstract class Figure implements Printable {
 
     public abstract boolean containsPoint(Point center);
 
-
     @Override
     public void printInformation() {
         System.out.println(center);

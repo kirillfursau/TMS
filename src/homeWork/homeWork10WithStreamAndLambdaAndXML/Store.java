@@ -1,15 +1,15 @@
 package homeWork.homeWork10WithStreamAndLambdaAndXML;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-import lessons.lesson13.Catalog;
-
-import javax.xml.bind.*;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 import static lessons.lesson11.DateUtils.printNowDate;

@@ -1,0 +1,11 @@
+#authorize_field {
+    border: solid 1px black;
+margin: 10px;
+}
+input, p{
+    margin: 10px;
+}
+#user_message{
+    width: 70%;
+    height: 100px;
+}
