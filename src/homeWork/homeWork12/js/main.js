@@ -13,7 +13,7 @@ $(document).on("click keyCode === 13", '#submit-btn', function (e) {
             console.log(data);
             $('#films').empty();
             $('#films').append('<table id="myTable" ><tbody></tbody></table>');
-            $('#myTable').append('<tr id = "title"><th>Name</th><th>Type</th><th>Overview</th></tr>');
+            $('#myTable').append('<tr id = "title"><td>Name</td><td>Type</td><td>Overview</td></tr>');
             data.results.forEach(el => {
                 const name = document.createElement("film");
                 name.src = el.title;
