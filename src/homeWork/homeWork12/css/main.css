@@ -35,9 +35,11 @@ header {
 }
 
 th, td {
-    padding: 20px;
-    border: 1px solid black;
-}
+    width: 30%;
+    height: 30%;
+     padding: 20px;
+     border: 1px solid black;
+ }
 
 tr:hover {
     border: rebeccapurple;

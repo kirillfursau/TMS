@@ -11,15 +11,15 @@ import java.util.GregorianCalendar;
 5. метод, который принимает дату и возвращает boolean: €вл€етс€ ли год високосным
  */
 public class DateUtils {
-        public static void printNowDate(){
+        public String printNowDate(){
             LocalTime time = LocalTime.now();
             LocalDate date = LocalDate.now();
             if (date.getMonthValue() < 10) {
-                System.out.println(date.getDayOfMonth() + ".0" + date.getMonthValue() + "." + date.getYear() + " "
-                        + time.getHour() + ":" + time.getMinute() + ":" + time.getSecond());
+                return date.getDayOfMonth() + ".0" + date.getMonthValue() + "." + date.getYear() + " "
+                        + time.getHour() + ":" + time.getMinute() + ":" + time.getSecond();
             }else{
-                System.out.println(date.getDayOfMonth() + "." + date.getMonthValue() + "." + date.getYear() + " "
-                        + time.getHour() + ":" + time.getMinute() + ":" + time.getSecond());
+                return date.getDayOfMonth() + "." + date.getMonthValue() + "." + date.getYear() + " "
+                        + time.getHour() + ":" + time.getMinute() + ":" + time.getSecond();
             }
         }
     public static void printNowDateWithTimeZone(ZoneId zoneId){
@@ -55,4 +55,6 @@ public class DateUtils {
         System.out.println(getLocalDateTimePlusFourHoursThirtyMinutes(localDateTime));
         System.out.println(dateUtils.LeapYear(localDateTime));
         }
+
 }
+

@@ -3,21 +3,21 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Forum</title>
-    <link rel="stylesheet" href="./main.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
 </head>
 <body>
 <h1 align="center">You are welcome on my first local forum</h1>
-<div id="authorize_field">
-    <form action="forum.do" method="get">
+<form action="forum.do" method="get">
+    <div id="authorize_field">
         <p>Enter your name</p>
         <input type="text" name="user_name">
         <p>Enter your massage</p>
         <input id="user_message" type="text" name="user_message" size="150%">
-        <td colspan="2" align="right">
+        <td align="right">
             <input type="submit" value="Send message"/>
         </td>
-    </form>
-</div>
+    </div>
+</form>
 <div id="chat_field">
 </div>
 </body>

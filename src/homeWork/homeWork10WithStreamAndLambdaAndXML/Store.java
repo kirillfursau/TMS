@@ -1,5 +1,7 @@
 package homeWork.homeWork10WithStreamAndLambdaAndXML;
 
+import lessons.lesson11.DateUtils;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -12,7 +14,6 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import static lessons.lesson11.DateUtils.printNowDate;
 
 @XmlRootElement
 public class Store {
@@ -164,7 +165,7 @@ public class Store {
                 System.out.print("Введите номер меню: ");
                 key = sc.nextLine().trim();
                 System.out.print("Текущая дата и время : ");
-                printNowDate();
+                new DateUtils().printNowDate();
                 switch (key) {
                     case "1":
                         printSecondMenu();
