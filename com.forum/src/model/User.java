@@ -1,29 +1,24 @@
 package model;
 
-import lessons.lesson11.DateUtils;
-
-
 public class User {
-    private String name;
-    private String message;
-    private String dateUtils;
+    private String login;
+    private String password;
 
-    public User(String name, String message, DateUtils dateUtils) {
-        this.name = name;
-        this.message = message;
-        this.dateUtils = dateUtils.printNowDate();
+    public User(String login, String password) {
+        setLogin(login);
+        this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getLogin() {
+        return login;
     }
 
-
-    public String getMessage() {
-        return message;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public String getDateUtils() {
-        return dateUtils;
+    public String getPassword() {
+        return password;
     }
+
 }
