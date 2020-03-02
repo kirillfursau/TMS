@@ -26,20 +26,17 @@ public class ForumServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
-        if (request.getParameter(LOGIN) != null) {
-            HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
+        if (session.getAttribute(LOGIN) == null) {
             session.setAttribute("Login", request.getParameter(LOGIN));
-            printHtml(request, response, session);
-            if (request.getParameter(MESSAGE) != null && !request.getParameter(MESSAGE).equals("")) {
-                Message message = new Message(request.getParameter(LOGIN), request.getParameter(MESSAGE),
-                        new DateUtils().printNowDate());
-                messagesList.add(message);
-            }
-        } else {
-            getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+        }
+        printHtml(request, response, session);
+        if (request.getParameter(MESSAGE) != null && !request.getParameter(MESSAGE).equals("")) {
+            Message message = new Message((String) session.getAttribute(LOGIN), request.getParameter(MESSAGE),
+                    new DateUtils().printNowDate());
+            messagesList.add(message);
         }
     }
-
 
     public static void printMessage(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         PrintWriter out = resp.getWriter();
@@ -69,14 +66,11 @@ public class ForumServlet extends HttpServlet {
         out.println("<center>");
         out.println("<h1>Forum Messages</h1>");
         out.println("</center>");
-        out.println("<form action=\"forum.do\" method=\"get\">");
+        out.println("<form action=\"forum.do\" method=\"post\">");
         out.println("<div id=\"authorize_field\">");
         out.println("<input type=\"button\" value=\"Sign out\" " +
                 "onClick='location.href=\"http://localhost:8081/com_forum_war_exploded2/index.html\"'>");
         out.println("<p>You sign in with login " + session.getAttribute(LOGIN) + "</p>");
-        out.println("<form method=\"GET\" action=\"forum.do\">");
-        out.println("<input type=\"hidden\" name=\"Login\" value=\"" + session.getAttribute(LOGIN) + "\" />");
-        out.println("</form>");
         out.println("<p>Enter your massage</p>");
         out.println("<input id=\"user_message\" type=\"text\" name=\"user_message\" size=\"150%\">");
         out.println("<td align=\"right\">");
@@ -92,10 +86,5 @@ public class ForumServlet extends HttpServlet {
         out.println("<div id=\"chat_field\">");
         out.println("</div>");
         out.println("</body>");
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req, resp);
     }
 }

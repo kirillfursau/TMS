@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TMS.iml" filepath="$PROJECT_DIR$/TMS.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.forum/com.forum.iml" filepath="$PROJECT_DIR$/com.forum/com.forum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.forumupdate/com.forumupdate.iml" filepath="$PROJECT_DIR$/com.forumupdate/com.forumupdate.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.fursau/com.fursau.iml" filepath="$PROJECT_DIR$/com.fursau/com.fursau.iml" />
     </modules>
   </component>

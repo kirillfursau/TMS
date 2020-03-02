@@ -1,7 +1,5 @@
 package model;
 
-import lessons.lesson11.DateUtils;
-
 public class Message {
     private String userName;
     private String userMessage;
