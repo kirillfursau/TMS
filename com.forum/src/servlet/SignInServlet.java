@@ -17,18 +17,18 @@ public class SignInServlet extends HttpServlet {
     private static final String PASSWORD = "Password";
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
-        User user = new User(req.getParameter(LOGIN), req.getParameter(PASSWORD));
-        resp.setContentType("text/html");
-        resp.setCharacterEncoding("UTF-8");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        User user = new User(request.getParameter(LOGIN), request.getParameter(PASSWORD));
+        response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
         if (UserRepository.doesUserExist(user) && UserRepository.checkPassword(user)) {
-            doPost(req,resp);
+            doPost(request,response);
         } else if (UserRepository.doesUserExist(user)) {
-            printHtml("User with this id is already sign up", req, resp);
+            printHtml("User with this id is already sign up", request, response);
         } else {
             UserRepository.addUser(user);
-            printHtml("User sign up", req, resp);
+            printHtml("User sign up", request, response);
         }
     }
 

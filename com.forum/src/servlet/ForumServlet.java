@@ -21,20 +21,20 @@ public class ForumServlet extends HttpServlet {
     public static List<Message> messagesList = new ArrayList<>();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html");
-        resp.setCharacterEncoding("UTF-8");
-        if (req.getParameter(LOGIN) != null) {
-            HttpSession session = req.getSession();
-            session.setAttribute("Login", req.getParameter(LOGIN));
-            printHtml(req, resp, session);
-            if (req.getParameter(MESSAGE) != null && !req.getParameter(MESSAGE).equals("")) {
-                Message message = new Message(req.getParameter(LOGIN), req.getParameter(MESSAGE), new DateUtils().printNowDate());
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+        if (request.getParameter(LOGIN) != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("Login", request.getParameter(LOGIN));
+            printHtml(request, response, session);
+            if (request.getParameter(MESSAGE) != null && !request.getParameter(MESSAGE).equals("")) {
+                Message message = new Message(request.getParameter(LOGIN), request.getParameter(MESSAGE), new DateUtils().printNowDate());
                 messagesList.add(message);
             }
         } else {
-            getServletContext().getRequestDispatcher("/index.html").forward(req, resp);
+            getServletContext().getRequestDispatcher("/index.html").forward(request, response);
         }
     }
 
