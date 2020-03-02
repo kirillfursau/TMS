@@ -17,7 +17,8 @@ public class SignInServlet extends HttpServlet {
     private static final String PASSWORD = "Password";
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+            IOException {
         request.setCharacterEncoding("UTF-8");
         User user = new User(request.getParameter(LOGIN), request.getParameter(PASSWORD));
         response.setContentType("text/html");
@@ -34,7 +35,8 @@ public class SignInServlet extends HttpServlet {
 
     public void printHtml(String text, HttpServletRequest req, HttpServletResponse resp) throws IOException {
         PrintWriter out = resp.getWriter();
-        out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">");
+        out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" " +
+                "\"http://www.w3.org/TR/html4/loose.dtd\">");
         out.println("<html>");
         out.println("<head>");
         out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");

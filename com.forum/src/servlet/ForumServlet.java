@@ -21,7 +21,8 @@ public class ForumServlet extends HttpServlet {
     public static List<Message> messagesList = new ArrayList<>();
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+            IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
@@ -30,7 +31,8 @@ public class ForumServlet extends HttpServlet {
             session.setAttribute("Login", request.getParameter(LOGIN));
             printHtml(request, response, session);
             if (request.getParameter(MESSAGE) != null && !request.getParameter(MESSAGE).equals("")) {
-                Message message = new Message(request.getParameter(LOGIN), request.getParameter(MESSAGE), new DateUtils().printNowDate());
+                Message message = new Message(request.getParameter(LOGIN), request.getParameter(MESSAGE),
+                        new DateUtils().printNowDate());
                 messagesList.add(message);
             }
         } else {
@@ -55,7 +57,8 @@ public class ForumServlet extends HttpServlet {
     public static void printHtml(HttpServletRequest req, HttpServletResponse resp, HttpSession session)
             throws IOException, ServletException {
         PrintWriter out = resp.getWriter();
-        out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">");
+        out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" " +
+                "\"http://www.w3.org/TR/html4/loose.dtd\">");
         out.println("<html>");
         out.println("<head>");
         out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
