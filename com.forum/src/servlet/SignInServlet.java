@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -24,6 +25,8 @@ public class SignInServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         if (UserRepository.doesUserExist(user) && UserRepository.checkPassword(user)) {
+            HttpSession session = request.getSession();
+            session.setAttribute("Login", request.getParameter(LOGIN));
             getServletContext().getRequestDispatcher("/forum.do").forward(request, response);
         } else if (UserRepository.doesUserExist(user)) {
             printHtml("User with this id is already sign up", request, response);

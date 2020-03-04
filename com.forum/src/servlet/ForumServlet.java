@@ -27,15 +27,12 @@ public class ForumServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
-        if (session.getAttribute(LOGIN) == null) {
-            session.setAttribute("Login", request.getParameter(LOGIN));
-        }
-        printHtml(request, response, session);
         if (request.getParameter(MESSAGE) != null && !request.getParameter(MESSAGE).equals("")) {
             Message message = new Message((String) session.getAttribute(LOGIN), request.getParameter(MESSAGE),
                     new DateUtils().printNowDate());
             messagesList.add(message);
         }
+        printHtml(request, response, session);
     }
 
     public static void printMessage(HttpServletRequest req, HttpServletResponse resp) throws IOException {

@@ -30,8 +30,8 @@ public class SignInServlet extends HttpServlet {
         }
     }
 
-    public void printHtml(String text, HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        PrintWriter out = resp.getWriter();
+    public void printHtml(String text, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        PrintWriter out = response.getWriter();
         out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">");
         out.println("<html>");
         out.println("<head>");
@@ -43,6 +43,6 @@ public class SignInServlet extends HttpServlet {
         out.println("<h1>Registration</h1>");
         out.println("</center>");
         out.println("<h1>" + text + "</h1>");
-        out.println("<a href=\"" + req.getServletContext().getContextPath() + "/index.html\">Go To Index Page</a>");
+        out.println("<a href=\"" + request.getServletContext().getContextPath() + "/index.html\">Go To Index Page</a>");
     }
 }
