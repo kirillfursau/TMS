@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Store>
-    <Product>
+    <java.Product>
         <Id>1</Id>
         <Name>pepsi</Name>
         <Price>50</Price>
-    </Product>
-    <Product>
+    </java.Product>
+    <java.Product>
         <Id>2</Id>
         <Name>cola</Name>
         <Price>100</Price>
-    </Product>
-    <Product>
+    </java.Product>
+    <java.Product>
         <Id>3</Id>
         <Name>fanta</Name>
         <Price>70</Price>
-    </Product>
-    <Product>
+    </java.Product>
+    <java.Product>
         <Id>4</Id>
         <Name>sprite</Name>
         <Price>80</Price>
-    </Product>
+    </java.Product>
 </Store>
