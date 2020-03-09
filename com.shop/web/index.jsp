@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="someClass.Product" %>
+<%@ page import="model.Product" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="obk" class="someClass.Product"/>
 <html>

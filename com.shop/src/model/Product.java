@@ -1,4 +1,4 @@
-package someClass;
+package model;
 
 public class Product {
     private String name;

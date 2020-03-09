@@ -24,7 +24,6 @@ public class SignInServlet extends HttpServlet {
         User user = new User(request.getParameter(LOGIN), request.getParameter(PASSWORD));
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
-        UserRepository.getInstance();
         if (UserRepository.doesUserExist(user) && UserRepository.checkPassword(user)) {
             HttpSession session = request.getSession();
             session.setAttribute("Login", request.getParameter(LOGIN));

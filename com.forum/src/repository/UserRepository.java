@@ -5,19 +5,8 @@ import model.User;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public final class UserRepository {
-    public static Map<String, String> users;
-
-    public static Map<String, String> getInstance() {
-        if (users == null) {
-            synchronized (UserRepository.class) {
-                if (users == null) {
-                    users = new ConcurrentHashMap<>();
-                }
-            }
-        }
-        return users;
-    }
+public class UserRepository {
+    public static Map<String, String> users = new ConcurrentHashMap<>();
 
     public static Map<String, String> addUser(User user) {
         users.put(user.getLogin(), user.getPassword());

@@ -1,6 +1,6 @@
 package servlet;
 
-import someClass.ProductList;
+import repository.ProductList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,6 +1,6 @@
 package servlet;
 
-import someClass.ProductBucket;
+import repository.ProductBucket;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

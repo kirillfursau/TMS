@@ -1,7 +1,7 @@
 package servlet;
 
-import someClass.Product;
-import someClass.ProductBucket;
+import model.Product;
+import repository.ProductBucket;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,8 +14,8 @@ import java.io.IOException;
 public class AddToBucketServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int price = Integer.parseInt(req.getParameter("price"));
-        ProductBucket.addToBucket(new Product(req.getParameter("product"), price));
+        ProductBucket.addToBucket(new Product(req.getParameter("product"),
+                Integer.parseInt(req.getParameter("price"))));
         req.getSession().setAttribute("bucket", ProductBucket.getBucket());
         resp.sendRedirect(req.getServletContext().getContextPath() + "/product");
     }
