@@ -5,16 +5,22 @@ public abstract class Game {
     public Player player2;
     public Field field;
 
-    public Game(Player player1, Player player2, Field field) {
+    public Game(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
-        this.field = field;
+        field = new Field();
     }
 
-    public abstract Player getPlayer1();
+    public Player getPlayer1() {
+        return player1;
+    }
 
-    public abstract Player getPlayer2();
+    public Player getPlayer2() {
+        return player2;
+    }
 
-    public abstract Field getField();
+    public Field getField() {
+        return field;
+    }
 
 }

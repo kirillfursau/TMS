@@ -6,26 +6,10 @@ public class TrackedGame extends Game {
     private int gameId;
     private LocalDateTime localDateTime;
 
-    public TrackedGame(RegisteredPlayer player1, RegisteredPlayer player2, Field field,
-                       int gameId, LocalDateTime localDateTime) {
-        super(player1, player2, field);
+    public TrackedGame(RegisteredPlayer player1, RegisteredPlayer player2, int gameId, LocalDateTime localDateTime) {
+        super(player1, player2);
         setGameId(gameId);
         this.localDateTime = localDateTime;
-    }
-
-    @Override
-    public Player getPlayer1() {
-        return player1;
-    }
-
-    @Override
-    public Player getPlayer2() {
-        return player2;
-    }
-
-    @Override
-    public Field getField() {
-        return field;
     }
 
     public LocalDateTime getLocalDateTime() {

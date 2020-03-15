@@ -16,7 +16,7 @@ public class FieldService {
     public Figure getNextFigure(Field field) {
         if (Arrays.stream(field.getFigures())
                 .flatMap(e -> Stream.of(e)
-                        .filter(el -> el == Figure.X || el == Figure.O))
+                        .filter(el -> el != null))
                 .count() % 2 == 0) {
             return Figure.X;
         }
@@ -26,8 +26,7 @@ public class FieldService {
     public void makeMove(Field field, int x, int y) throws XOException {
         if (x > 2 || y > 2 || x < 0 || y < 0) {
             throw new MoveOutOfBoundsException();
-        }
-        if (field.getFigure(x, y) != Figure.X && field.getFigure(x, y) != Figure.O) {
+        } else if (field.getFigure(x, y) != Figure.X && field.getFigure(x, y) != Figure.O) {
             field.setFigure(x, y, getNextFigure(field));
         } else {
             throw new AlreadyOccupiedException();
