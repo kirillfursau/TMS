@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/com.forum/com.forum.iml" filepath="$PROJECT_DIR$/com.forum/com.forum.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.fursau/com.fursau.iml" filepath="$PROJECT_DIR$/com.fursau/com.fursau.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.shop/com.shop.iml" filepath="$PROJECT_DIR$/com.shop/com.shop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/lessons/startSpring.iml" filepath="$PROJECT_DIR$/src/lessons/startSpring.iml" />
     </modules>
   </component>
 </project>

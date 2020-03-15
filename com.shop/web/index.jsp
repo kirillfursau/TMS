@@ -25,10 +25,10 @@
     <% int price = list.get(i).getPrice();%>
     <div class="row">
         <div class="col-md-2">
-            <% out.print(name);%>
+            <%=name%>
         </div>
         <div class="col-md-2">
-            <%out.print(price);%>
+            <%=price%>
         </div>
         <div class="col-md-2">
             <button onclick="document.location='add?product=<%=name%>&price=<%=price%>'">add to bucket</button>
