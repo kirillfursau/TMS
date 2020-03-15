@@ -16,8 +16,7 @@ public class MySecondBeanImpl implements MySecondBean {
     }
 
     @Override
-    public void printName(String name) {
-        name = myFirstBean.getName();
-        System.out.println(name);
+    public void printName() {
+        System.out.println(myFirstBean.getName());
     }
 }

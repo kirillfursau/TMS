@@ -8,7 +8,8 @@ public class MyFirstBeanImpl implements MyFirstBean {
 
     public String name;
 
-    public MyFirstBeanImpl(String name) {
+
+    public MyFirstBeanImpl() {
         this.name = "kiryl";
     }
 

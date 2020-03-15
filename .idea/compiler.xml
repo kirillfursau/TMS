@@ -10,6 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="firstSpring" target="1.7" />
       <module name="TMS" target="8" />
     </bytecodeTargetLevel>
   </component>

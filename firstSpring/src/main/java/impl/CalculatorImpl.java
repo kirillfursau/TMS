@@ -14,17 +14,21 @@ public class CalculatorImpl implements Calculator {
         this.userInput = userInput;
     }
 
+    public CalculatorImpl() {
+    }
+
     public UserInput getUserInput() {
         return userInput;
     }
 
     @Override
     public double calculate() {
+        System.out.print("Result is ");
         switch (userInput.getOperator()) {
             case "+":
-                return fold();
-            case "-":
                 return subtract();
+            case "-":
+                return fold();
             case "*":
                 return multiply();
             case "/":
