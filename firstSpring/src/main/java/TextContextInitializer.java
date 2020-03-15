@@ -9,4 +9,5 @@ public class TextContextInitializer {
         Calculator calculator = context.getBean("calculatorImpl", Calculator.class);
         System.out.println(calculator.calculate());
     }
+
 }
