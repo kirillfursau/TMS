@@ -6,8 +6,7 @@ import myFirstProject.model.exception.AlreadyOccupiedException;
 import myFirstProject.model.exception.MoveOutOfBoundsException;
 import myFirstProject.model.exception.XOException;
 
-
-import java.util.*;
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 
@@ -24,12 +23,14 @@ public class FieldService {
     }
 
     public void makeMove(Field field, int x, int y) throws XOException {
-        if (x > 2 || y > 2 || x < 0 || y < 0) {
+        try {
+            if (field.getFigure(x, y) != Figure.X && field.getFigure(x, y) != Figure.O) {
+                field.setFigure(x, y, getNextFigure(field));
+            } else {
+                throw new AlreadyOccupiedException();
+            }
+        } catch (ArrayIndexOutOfBoundsException ex) {
             throw new MoveOutOfBoundsException();
-        } else if (field.getFigure(x, y) != Figure.X && field.getFigure(x, y) != Figure.O) {
-            field.setFigure(x, y, getNextFigure(field));
-        } else {
-            throw new AlreadyOccupiedException();
         }
     }
 

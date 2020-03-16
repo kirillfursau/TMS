@@ -90,5 +90,12 @@ public class XOController {
                 e.printStackTrace();
             }
         }
+        fieldService.draw(game.getField());
+        if (gameService.getWinner(game).isPresent()) {
+            System.out.println("The winner is " + gameService.getWinner(game).get().getName());
+        } else {
+            System.out.println("Draw");
+        }
+
     }
 }
