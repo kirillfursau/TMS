@@ -10,6 +10,7 @@ public class UserInputImpl implements UserInput {
     private double firstNumber;
     private double secondNumber;
     private String operator;
+    private Scanner scanner;
 
     public UserInputImpl() {
         Scanner scanner = new Scanner(System.in);
@@ -38,6 +39,7 @@ public class UserInputImpl implements UserInput {
 
     @Override
     public double getFirstNumber() {
+
         return firstNumber;
     }
 
