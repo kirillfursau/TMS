@@ -2,9 +2,10 @@ package config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-@ComponentScan(basePackages = {"impl"})
+@EnableAspectJAutoProxy
+@ComponentScan(basePackages = {"impl", "aop"})
 @Configuration
 public class Config {
-
 }
