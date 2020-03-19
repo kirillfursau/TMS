@@ -82,16 +82,22 @@
             <version>5.2.3.RELEASE</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+        <!-- spring -->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>5.2.4.RELEASE</version>
+            <artifactId>spring-context</artifactId>
+            <version>5.2.3.RELEASE</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <version>5.2.4.RELEASE</version>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.2.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>5.2.3.RELEASE</version>
         </dependency>
 
 

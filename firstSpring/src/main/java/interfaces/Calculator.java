@@ -1,13 +1,11 @@
 package interfaces;
 
 public interface Calculator {
-    double calculate();
+    double fold(double firstNumber, double secondNumber);
 
-    double fold();
+    double subtract(double firstNumber, double secondNumber);
 
-    double subtract();
+    double multiply(double firstNumber, double secondNumber);
 
-    double multiply();
-
-    double divide();
+    double divide(double firstNumber, double secondNumber);
 }

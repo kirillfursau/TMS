@@ -3,18 +3,18 @@ package impl;
 import annotation.EndTimeToCalculate;
 import annotation.StartTimeToCalculate;
 import interfaces.Calculator;
-import interfaces.Context;
+import interfaces.Controller;
 import interfaces.UserInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-class ContextImpl implements Context {
+class ControllerImpl implements Controller {
     private UserInput userInput;
     private Calculator calculator;
 
     @Autowired
-    public ContextImpl(UserInput userInput, Calculator calculator) {
+    public ControllerImpl(UserInput userInput, Calculator calculator) {
         this.userInput = userInput;
         this.calculator = calculator;
     }
@@ -27,17 +27,16 @@ class ContextImpl implements Context {
         System.out.print("Result is ");
         switch (userInput.getOperator()) {
             case "+":
-                return calculator.subtract(userInput.getFirstNumber(), userInput.getSecondNumber());
+                System.out.println(calculator.subtract(userInput.getFirstNumber(), userInput.getSecondNumber()));
             case "-":
-                return calculator.fold(userInput.getFirstNumber(), userInput.getSecondNumber());
+                System.out.println(calculator.fold(userInput.getFirstNumber(), userInput.getSecondNumber()));
             case "*":
-                return calculator.multiply(userInput.getFirstNumber(), userInput.getSecondNumber());
+                System.out.println(calculator.multiply(userInput.getFirstNumber(), userInput.getSecondNumber()));
             case "/":
-                return calculator.divide(userInput.getFirstNumber(), userInput.getSecondNumber());
+                System.out.println(calculator.divide(userInput.getFirstNumber(), userInput.getSecondNumber()));
             default:
                 System.out.println("Something wrong");
                 break;
         }
-        return 0;
     }
 }
