@@ -1,64 +1,37 @@
 package impl;
 
+import annotation.EndTimeToCalculate;
 import interfaces.Calculator;
-import interfaces.UserInput;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CalculatorImpl implements Calculator {
-    private UserInput userInput;
-
-    @Autowired
-    public CalculatorImpl(UserInput userInput) {
-        this.userInput = userInput;
-    }
 
     public CalculatorImpl() {
     }
 
-    public UserInput getUserInput() {
-        return userInput;
-    }
-
+    @EndTimeToCalculate
     @Override
-    public double calculate() {
-        System.out.print("Result is ");
-        switch (userInput.getOperator()) {
-            case "+":
-                return subtract();
-            case "-":
-                return fold();
-            case "*":
-                return multiply();
-            case "/":
-                return divide();
-            default:
-                System.out.println("Something wrong");
-                break;
-        }
-        return 0;
-    }
-
-    @Override
-    public double fold() {
-        return userInput.getFirstNumber() - userInput.getSecondNumber();
+    public double fold(double firstNumber, double secondNumber) {
+        return firstNumber - secondNumber;
     }
 
 
     @Override
-    public double subtract() {
-        return userInput.getFirstNumber() + userInput.getSecondNumber();
+    public double multiply(double firstNumber, double secondNumber) {
+        return firstNumber * secondNumber;
     }
 
+    @EndTimeToCalculate
     @Override
-    public double multiply() {
-        return userInput.getFirstNumber() * userInput.getSecondNumber();
+    public double subtract(double firstNumber, double secondNumber) {
+        return firstNumber + secondNumber;
     }
 
+    @EndTimeToCalculate
     @Override
-    public double divide() {
-        return userInput.getFirstNumber() / userInput.getSecondNumber();
+    public double divide(double firstNumber, double secondNumber) {
+        return firstNumber + secondNumber;
     }
 }
 
