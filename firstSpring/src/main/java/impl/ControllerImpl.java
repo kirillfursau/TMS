@@ -28,12 +28,16 @@ class ControllerImpl implements Controller {
         switch (userInput.getOperator()) {
             case "+":
                 System.out.println(calculator.subtract(userInput.getFirstNumber(), userInput.getSecondNumber()));
+                break;
             case "-":
                 System.out.println(calculator.fold(userInput.getFirstNumber(), userInput.getSecondNumber()));
+                break;
             case "*":
                 System.out.println(calculator.multiply(userInput.getFirstNumber(), userInput.getSecondNumber()));
+                break;
             case "/":
                 System.out.println(calculator.divide(userInput.getFirstNumber(), userInput.getSecondNumber()));
+                break;
             default:
                 System.out.println("Something wrong");
                 break;
