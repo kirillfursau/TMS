@@ -1,11 +1,16 @@
 package aop;
 
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
 public class LogeTimeToCalculate {
+    private long startCalculate;
+    private long timeToCalculate;
 
     @Pointcut("@annotation(annotation.StartTimeToCalculate)")
     public void startTime() {
@@ -17,11 +22,12 @@ public class LogeTimeToCalculate {
 
     @After("endTime()")
     public void afterCallAt() {
-        System.out.println("Bye");
+        timeToCalculate = System.currentTimeMillis() - startCalculate;
+        System.out.printf("Time to calculate %d millis", timeToCalculate);
     }
 
     @Before("startTime()")
     public void beforeCallAt() {
-        System.out.println("hello");
+       startCalculate = System.currentTimeMillis();
     }
 }
