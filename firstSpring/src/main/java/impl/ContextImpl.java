@@ -23,7 +23,7 @@ class ContextImpl implements Context {
     @StartTimeToCalculate
     @EndTimeToCalculate
     @Override
-    public double calculate() {
+    public void calculate() {
         System.out.print("Result is ");
         switch (userInput.getOperator()) {
             case "+":

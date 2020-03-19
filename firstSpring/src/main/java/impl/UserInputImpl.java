@@ -3,6 +3,7 @@ package impl;
 import interfaces.UserInput;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.Scanner;
 
 @Component
@@ -13,7 +14,6 @@ public class UserInputImpl implements UserInput {
     private Scanner scanner;
 
     public UserInputImpl() {
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Input first number : ");
         firstNumber = scanner.nextDouble();
         System.out.print("Input second number : ");
@@ -21,6 +21,11 @@ public class UserInputImpl implements UserInput {
         scanner.nextLine();
         System.out.print("Input operator(+ , - , * , /) : ");
         operator = scanner.nextLine();
+    }
+
+    @PostConstruct
+    public void init(){
+        scanner = new Scanner(System.in);
     }
 
     @Override
