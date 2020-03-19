@@ -19,7 +19,6 @@ class ControllerImpl implements Controller {
         this.calculator = calculator;
     }
 
-
     @StartTimeToCalculate
     @EndTimeToCalculate
     @Override
