@@ -1,5 +1,6 @@
 package impl;
 
+import annotation.EndTimeToCalculate;
 import annotation.StartTimeToCalculate;
 import interfaces.Calculator;
 import interfaces.Context;
@@ -20,6 +21,7 @@ class ContextImpl implements Context {
 
 
     @StartTimeToCalculate
+    @EndTimeToCalculate
     @Override
     public double calculate() {
         System.out.print("Result is ");
