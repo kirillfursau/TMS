@@ -22,7 +22,7 @@ public class CalculatorImpl implements Calculator {
         return firstNumber * secondNumber;
     }
 
-    @EndTimeToCalculate
+
     @Override
     public double subtract(double firstNumber, double secondNumber) {
         return firstNumber + secondNumber;
