@@ -12,7 +12,7 @@ public class CalculatorImpl implements Calculator {
 
     @Override
     public double fold(double firstNumber, double secondNumber) {
-        return firstNumber - secondNumber;
+        return firstNumber + secondNumber;
     }
 
 
@@ -23,12 +23,12 @@ public class CalculatorImpl implements Calculator {
 
     @Override
     public double subtract(double firstNumber, double secondNumber) {
-        return firstNumber + secondNumber;
+        return firstNumber - secondNumber;
     }
 
     @Override
     public double divide(double firstNumber, double secondNumber) {
-        return firstNumber + secondNumber;
+        return firstNumber / secondNumber;
     }
 }
 

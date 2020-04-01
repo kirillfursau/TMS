@@ -26,10 +26,10 @@ class ControllerImpl implements Controller {
         System.out.print("Result is ");
         switch (userInput.getOperator()) {
             case "+":
-                System.out.println(calculator.subtract(userInput.getFirstNumber(), userInput.getSecondNumber()));
+                System.out.println(calculator.fold(userInput.getFirstNumber(), userInput.getSecondNumber()));
                 break;
             case "-":
-                System.out.println(calculator.fold(userInput.getFirstNumber(), userInput.getSecondNumber()));
+                System.out.println(calculator.subtract(userInput.getFirstNumber(), userInput.getSecondNumber()));
                 break;
             case "*":
                 System.out.println(calculator.multiply(userInput.getFirstNumber(), userInput.getSecondNumber()));
